@@ -24,6 +24,10 @@ description: Graduate Student at Johns Hopkins
 <br/>
 <br/>
 
+## Anton Alyakin
+
+### Data S(hm)ientist
+
 I am a Masters student at Johns Hopkins University in Applied Mathematics and
 Statistics.
 I am advised by Professor Avanti Atheya. I also do research with  Professor 
