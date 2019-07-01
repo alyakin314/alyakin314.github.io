@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 
+title: Anton Alyakin
 description: Graduate Student at Johns Hopkins
 ---
 <div class="container">
