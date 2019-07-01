@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Anton Alyakin
+tagline: Data Sc(hm)ientist
 description: Graduate Student at Johns Hopkins
 ---
 <div class="container">
@@ -39,5 +40,6 @@ I graduated from the Johns Hopkins University in 2019 with a Bachelor of Science
 in Computer Science and Applied Mathematics and Statistics.
 During my undergraduate I was fortunate to be advised by
 [Suchi Saria](https://suchisaria.jhu.edu/).
+My Senior Honors Thesis title was on the _Motif Discovery in the Irregularly Sampled Time Series Data_.
 
 I consider myself a frequentist in philosophy, but a Bayesian in practice.
