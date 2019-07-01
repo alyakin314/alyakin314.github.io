@@ -30,7 +30,7 @@ description: Graduate Student at Johns Hopkins
 
 I am a Masters student at Johns Hopkins University in Applied Mathematics and
 Statistics.
-I am advised by Professor Avanti Atheya. I also do research with  Professor 
+I am advised by Professor Avanti Atheya. I also work with  Professor 
 [Carey Priebe](https://www.ams.jhu.edu/~priebe/).
 My research interests primarily lie in the domains of Statistical Learning and
 its applications to biomedical problems.
