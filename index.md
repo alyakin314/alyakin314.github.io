@@ -5,7 +5,7 @@ description: Graduate Student at Johns Hopkins
 ---
 <div class="container">
 	<div class = "span3">
-		<div style="text-align:center"><img src ="assets/pics/Inked_joshua_agterberg_8-20.jpg"/>
+		<div style="text-align:center"><img src ="assets/pics/anton_alyakin.jpg"/>
 		</div>
 	</div>
 	<div class = "span4">
@@ -30,7 +30,6 @@ I am advised by Professor Avanti Atheya. I also do research with  Professor
 [Carey Priebe](https://www.ams.jhu.edu/~priebe/).
 My research interests primarily lie in the domains of Statistical Learning and
 its applications to biomedical problems.
-# You can read about some of my research [here](/pages/research.html).
 
 I graduated from the Johns Hopkins University in 2019 with a Bachelor of Science
 in Computer Science and Applied Mathematics and Statistics.
