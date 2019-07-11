@@ -13209,47 +13209,45 @@ $$</p>
 <p>This allows us to compute an mle. Take a log to get to the log-likelihood:
 $$
 \begin{aligned}
-  \log \left( f(X_1, \dots, X_n \vert p, n) \right)
-  &amp;=</p>
-<ul>
-<li>\frac{n}{2} \log\left({2 \pi n}\right) - n \log\left({1 - p}\right) </li>
-<li>\frac{n}{2} \sum_{i=1}^n \left(\frac{\left( X_i - p \right)^2}{(1 - p^2)} \right)
+  \log \left( f(X_1, \dots, X_n \vert p, n) \right) 
+  &amp;= - \frac{n}{2} \log\left(2 \pi n\right) - n \log\left(1 - p\right) - \frac{n}{2} \sum_{i=1}^n \left(\frac{\left( X_i - p \right)^2}{(1 - p)^2} \right)
 \end{aligned}
-$$
-Compute a partial with respect to $p$:
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Compute a partial with respect to $p$:
 $$
 \begin{aligned}
-\frac{\partial \log \left( f(X_1, \dots, X_n \vert p, n) \right)}{\partial p}
-&amp;= \frac{n}{1 - p}</li>
-<li>\frac{n}{2} \sum_{i=1}^n \left(\frac{(1 - p)^2 (x_i - p)(-2) - (x_i - p)^2(1 - p)(-2)}{(1-p)^4} \right) \
-&amp;= \frac{n}{1 - p}</li>
-<li>n \sum_{i=1}^n \left(\frac{(1 - p)(x_i - p) - (x_i - p)^2}{(1-p)^3} \right) \ 
-&amp;= \frac{n}{1 - p}</li>
-<li>n \sum_{i=1}^n \left(\frac{(x_i - p)(x_i - 1)}{(1-p)^3} \right) \ 
+  \frac{\partial \log \left( f(X_1, \dots, X_n \vert p, n) \right)}{\partial p}
+  &amp;= \frac{n}{1 - p} - \frac{n}{2} \sum_{i=1}^n \left(\frac{(1 - p)^2 (x_i - p)(-2) - (x_i - p)^2(1 - p)(-2)}{(1-p)^4} \right) \\
+  &amp;= \frac{n}{1 - p} + n \sum_{i=1}^n \left(\frac{(1 - p)(x_i - p) - (x_i - p)^2}{(1-p)^3} \right) \\ 
+  &amp;= \frac{n}{1 - p} - n \sum_{i=1}^n \left(\frac{(x_i - p)(x_i - 1)}{(1-p)^3} \right) \\ 
 \end{aligned}
-$$
-Solve for $p$:
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Solve for $p$:
 $$
 \begin{aligned}
-0
-&amp;= \frac{n}{1 - p}</li>
-<li>n \sum_{i=1}^n \left(\frac{(x_i - p)(x_i - 1)}{(1-p)^3} \right) \
-0
-&amp;= 1</li>
-<li>\sum_{i=1}^n \left(\frac{(x_i - p)(x<em>i - 1)}{(1-p)^2} \right) \ 
-(1-p)^2
-&amp;=
-\sum</em>{i=1}^n (x_i - p)(x<em>i - 1) \ 
-1 - 2p + p^2
-&amp;=
-\sum</em>{i=1}^n x<em>i^2 - p \sum</em>{i=1}^n X<em>i - \sum</em>{i=1}^n X<em>i + np \
-0
-&amp;=
-p^2 + \left(\sum</em>{i=1}^n X<em>i - n - 2 \right) p + \left(- \sum</em>{i=1}^n x<em>i^2 + \sum</em>{i=1}^n x_i + 1 \right)
+  0 &amp;= \frac{n}{1 - p} - n \sum_{i=1}^n \left(\frac{(x_i - p)(x_i - 1)}{(1-p)^3} \right) \\
+  0 &amp;= 1 - \sum_{i=1}^n \left(\frac{(x_i - p)(x_i - 1)}{(1-p)^2} \right) \\ 
+  (1-p)^2 &amp;=
+  \sum_{i=1}^n (x_i - p)(x_i - 1) \\ 
+  1 - 2p + p^2 &amp;= \sum_{i=1}^n x_i^2 - p \sum_{i=1}^n X_i - \sum_{i=1}^n X_i + np \\
+  0 &amp;= p^2 + \left(\sum_{i=1}^n X_i - n - 2 \right) p + \left(- \sum_{i=1}^n x_i^2 + \sum_{i=1}^n x_i + 1 \right)
 \end{aligned}
 $$
-which can give us up to two solutions. The root with the maximal likelihood is the MLE.</li>
-</ul>
+which can give us up to two solutions. The root with the maximal likelihood is the MLE.</p>
 
 </div>
 </div>
