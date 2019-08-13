@@ -25,12 +25,12 @@ description: Graduate Student at Johns Hopkins
 <br/>
 <br/>
 
-I am a Masters student at Johns Hopkins University in Applied Mathematics and
-Statistics.
+
+
+I am a Masters student at Johns Hopkins University degree in Applied Mathematics and Statistics.
 I am advised by Professor Avanti Atheya. I also work with  Professor 
 [Carey Priebe](https://www.ams.jhu.edu/~priebe/).
-My research interests primarily lie in the domains of Statistical Learning and
-its applications to biomedical problems.
+My current work is primarily in computational statistics, mixture estimates, and statistical inference for high-dimensional and graph data.
 
 I graduated from the Johns Hopkins University in 2019 with a Bachelor of Science
 in Computer Science and Applied Mathematics and Statistics.
@@ -38,4 +38,17 @@ During my undergraduate I was fortunate to be advised by
 [Suchi Saria](https://suchisaria.jhu.edu/).
 My Senior Honors Thesis was on the _Motif Discovery in the Irregularly Sampled Time Series Data_.
 
+My goal is to pursue a joint M.D.-Ph.D. degree and work as a physician scientist, tackling the problems related to medical diagnosis using machine learning approaches.
+
 I consider myself a frequentist in philosophy, but a Bayesian in practice.
+
+**Frequently Asked Questions?**
+
+*Do you own multiple of these tracksuits?*
+I get this question A LOT.
+Yes, I have 5 identical tracksuits and 12 identical T-shirts.
+I wear them every day unless forced by some obstacles to do overwise
+(e.g. an occasional interview).
+There are multiple reasons why I started doing this, but primarily because I wanted to routinize this aspect of my life and spend mental energy thinking about things that are interesting to me rather than "what do I wear today"/"does this match"/"can I wash these together".
+I am also a proponent of function over form in most circumstances, this one included: I simply do not feel comfortable wearing over things.
+I got the inspiration to do this from multiple people, most notably, Prof. Avanti Athreya (but she is not aware of this :) ).
