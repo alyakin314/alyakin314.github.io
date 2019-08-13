@@ -27,7 +27,7 @@ description: Graduate Student at Johns Hopkins
 
 
 
-I am a Masters student at Johns Hopkins University degree in Applied Mathematics and Statistics.
+I am a Masters student at Johns Hopkins University pursuing a degree in Applied Mathematics and Statistics.
 I am advised by Professor Avanti Atheya. I also work with  Professor 
 [Carey Priebe](https://www.ams.jhu.edu/~priebe/).
 My current work is primarily in computational statistics, mixture estimates, and statistical inference for high-dimensional and graph data.
