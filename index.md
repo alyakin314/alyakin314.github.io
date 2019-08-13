@@ -42,13 +42,21 @@ My goal is to pursue a joint M.D.-Ph.D. degree and work as a physician scientist
 
 I consider myself a frequentist in philosophy, but a Bayesian in practice.
 
-**Frequently Asked Questions?**
+
+
+**Frequently Asked Question[s]**
 
 *Do you own multiple of these tracksuits?*
+
 I get this question A LOT.
 Yes, I have 5 identical tracksuits and 12 identical T-shirts.
 I wear them every day unless forced by some obstacles to do overwise
-(e.g. an occasional interview).
-There are multiple reasons why I started doing this, but primarily because I wanted to routinize this aspect of my life and spend mental energy thinking about things that are interesting to me rather than "what do I wear today"/"does this match"/"can I wash these together".
-I am also a proponent of function over form in most circumstances, this one included: I simply do not feel comfortable wearing over things.
-I got the inspiration to do this from multiple people, most notably, Prof. Avanti Athreya (but she is not aware of this :) ).
+(e.g. an interview).
+There primary reason why I started doing this is because I wanted to routinize
+this aspect of my life and spend mental energy thinking about things that are
+interesting to me rather than "what do I wear today"/"does this match"/"can I
+wash these together".
+I am also a proponent of function over form in most circumstances and I simply
+do not feel comfortable wearing over things.
+I got the inspiration to do this from Prof. Avanti Athreya (but she is not aware
+of this :) ).
