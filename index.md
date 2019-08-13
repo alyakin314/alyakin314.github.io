@@ -52,7 +52,7 @@ I get this question A LOT.
 Yes, I have 5 identical tracksuits and 12 identical T-shirts.
 I wear them every day unless forced to do otherwise by some obstacles (e.g. an
 interview).
-There primary reason why I started doing this is because I wanted to routinize
+The primary reason why I started doing this is because I wanted to routinize
 this aspect of my life and spend mental energy thinking about things that are
 interesting to me rather than "what do I wear today"/"does this match"/"can I
 wash these together".
