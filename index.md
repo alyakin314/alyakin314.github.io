@@ -48,7 +48,7 @@ I consider myself a frequentist in philosophy, but a Bayesian in practice.
 
 *Do you own multiple of these tracksuits?*
 
-% I get this question A LOT.
+# I get this question A LOT.
 Yes, I have 5 identical tracksuits and 12 identical T-shirts.
 I wear them every day unless forced to do otherwise by some obstacles (e.g. an
 interview).
