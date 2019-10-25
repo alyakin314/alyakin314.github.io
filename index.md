@@ -15,9 +15,9 @@ description: Graduate Student at Johns Hopkins
 		<a href="https://engineering.jhu.edu/">Whiting School of Engineering</a><br/>
           	<a href="https://www.jhu.edu/">Johns Hopkins University</a><br/>
 		<br/>
+		<a href="{{ BASE_PATH }}/assets/AntonAlyakinResume.pdf">Resume</a><br/>
 		<a href = "https://github.com/alyakin314">Github</a><br/>
 		<a href = "https://www.linkedin.com/in/anton-alyakin-64a58a9b/">LinkedIn</a><br/>
-		<a href="{{ BASE_PATH }}/assets/AntonAlyakinResume.pdf">Resume</a><br/>
 		</div>		
 	</div>
 </div>
