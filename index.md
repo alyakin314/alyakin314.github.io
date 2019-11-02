@@ -53,6 +53,8 @@ I consider myself a frequentist in philosophy, but a Bayesian in practice.
 [//]: # interview).
 [//]: # The primary reason why I started doing this is because I wanted to routinize
 [//]: # this aspect of my life and spend mental energy thinking about things that are
+[//]: # interesting to me rather than \"what do I wear today\"\"does this match\"\"can I
+[//]: # wash these together\".
 [//]: # I am also a proponent of function over form in most circumstances and I simply
 [//]: # do not feel comfortable wearing other things.
 [//]: # I got the inspiration to do this from Prof. Avanti Athreya (but she is not aware
