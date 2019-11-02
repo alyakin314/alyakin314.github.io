@@ -44,18 +44,18 @@ I consider myself a frequentist in philosophy, but a Bayesian in practice.
 
 
 
-**Frequently Asked Question[s]**
-
-*Do you own multiple of these tracksuits?*
-
-Yes, I have 5 identical tracksuits and 12 identical T-shirts.
-I wear them every day unless forced to do otherwise by some obstacles (e.g. an
-interview).
-The primary reason why I started doing this is because I wanted to routinize
-this aspect of my life and spend mental energy thinking about things that are
-interesting to me rather than "what do I wear today"/"does this match"/"can I
-wash these together".
-I am also a proponent of function over form in most circumstances and I simply
-do not feel comfortable wearing other things.
-I got the inspiration to do this from Prof. Avanti Athreya (but she is not aware
-of this :) ).
+    []: # **Frequently Asked Question[s]**
+    []: # 
+    []: # *Do you own multiple of these tracksuits?*
+    []: # 
+    []: # Yes, I have 5 identical tracksuits and 12 identical T-shirts.
+    []: # I wear them every day unless forced to do otherwise by some obstacles (e.g. an
+    []: # interview).
+    []: # The primary reason why I started doing this is because I wanted to routinize
+    []: # this aspect of my life and spend mental energy thinking about things that are
+    []: # interesting to me rather than "what do I wear today"/"does this match"/"can I
+    []: # wash these together".
+    []: # I am also a proponent of function over form in most circumstances and I simply
+    []: # do not feel comfortable wearing other things.
+    []: # I got the inspiration to do this from Prof. Avanti Athreya (but she is not aware
+    []: # of this :) ).
