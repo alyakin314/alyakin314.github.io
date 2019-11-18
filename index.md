@@ -3,6 +3,7 @@ layout: page
 title: Anton Alyakin
 tagline: Data Sc(hm)ientist
 description: Graduate Student at Johns Hopkins
+<meta name="google-site-verification" content="RSyh9BngNBD54x_kFXhg6Omp_1Zor81oKA0-o91Gs0c" />
 ---
 <div class="container">
 	<div class = "span3">
@@ -59,6 +60,3 @@ I consider myself a frequentist in philosophy, but a Bayesian in practice.
 [//]: # do not feel comfortable wearing other things.
 [//]: # I got the inspiration to do this from Prof. Avanti Athreya (but she is not aware
 [//]: # of this :) ).
-
-
-<meta name="google-site-verification" content="RSyh9BngNBD54x_kFXhg6Omp_1Zor81oKA0-o91Gs0c" />
