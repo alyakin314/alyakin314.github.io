@@ -16,8 +16,8 @@ description: Graduate Student at Johns Hopkins
           	<a href="https://www.jhu.edu/">Johns Hopkins University</a><br/>
 		<br/>
 		<a href="{{ BASE_PATH }}/assets/AntonAlyakinCV.pdf">CV</a><br/>
-		<a href = "https://github.com/alyakin314">Github</a><br/>
 		<a href = "https://www.linkedin.com/in/anton-alyakin-64a58a9b/">LinkedIn</a><br/>
+		<a href = "https://github.com/alyakin314">Github</a><br/>
 		</div>		
 	</div>
 </div>
@@ -36,11 +36,11 @@ statistical inference on graphs.
 I graduated from the Johns Hopkins University with a Bachelor of Science degree
 in Computer Science and Applied Mathematics and Statistics in May 2019, and a
 Master of Science degree in Applied Mathematics and Statistics in December 2019.
-During my this time I was fortunate to be advised by [Suchi
+During my time as a student I was fortunate to be advised by [Suchi
 Saria](https://suchisaria.jhu.edu/) and Avanti Athreya.
 
-I am currently applying to M.D.-Ph.D programs, as my primary research interest
-is the development of diagnostic clinical decision support tools and other
+I am currently applying to M.D.-Ph.D programs, as my primary research interests
+are the development of diagnostic clinical decision support tools and other
 intersections of machine learning and medicine.
 
 I consider myself a frequentist in philosophy, but a Bayesian in practice.
