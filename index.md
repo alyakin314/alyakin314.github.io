@@ -35,7 +35,8 @@ statistical inference on graphs.
 
 I graduated from the Johns Hopkins University with a Bachelor of Science degree
 in Computer Science and Applied Mathematics and Statistics in May 2019, and a
-Master of Science degree in Applied Mathematics and Statistics in December 2019.
+Master of Science in Engineering degree in Applied Mathematics and Statistics
+in December 2019.
 During my time as a student I was fortunate to be advised by [Suchi
 Saria](https://suchisaria.jhu.edu/) and Avanti Athreya.
 
