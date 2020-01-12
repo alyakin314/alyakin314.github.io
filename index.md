@@ -11,7 +11,7 @@ description: Graduate Student at Johns Hopkins
 	</div>
 	<div class = "span4">
 		<div style="text-align:right">
-		<a href="https://engineering.jhu.edu/ams/">Department of Applied Mathematics and Statistics</a><br/>
+		<a href="https://engineering.jhu.edu/ams/">Department of Applied Mathematics & Statistics</a><br/>
 		<a href="https://engineering.jhu.edu/">Whiting School of Engineering</a><br/>
           	<a href="https://www.jhu.edu/">Johns Hopkins University</a><br/>
 		<br/>
@@ -34,9 +34,9 @@ multivariate analysis, robust hypothesis testing, curved mixture estimates, and
 statistical inference on graphs.
 
 I graduated from the Johns Hopkins University with a Bachelor of Science degree
-in Computer Science and Applied Mathematics and Statistics in May 2019, and a
-Master of Science in Engineering degree in Applied Mathematics and Statistics
-in December 2019.
+in Computer Science and Applied Mathematics & Statistics in May 2019, and a
+Master of Science in Engineering degree in Applied Mathematics & Statistics in
+December 2019.
 During my time as a student I was fortunate to be advised by [Suchi
 Saria](https://suchisaria.jhu.edu/) and Avanti Athreya.
 
