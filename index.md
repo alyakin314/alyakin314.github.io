@@ -26,8 +26,8 @@ description: Graduate Student at Johns Hopkins
 <br/>
 
 
-I am an Assistant Research Engineer at the Johns Hopkins University Center for
-Imaging Science.
+I am an Assistant Research Engineer at the Johns Hopkins University Department
+of Applied Mathematics & Statistics.
 I primarily work with Professor [Carey Priebe](https://www.ams.jhu.edu/~priebe/)
 on problems in classical statistics and modern data science, such as
 multivariate analysis, robust hypothesis testing, curved mixture estimates, and
