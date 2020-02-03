@@ -18,7 +18,7 @@ title: Research
   - I am the author and the maintainer of the lqrt, a package implements the
     the Robust Hypothesis Testing of Location Parameters using
     Lq-Likelihood-Ratio-Type Test in Python.
-2. [graph primitives of the Data-Driven Discovery of Models (D3M) Program](https://github.com/neurodata/primitives-interfaces)
+2. [Graph Primitives of the Data-Driven Discovery of Models (D3M) Program](https://github.com/neurodata/primitives-interfaces)
   - I am one of the primary mainterners of the repository that is JHU's
     contribution to the D3M's library of selectable primitives that are used as
     basic building blocks in the automated model discovery process.
