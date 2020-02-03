@@ -15,6 +15,4 @@ title: Research
 {: reversed="reversed"}
 
 ### Ongoing Projects
-- Using Machine Learning Tools for Early Prediction of Cardiogenic Shock in Patients with Acute Decompensated Heart Failure.
-
 - Corrupted Adjacency Spectral Embedding and Valid Latent Distribution Permutation Test for Random Graphs
