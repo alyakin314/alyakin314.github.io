@@ -16,3 +16,20 @@ title: Research
 
 ### Ongoing Projects
 - Corrupted Adjacency Spectral Embedding and Valid Latent Distribution Permutation Test for Random Graphs
+
+### Software
+1. [lqrt](https://github.com/alyakin314/lqrt)
+  - lqrt implements the the Robust Hypothesis Testing of Location Parameters
+    using Lq-Likelihood-Ratio-Type Test in Python. I am the sole author and the
+    maintainer.
+2. [graph primitives of the D3M Program](https://github.com/neurodata/primitives-interfaces)
+  - The Data-Driven Discovery of Models (D3M) program aims to develop automated
+    model discovery systems that enable users with subject matter expertise but
+    no data science background to create empirical models of real, complex
+    processes.
+    I am one of the primary mainterners of the primitives that are JHU's
+    contribution to the D3M's library of selectable primitives that are used as
+    basic building blocks in the automated model discovery process.
+    Our primitives are aimed at tackling machine learning problems with graph
+    (aks network) inputs, such as Vertex Classification, Community Detection,
+    Link Prediction and Seeded Graph Matching.
