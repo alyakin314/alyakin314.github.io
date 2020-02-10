@@ -38,7 +38,8 @@ in Computer Science and Applied Mathematics & Statistics in May 2019, and a
 Master of Science in Engineering degree in Applied Mathematics & Statistics in
 December 2019.
 During my time as a student I was fortunate to be advised by [Suchi
-Saria](https://suchisaria.jhu.edu/) and Avanti Athreya.
+Saria](https://suchisaria.jhu.edu/) and
+[Avanti Athreya](https://engineering.jhu.edu/ams/faculty/avanti-athreya/).
 
 I am currently applying to M.D.-Ph.D programs, as my primary research interests
 are the development of diagnostic clinical decision support tools and other
