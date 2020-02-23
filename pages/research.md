@@ -9,7 +9,7 @@ title: Research
 {: reversed="reversed"}
 
 ### Theses
-2. **A. Alyakin**, Robust Hypothesis Testing of Location Parameters using Lq-Likelihood-Ratio-Type Test in Python, a thesis submitted to The Johns Hopkins University in conformity with the requirements for the degree of Master of Science in Engineering, 2019.
+2. **A. Alyakin**, [Robust Hypothesis Testing of Location Parameters using Lq-Likelihood-Ratio-Type Test in Python](http://jhir.library.jhu.edu/handle/1774.2/62301), a thesis submitted to The Johns Hopkins University in conformity with the requirements for the degree of Master of Science in Engineering, 2019.
 1. **A. Alyakin**, Motif Discovery in the Irregulary Sampled Time Series Data, a thesis submitted to The Johns Hopkins University in conformity with the requirements for Senior Honors Thesis in Computer Science, 2019 (Available upon Request).
 {: reversed="reversed"}
 
