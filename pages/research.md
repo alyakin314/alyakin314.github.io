@@ -27,5 +27,4 @@ title: Research
     Link Prediction and Seeded Graph Matching.
 
 ### Ongoing Projects
-- Corrupted Adjacency Spectral Embedding and Valid Latent Distribution Permutation Test for Random Graphs
-
+- **A. Alyakin**, H. Helm, and  C. E. Priebe, Two-sample Permutation Testing for Random Dot Product Graphs of Varying Size, In Progress.
