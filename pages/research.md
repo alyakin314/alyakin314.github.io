@@ -25,6 +25,9 @@ title: Research
     Our primitives are aimed at tackling machine learning problems with graph,
     or netowrk, inputs, such as Vertex Classification, Community Detection,
     Link Prediction and Seeded Graph Matching.
+3. [graspy](https://github.com/neurodata/graspy)
+  - I contribute to graspy, an open-souce Python package for doing statistical
+    analyses on network-valued data.
 
 ### Ongoing Projects
 - **A. Alyakin**, H. Helm, and  C. E. Priebe, Two-sample Permutation Testing for Random Dot Product Graphs of Varying Size, In Progress.
