@@ -30,4 +30,4 @@ title: Research
     analyses on network-valued data.
 
 ### Ongoing Projects
-- **A. Alyakin**, H. Helm, and  C. E. Priebe, Two-sample Permutation Testing for Random Dot Product Graphs of Varying Size, In Progress.
+- **A. Alyakin**, J. Agterberg, H. Helm, and  C. E. Priebe, Correcting a Nonparametric Two-sample Graph Hypothesis Test for Differing Orders, In Progress.
