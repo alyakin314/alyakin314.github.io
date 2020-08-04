@@ -27,13 +27,12 @@ reversed="reversed"}
 
 ### Software
 1. [lqrt](https://github.com/alyakin314/lqrt)
-  - I am the author and maintainer of the lqrt, a package implements the
+  - Author and maintainer of **lqrt**, a Python package that implements the
     Robust Hypothesis Testing of Location Parameters using
-    Lq-Likelihood-Ratio-Type Test in Python.
+    Lq-Likelihood-Ratio-Type Test.
 2. [graspy](https://github.com/neurodata/graspy)
-  - I regulary contribute to graspy, an open-souce Python package for doing
-    statistical analyses on network-valued data. In particular, my contributions
-    include modifications to LatentDistributionTest and LatentPositionTest.
+  - I regulary contribute to **graspy**, an open-souce Python package for doing
+    statistical analyses on network-valued data. 
 3. [Graph Primitives of the Data-Driven Discovery of Models (D3M)
    Program](https://github.com/neurodata/primitives-interfaces)
   - I am one of the primary mainterners of the repository that is JHU's
