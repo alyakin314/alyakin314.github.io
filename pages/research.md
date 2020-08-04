@@ -30,4 +30,4 @@ title: Research
     analyses on network-valued data.
 
 ### Ongoing Projects
-- **A. Alyakin**, J. Agterberg, H. Helm, and  C. E. Priebe, Correcting a Nonparametric Two-sample Graph Hypothesis Test for Differing Orders, In Progress.
+- **A. Alyakin**, J. Agterberg, H. Helm, and  C. E. Priebe, Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices, In Progress.
