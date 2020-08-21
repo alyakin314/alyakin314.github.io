@@ -6,7 +6,7 @@ title: Research
 
 3. **A. Alyakin**, J. Agterberg, H. Helm, and C. E. Priebe, Correcting a
    Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different
-   Numbers of Vertices, submitted.
+   Numbers of Vertices, submitted, 2020.
 2. F. Rahman, N. Finkelstein, **A. Alyakin**, N. A Gilotra, J. Trost, S. P.
    Schulman, and S. Saria, Using Machine Learning Tools for Early Prediction of
    Cardiogenic Shock in Patients with Acute Decompensated Heart Failure,
