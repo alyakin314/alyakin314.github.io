@@ -4,9 +4,9 @@ title: Research
 ---
 ### Publications (Submitted)
 
-3. **A. Alyakin**, J. Agterberg, H. Helm, and C. E. Priebe, Correcting a
+3. **A. Alyakin**, J. Agterberg, H. Helm, and C. E. Priebe, [Correcting a
    Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different
-   Numbers of Vertices, submitted, 2020.
+   Numbers of Vertices](https://arxiv.org/abs/2008.09434), submitted, 2020.
 2. F. Rahman, N. Finkelstein, **A. Alyakin**, N. A Gilotra, J. Trost, S. P.
    Schulman, and S. Saria, Using Machine Learning Tools for Early Prediction of
    Cardiogenic Shock in Patients with Acute Decompensated Heart Failure,
@@ -46,3 +46,4 @@ title: Research
     Link Prediction and Seeded Graph Matching.
 
 ### Ongoing Projects
+1. secrets ;) 
