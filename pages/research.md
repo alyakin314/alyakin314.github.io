@@ -51,7 +51,7 @@ title: Research
 
 ### Stats
 <img align="left" alt="Anton Alyakin's Github Stats" src="https://github-readme-stats.vercel.app/api?username=alyakin314&show_icons=true&hide_border=true" />
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
 
 ### Languages and other Skills
 ##### Python :snake:
