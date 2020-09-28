@@ -54,7 +54,7 @@ title: Research
 <br/><br/><br/><br/><br/><br/>
 
 ### Languages and other Skills
-##### Python
+##### Python :snake:
 <img align="left" alt="Python" width="50px" src="https://www.python.org/static/opengraph-icon-200x200.png" />
 <img align="left" alt="pandas" width="50px" src="https://cdn.shortpixel.ai/spai/q_lossy+ret_img/https://numfocus.org/wp-content/uploads/2016/07/pandas-logo-300.png" />
 <img align="left" alt="scikit-learn" width="50px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/scikit-learn/scikit-learn.png" />
