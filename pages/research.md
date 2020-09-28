@@ -33,7 +33,7 @@ title: Research
   - I am the author and maintainer of **lqrt**, a Python package that implements
     the Robust Hypothesis Testing of Location Parameters using
     Lq-Likelihood-Ratio-Type Test.
-2. [microsoft/graspologic](https://github.com/microsoft/graspologoic) (previously
+2. [microsoft/graspologic](https://github.com/microsoft/grasplogoic) (previously
     neurodata/graspy)
   - I regulary contribute to **graspologic**, an open-souce Python package for doing
     statistical analyses on network-valued data. 
