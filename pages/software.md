@@ -23,10 +23,10 @@ title: Software
 
 ### Stats
 <img align="left" alt="Anton Alyakin's Github Stats" src="https://github-readme-stats.vercel.app/api?username=alyakin314&show_icons=true&hide_border=true" />
-<br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 ### Languages and other Skills 
-##### Python <img align="left" alt=":snake:" width="20px" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Snake_Iphone_Emoji_JPG_grande.png?v=1571606114" />
+##### Python    <img align="left" alt=":snake:" width="20px" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Snake_Iphone_Emoji_JPG_grande.png?v=1571606114" />
 <img align="left" alt="Python" width="50px" src="https://www.python.org/static/opengraph-icon-200x200.png" />
 <img align="left" alt="pandas" width="50px" src="https://cdn.shortpixel.ai/spai/q_lossy+ret_img/https://numfocus.org/wp-content/uploads/2016/07/pandas-logo-300.png" />
 <img align="left" alt="scikit-learn" width="50px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/scikit-learn/scikit-learn.png" />
