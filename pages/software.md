@@ -23,7 +23,7 @@ title: Software
 
 ### Stats
 <img align="left" alt="Anton Alyakin's Github Stats" src="https://github-readme-stats.vercel.app/api?username=alyakin314&show_icons=true&hide_border=true" />
-<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 ### Languages and other Skills 
 ##### Python    <img align="left" alt=":snake:" width="20px" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Snake_Iphone_Emoji_JPG_grande.png?v=1571606114" />
