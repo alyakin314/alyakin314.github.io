@@ -33,8 +33,9 @@ title: Research
   - I am the author and maintainer of **lqrt**, a Python package that implements
     the Robust Hypothesis Testing of Location Parameters using
     Lq-Likelihood-Ratio-Type Test.
-2. [graspy](https://github.com/neurodata/graspy)
-  - I regulary contribute to **graspy**, an open-souce Python package for doing
+2. [microsoft/graspologic](https://github.com/microsoft/graspologoic) (previously
+    neurodata/graspy)
+  - I regulary contribute to **graspologic**, an open-souce Python package for doing
     statistical analyses on network-valued data. 
 3. [Graph Primitives of the Data-Driven Discovery of Models (D3M)
    Program](https://github.com/neurodata/primitives-interfaces)
@@ -47,3 +48,14 @@ title: Research
 
 ### Ongoing Projects
 1. secrets ;) 
+
+### Stats, Skills, etc.
+
+<img align="left" alt="Anton Alyakin's Github Stats" src="https://github-readme-stats.vercel.app/api?username=alyakin314&show_icons=true&hide_border=true" />
+
+
+<img align="left" alt="Python" width="30px" src="https://www.python.org/static/opengraph-icon-200x200.png" />
+<img align="left" alt="SQL" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png" />
+<img align="left" alt="MySQL" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png" />
+<img align="left" alt="Git" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png" />
+<img align="left" alt="GitHub" width="30px" src="https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png" />
