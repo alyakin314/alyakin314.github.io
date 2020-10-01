@@ -19,7 +19,8 @@ title: Software
     to the D3M's library of selectable primitives that are used as basic
     building blocks in the automated model discovery process. JHU's primitives
     are aimed at tackling machine learning problems with graph, or netowrk,
-    inputs, such as Vertex Classif
+    inputs, such as Vertex Classification, Community Detection, Link Prediction
+    and Seeded Graph Matching.
 
 ### Languages and Skills 
 ##### Python    <img align="left" alt=":snake:" width="20px" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Snake_Iphone_Emoji_JPG_grande.png?v=1571606114" /> & Data Science Stack
