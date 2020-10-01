@@ -4,22 +4,22 @@ title: Software
 ---
 
 ### Contributions
-1. [lqrt](https://github.com/alyakin314/lqrt)
-  - I am the author and maintainer of **lqrt**, a Python package that implements
-    the Robust Hypothesis Testing of Location Parameters using
-    Lq-Likelihood-Ratio-Type Test.
-2. [microsoft/graspologic](https://github.com/microsoft/grasplogoic) (previously
+1. [microsoft/graspologic](https://github.com/microsoft/grasplogoic) (previously
     neurodata/graspy)
-  - I regulary contribute to **graspologic**, an open-souce Python package for doing
-    statistical analyses on network-valued data. 
+    Contributor and maintainer of **graspologic**, an open-source Python package
+    that provides utilities and algorithms for doing statistical analyses on
+    graph- and network-valued data.
+2. [lqrt](https://github.com/alyakin314/lqrt)
+  - Author and maintainer of **lqrt**, a Python package that implements the
+    Robust Hypothesis Testing of Location Parameters using
+    Lq-Likelihood-Ratio-Type Test.
 3. [Graph Primitives of the Data-Driven Discovery of Models (D3M)
    Program](https://github.com/neurodata/primitives-interfaces)
-  - I am one of the primary mainterners of the repository that is JHU's
-    contribution to the D3M's library of selectable primitives that are used as
-    basic building blocks in the automated model discovery process.
-    Our primitives are aimed at tackling machine learning problems with graph,
-    or netowrk, inputs, such as Vertex Classification, Community Detection,
-    Link Prediction and Seeded Graph Matching.
+  - One of the primary mainterners of the repository that is JHU's contribution
+    to the D3M's library of selectable primitives that are used as basic
+    building blocks in the automated model discovery process. JHU's primitives
+    are aimed at tackling machine learning problems with graph, or netowrk,
+    inputs, such as Vertex Classif
 
 ### Languages and Skills 
 ##### Python    <img align="left" alt=":snake:" width="20px" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Snake_Iphone_Emoji_JPG_grande.png?v=1571606114" /> & Data Science Stack
