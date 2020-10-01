@@ -6,7 +6,7 @@ title: Software
 ### Contributions
 1. [microsoft/graspologic](https://github.com/microsoft/grasplogoic) (previously
     [neurodata/graspy](https://github.com/neurodata/graspy))
-    Contributor and maintainer of **graspologic**, an open-source Python package
+  - Contributor and maintainer of **graspologic**, an open-source Python package
     that provides utilities and algorithms for doing statistical analyses on
     graph- and network-valued data.
 2. [alyakin314/lqrt](https://github.com/alyakin314/lqrt)
