@@ -23,7 +23,7 @@ title: Software
     and Seeded Graph Matching.
 
 ### Languages and Skills 
-##### Python    <img align="left" alt=":snake:" width="20px" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Snake_Iphone_Emoji_JPG_grande.png?v=1571606114" /> & Data Science Stack
+##### Python & Data Science Stack <img align="left" alt=":snake:" width="20px" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Snake_Iphone_Emoji_JPG_grande.png?v=1571606114" />
 <img align="left" alt="Python" width="40px" src="https://www.python.org/static/opengraph-icon-200x200.png" />
 <img align="left" alt="jupyter" width="40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" />
 <img align="left" alt="pandas" width="40px" src="https://cdn.shortpixel.ai/spai/q_lossy+ret_img/https://numfocus.org/wp-content/uploads/2016/07/pandas-logo-300.png" />
