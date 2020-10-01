@@ -5,7 +5,7 @@ title: Software
 
 ### Contributions
 1. [microsoft/graspologic](https://github.com/microsoft/grasplogoic) (previously
-    [neurodata/graspy](https://github.com/neurodata/graspy)
+    [neurodata/graspy](https://github.com/neurodata/graspy))
     Contributor and maintainer of **graspologic**, an open-source Python package
     that provides utilities and algorithms for doing statistical analyses on
     graph- and network-valued data.
@@ -31,7 +31,7 @@ title: Software
 <img align="left" alt="docker" width="40px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/docker/docker.png" />
 <img align="left" alt="SQL" width="40px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png" />
 <img align="left" alt="PostgreSQL" width="40px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/postgresql/postgresql.png" />
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 ##### Other Languages and Skills <img align="left" alt=":hammer-and-wrench:" width="20px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/81/hammer-and-wrench_1f6e0.png" />
 <img align="left" alt="R" width="40px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/r/r.png" />
@@ -47,7 +47,7 @@ title: Software
 <img align="left" alt="vim" width="40px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/vim/vim.png" />
 <img align="left" alt="emacs" width="40px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/emacs/emacs.png" />
 -->
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 ### Stats
 <img align="left" alt="Anton Alyakin's Github Stats" src="https://github-readme-stats.vercel.app/api?username=alyakin314&show_icons=true&hide_border=true" />

@@ -2,7 +2,7 @@
 layout: page
 title: Anton Alyakin
 tagline: Data Sc(hm)ientist
-description: Graduate Student at Johns Hopkins
+description: Assistant Research Engineer at Johns Hopkins
 ---
 <div class="container">
 	<div class = "span3">
@@ -27,7 +27,6 @@ description: Graduate Student at Johns Hopkins
 <br/>
 <br/>
 
-
 I am an Assistant Research Engineer at the Johns Hopkins University Department
 of Applied Mathematics & Statistics.
 I primarily work with Professor [Carey Priebe](https://www.ams.jhu.edu/~priebe/)
@@ -43,26 +42,10 @@ During my time as a student I was fortunate to be advised by [Suchi
 Saria](https://suchisaria.jhu.edu/) and
 [Avanti Athreya](https://engineering.jhu.edu/ams/faculty/avanti-athreya/).
 
-I am currently applying to M.D.-Ph.D programs, as my primary research interests
-are the development of diagnostic clinical decision support tools and other
-intersections of machine learning and medicine.
+I am currently applying to Ph.D. & M.D.-Ph.D programs, as my primary research
+interests are the development of diagnostic clinical decision support tools and
+other intersections of machine learning and medicine.
 
 I consider myself a frequentist in philosophy, but a Bayesian in practice.
 
 
-
-[//]: # **Frequently Asked Question[s]**
-[//]: # 
-[//]: # *Do you own multiple of these tracksuits?*
-[//]: # 
-[//]: # Yes, I have 5 identical tracksuits and 12 identical T-shirts.
-[//]: # I wear them every day unless forced to do otherwise by some obstacles (e.g. an
-[//]: # interview).
-[//]: # The primary reason why I started doing this is because I wanted to routinize
-[//]: # this aspect of my life and spend mental energy thinking about things that are
-[//]: # interesting to me rather than \"what do I wear today\"\"does this match\"\"can I
-[//]: # wash these together\".
-[//]: # I am also a proponent of function over form in most circumstances and I simply
-[//]: # do not feel comfortable wearing other things.
-[//]: # I got the inspiration to do this from Prof. Avanti Athreya (but she is not aware
-[//]: # of this :) ).
