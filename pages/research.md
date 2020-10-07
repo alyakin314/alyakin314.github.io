@@ -21,7 +21,7 @@ title: Research
 1. **A. Alyakin**, Y. Qin, and C. E. Priebe, LqRT: Robust Hypothesis Testing of
    Location Parameters using Lq-Likelihood-Ratio-Type Test in Python, submitted,
    2019.
-   [[arXiv]]((https://arxiv.org/abs/1911.11922))
+   [[arXiv]](https://arxiv.org/abs/1911.11922)
    [[code]](https://github.com/alyakin314/lqrt)
 {:reversed="reversed"}
 
