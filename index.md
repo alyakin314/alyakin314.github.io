@@ -30,9 +30,10 @@ description: Assistant Research Engineer at Johns Hopkins
 I am an Assistant Research Engineer at the Johns Hopkins University Department
 of Applied Mathematics & Statistics.
 I primarily work with Professor [Carey Priebe](https://www.ams.jhu.edu/~priebe/)
-on problems in classical statistics and modern data science, such as
-multivariate analysis, robust hypothesis testing, curved mixture estimates, and
-statistical inference on graphs.
+and Professor [Joshua Vogelstein](https://jovo.me/) on various problems in
+classical statistics, data science, and causal inference. Applications include
+connectomics, social network analysis, and causal inference from observational
+electronic health records data.
 
 I graduated from the Johns Hopkins University with a Bachelor of Science degree
 in Computer Science and Applied Mathematics & Statistics in May 2019, and a
