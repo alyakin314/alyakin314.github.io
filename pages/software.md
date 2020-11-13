@@ -6,9 +6,10 @@ title: Software
 ### Contributions
 1. [microsoft/graspologic](https://github.com/microsoft/grasplogoic) (previously
     [neurodata/graspy](https://github.com/neurodata/graspy))
-  - Contributor and maintainer of **graspologic**, an open-source Python package
-    that provides utilities and algorithms for doing statistical analyses on
-    graph- and network-valued data.
+  - Contributor to and maintainer of **graspologic**, an open-source Python
+    package that provides utilities and algorithms for doing statistical
+    analyses on  graph- and network-valued data. Notable contributions include
+    latent distribution test implementation and the align module.
 2. [alyakin314/lqrt](https://github.com/alyakin314/lqrt)
   - Author and maintainer of **lqrt**, a Python package that implements the
     Robust Hypothesis Testing of Location Parameters using
