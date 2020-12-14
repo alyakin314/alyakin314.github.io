@@ -8,6 +8,10 @@ title: Research
 - Statistical inference on graphs
 
 ### Publications (Submitted)
+4. J. Chung\*, B. Varjavand\*, J. Arroyo, **A. Alyakin**, J. Agterberg, M. Tang,
+   C. E. Priebe, and J. T. Vogelstein, Improving Power of 2-Sample Random Graph
+   Tests with Applications in Connectomics, In Progress, 2020.
+   <!-- [[arXiv]](https://arxiv.org/abs/1911.02741) -->
 
 3. **A. Alyakin**, J. Agterberg, H. Helm, and C. E. Priebe, Correcting a
    Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different
