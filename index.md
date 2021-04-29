@@ -16,9 +16,7 @@ description: Assistant Research Engineer at Johns Hopkins
 		<a href="https://engineering.jhu.edu/">Whiting School of Engineering</a><br/>
           	<a href="https://www.jhu.edu/">Johns Hopkins University</a><br/>
 		<br/>
-                -->
 		<a href="{{ BASE_PATH }}/assets/AntonAlyakinCV.pdf">CV</a><br/>
-                <!--
 		<a href = "https://www.linkedin.com/in/anton-a-64a58a9b">LinkedIn</a><br/>
 		<a href = "https://github.com/alyakin314">Github</a><br/>
                 -->
@@ -29,10 +27,10 @@ description: Assistant Research Engineer at Johns Hopkins
 <br/>
 <br/>
 
-I am incoming M.D.-Ph.D. student at the Washington University School of Medicine
-in St. Louis. My primary research interests are development of diagnostic
-clinical decision support tools and other intersections of machine learning and
-medicine.
+I am an (all but officially committed) incoming M.D.-Ph.D. student at the
+Washington University School of Medicine in St. Louis. My primary research
+interests are development of diagnostic clinical decision support tools and
+other intersections of machine learning and medicine.
 
 I graduated from Johns Hopkins University with a B.S. in Computer Science in
 May 2019 and an M.S.E. in Applied Mathematics & Statistics in December 2019. 
