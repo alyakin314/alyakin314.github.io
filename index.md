@@ -11,7 +11,7 @@ description: Assistant Research Engineer at Johns Hopkins
 	</div>
 	<div class = "span4">
 		<div style="text-align:right">
-        <a href="https://medicine.wustl.edu/">Washington University School of Medicine</a><br/>
+        <a href="https://medicine.wustl.edu/">Washington University School of Medicine in St. Louis</a><br/>
         <a href="http://www.dbbs.wustl.edu/divprograms/BIDS/">Biomedical Informatics and Data Science</a><br/>
         <a href="http://mstp.wustl.edu//">Medical Scientist Training Program</a><br/>
                 <!--
@@ -48,7 +48,7 @@ alma mater's Department of Applied Mathematics & Statistics. I was a part of the
 statistical graph inference and with [Joshua Vogelstein](https://jovo.me/) on
 causal inference from observational health data.
 
-I don't understand determinism, probably...
+I probably don't understand determinism...
 
 <!--
 Every math answer I give you is always up to a
