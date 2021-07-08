@@ -15,7 +15,7 @@ title: Research
    --->
 4. K. Marchisio, Y. Park, A. Saad-Eldin, **A. Alyakin**, K. Duh, C. Priebe, P.
    Koehn, An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon
-   Induction from Word Embedding Spaces, in progress, 2021.
+   Induction from Word Embedding Spaces, submitted, 2021.
 3. J. Chung\*, B. Varjavand\*, J. Arroyo, **A. Alyakin**, J. Agterberg, M. Tang,
    J. T. Vogelstein, C. E. Priebe, Valid Two-Sample Graph Testing via Optimal
    Transport Procrustes and Multiscale Graph Correlation: Applications in
