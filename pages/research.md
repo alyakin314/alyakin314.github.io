@@ -3,8 +3,8 @@ layout: page
 title: Research
 ---
 ### Interests
-- Clinical decision support
 - Causal inference
+- Clinical decision support
 - Statistical inference on graphs
 
 ### Peer-Reviewed Publications
