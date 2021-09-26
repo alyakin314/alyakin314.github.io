@@ -48,14 +48,12 @@ alma mater's Department of Applied Mathematics & Statistics. I was a part of the
 statistical graph inference and with [Joshua Vogelstein](https://jovo.me/) on
 causal inference from observational health data.
 
-I probably don't understand determinism...
+I consider myself a frequentist in philosophy, but a Bayesian in practice.
 
-<!--
 Every math answer I give you is always up to a
 sign/inverse/reciprocal/transpose/etc. Constants are overrated.
--->
+
 
 <!--
-I consider myself a frequentist in philosophy, but a Bayesian in practice.
+I probably don't understand determinism...
 -->
-
