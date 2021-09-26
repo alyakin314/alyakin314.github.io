@@ -30,10 +30,11 @@ description: Assistant Research Engineer at Johns Hopkins
 <br/>
 <br/>
 
-I am an incoming MD-PhD student at the Washington University School of Medicine
+I am an MD-PhD student at the Washington University School of Medicine
 in St. Louis. My primary research interests are development of diagnostic
-clinical decision support tools and other intersections of machine learning and
-medicine.
+clinical decision support tools and other intersections of statistics and
+medicine. I especially appreciate causal inference machine learning methods
+and tools.
 
 I graduated from Johns Hopkins University with a BS in Computer Science in
 May 2019 and an MSE in Applied Mathematics & Statistics in December 2019. 
