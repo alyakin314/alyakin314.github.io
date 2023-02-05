@@ -14,7 +14,7 @@ https://us05web.zoom.us/j/87017212482?pwd=L3lSUERoQ2szeVpxeEVaT0lVcjdFdz09
 
 хорошо. тогда телеграм?
 
-https://t.me/alyakin314
+[https://t.me/alyakin314](https://t.me/alyakin314)
 
 или что ты предпочитаешь?
 
