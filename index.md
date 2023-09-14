@@ -30,11 +30,10 @@ description: Assistant Research Engineer at Johns Hopkins
 <br/>
 <br/>
 
-I am an MD-PhD student at the Washington University School of Medicine
-in St. Louis. My primary research interests are development of diagnostic
-clinical decision support tools and other intersections of statistics and
-medicine. I especially appreciate causal inference machine learning methods
-and tools.
+I am an MD student at the Washington University School of Medicine in St. Louis.
+At this stage of my soul-searching I am most interested in ~~emergency
+medicine~~ ~~critical care~~ ~~anesthesiology~~ ~~neurosurgery~~ ~~cardiac
+surgery~~ neurosurgery.
 
 I graduated from Johns Hopkins University with a BS in Computer Science in
 May 2019 and an MSE in Applied Mathematics & Statistics in December 2019. 
@@ -47,7 +46,16 @@ alma mater's Department of Applied Mathematics & Statistics. I was a part of the
 [NeuroData](https://neurodata.io/) lab and primarily worked with
 [Carey Priebe](https://www.ams.jhu.edu/~priebe/) on various problems in
 statistical graph inference and with [Joshua Vogelstein](https://jovo.me/) on
-causal inference from observational health data.
+causal inference from observational health data. 
+
+I began an MD-PhD program at Washington University School of Medicine in 2021,
+but later decided to only pursue the first two letters out of five.
+
+My primary research interests are development of diagnostic clinical decision
+support tools and other intersections of statistics and medicine. I especially
+appreciate causal inference machine learning methods and tools. Philosophically,
+what interests me is consciousness, and why neural networks might have some and
+intelligence, and why I might not have any.
 
 <!--
 I consider myself a frequentist in philosophy, but a Bayesian in practice.
