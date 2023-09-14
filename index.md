@@ -12,9 +12,9 @@ description: Assistant Research Engineer at Johns Hopkins
 	<div class = "span4">
 		<div style="text-align:right">
         <a href="https://medicine.wustl.edu/">Washington University School of Medicine in St. Louis</a><br/>
+                <!--
         <a href="http://www.dbbs.wustl.edu/divprograms/BIDS/">Biomedical Informatics and Data Science</a><br/>
         <a href="http://mstp.wustl.edu//">Medical Scientist Training Program</a><br/>
-                <!--
 		<a href="https://engineering.jhu.edu/ams/">Department of Applied Mathematics & Statistics</a><br/>
 		<a href="https://engineering.jhu.edu/">Whiting School of Engineering</a><br/>
           	<a href="https://www.jhu.edu/">Johns Hopkins University</a><br/>
