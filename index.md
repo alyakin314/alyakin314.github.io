@@ -55,8 +55,8 @@ My primary research interests are development of statistical inference on
 connectome networks, diagnostic and prognostic clinical decision support tools
 and other intersections of statistics and medicine. I especially appreciate
 causal inference machine learning methods and tools. Broadly speaking, what
-interests me is artificial intelligence, and why might neural networks have some
-and human intelligence and why I might not have any.
+interests me is artificial intelligence, and why might neural networks have
+some already, and human intelligence, and why I might not have any still.
 
 <!--
 I consider myself a frequentist in philosophy, but a Bayesian in practice.
