@@ -35,7 +35,7 @@ At this stage of my soul-searching I am most interested in ~~emergency
 medicine~~ ~~critical care~~ ~~anesthesiology~~ ~~neurosurgery~~ ~~cardiac
 surgery~~ neurosurgery.
 
-I graduated from Johns Hopkins University with a BS in Computer Science in
+I graduated from Johns Hopkins University with a [BS in Computer Science](https://alyakin314.github.io/assets/papers/Alyakin_Motif_Discovery_in_the_Irregulary_Sampled_Time_Series_Data.pdf) in
 May 2019 and an MSE in Applied Mathematics & Statistics in December 2019.
 While a student there I was fortunate to be advised by
 [Suchi Saria](https://suchisaria.jhu.edu/) and
