@@ -30,10 +30,12 @@ description: Assistant Research Engineer at Johns Hopkins
 <br/>
 <br/>
 
-I am an MD student at the Washington University School of Medicine in St. Louis.
-At this stage of my soul-searching I am most interested in ~~emergency
-medicine~~ ~~critical care~~ ~~anesthesiology~~ ~~neurosurgery~~ ~~cardiac
-surgery~~ neurosurgery.
+I am currently (March 2024-March 2025) a visiting MD student researcher at NYU
+under the supervsion of Dr. Eric Oermann. After the completion of this research
+experience, I plan to return to finish my MD at the Washington University
+School of Medicine in St. Louis. At this stage of my soul-searching I am most
+interested in ~~emergency medicine~~ ~~critical care~~ ~~anesthesiology~~
+~~neurosurgery~~ ~~cardiac surgery~~ neurosurgery.
 
 I graduated from Johns Hopkins University with a [BS in Computer Science](https://alyakin314.github.io/assets/papers/Alyakin_Motif_Discovery_in_the_Irregulary_Sampled_Time_Series_Data.pdf) in
 May 2019 and an MSE in Applied Mathematics & Statistics in December 2019.
