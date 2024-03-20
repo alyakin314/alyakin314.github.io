@@ -30,12 +30,20 @@ description: Assistant Research Engineer at Johns Hopkins
 <br/>
 <br/>
 
+**Status Quo**
+
 I am currently (March 2024-March 2025) a visiting MD student researcher at NYU
 under the supervsion of Dr. Eric Oermann. After the completion of this research
 experience, I plan to return to finish my MD at the Washington University
-School of Medicine in St. Louis. At this stage of my soul-searching I am most
-interested in ~~emergency medicine~~ ~~critical care~~ ~~anesthesiology~~
-~~neurosurgery~~ ~~cardiac surgery~~ neurosurgery.
+School of Medicine in St. Louis.
+
+At this stage of my soul-searching I am most interested in ~~emergency medicine~~
+ ~~critical care~~ ~~anesthesiology~~ ~~neurosurgery~~ ~~cardiac surgery~~
+ neurosurgery. Broadly speaking, research-wise, what interests me is
+1. artificial intelligence, and why might neural networks have some already
+2. human intelligence, and why I might not have any still.
+
+**Road So Far**
 
 I graduated from Johns Hopkins University with a [BS in Computer Science](https://alyakin314.github.io/assets/papers/Alyakin_Motif_Discovery_in_the_Irregulary_Sampled_Time_Series_Data.pdf) in
 May 2019 and an MSE in Applied Mathematics & Statistics in December 2019.
@@ -53,12 +61,11 @@ causal inference from observational health data.
 I started an MD-PhD program at Washington University School of Medicine in 2021,
 but later decided to only pursue the first two letters out of five.
 
-My primary research interests are development of statistical inference on
+My previous research interests involved statistical inference on
 connectome networks, diagnostic and prognostic clinical decision support tools
 and other intersections of statistics and medicine. I especially appreciate
-causal inference machine learning methods and tools. Broadly speaking, what
-interests me is artificial intelligence, and why might neural networks have
-some already, and human intelligence, and why I might not have any still.
+causal inference machine learning methods and tools. Most of my recent work 
+has been on Large Language Models (LLMs), after they became cool.
 
 <!--
 I consider myself a frequentist in philosophy, but a Bayesian in practice.
