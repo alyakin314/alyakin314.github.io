@@ -39,7 +39,7 @@ School of Medicine in St. Louis.
 
 At this stage of my soul-searching I am most interested in ~~emergency medicine~~
  ~~critical care~~ ~~anesthesiology~~ ~~neurosurgery~~ ~~cardiac surgery~~
- neurosurgery. Broadly speaking, research-wise, what interests me is
+ neurosurgery. Research-wise, broadly speaking, I am curious about
 1. artificial intelligence, and why might neural networks have some already
 2. human intelligence, and why I might not have any still.
 
