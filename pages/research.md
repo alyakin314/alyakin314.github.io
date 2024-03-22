@@ -36,9 +36,14 @@ title: Research
 {: reversed="reversed"}
 
 ### Preprints (Submitted Publications)
+2. J. Lee, M. Ruiz-Cardozo, R. Patel, S. Lavend, R. Lavadi, C. Newsom-Stewart,
+   **A. Alyakin**, C. Molina, N. Agarwal, W. Ray, M. Santacatterina,
+   B. Pennicooke, Clinical Prediction for Early Surgical versus Nonsurgical
+   Interventions in Patients with Vertebral Osteomyelitis and Discitis,
+   submitted, 2023.
 1. **A. Alyakin**, J. Agterberg, H. Helm, and C. E. Priebe, Correcting a
    Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different
-   Numbers of Vertices, submitted, 2020.
+   Numbers of Vertices, submitted, 2023.
    [[arXiv]](https://arxiv.org/abs/2008.09434)
    [[code]](https://github.com/alyakin314/correcting-nonpar)
 {:reversed="reversed"}
