@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Anton Alyakin
-tagline: Data Sc(hm)ientist
+tagline: (sh)machine (sh)learner / aspiring craniotomist
 description: Assistant Research Engineer at Johns Hopkins
 ---
 <div class="container">
@@ -12,6 +12,12 @@ description: Assistant Research Engineer at Johns Hopkins
 	<div class = "span4">
 		<div style="text-align:right">
         <a href="https://medicine.wustl.edu/">Washington University School of Medicine in St. Louis</a><br/>
+        <a href="https://neurosurgery.wustl.edu/">WUSM Neurosurgery</a><br/>
+        <a href="https://www.leuthardtlab.com/">The Leuthardt Lab</a><br/>
+        <br>
+        <a href="https://nyulangone.org/">NYU Langone</a><br/>
+        <a href="https://med.nyu.edu/departments-institutes/neurosurgery/">NYU Neurosurgery</a><br/>
+        <a href="https://www.nyuolab.org">OLAB</a><br/>
                 <!--
         <a href="http://www.dbbs.wustl.edu/divprograms/BIDS/">Biomedical Informatics and Data Science</a><br/>
         <a href="http://mstp.wustl.edu//">Medical Scientist Training Program</a><br/>
@@ -23,7 +29,7 @@ description: Assistant Research Engineer at Johns Hopkins
 		<a href = "https://www.linkedin.com/in/anton-a-64a58a9b">LinkedIn</a><br/>
 		<a href = "https://github.com/alyakin314">Github</a><br/>
                 -->
-		</div>		
+		</div>
 	</div>
 </div>
 
@@ -33,13 +39,13 @@ description: Assistant Research Engineer at Johns Hopkins
 **Status Quo**
 
 I am currently (March 2024-March 2025) a visiting MD student researcher at NYU
-under the supervsion of Dr. Eric Oermann. After the completion of this research
-experience, I plan to return to finish my MD at the Washington University
-School of Medicine in St. Louis.
+[OLAB](https://www.nyuolab.org/) under the supervsion of Dr. [Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
+After the completion of this research experience, I plan to return to finish my
+MD at the Washington University School of Medicine in St. Louis.
 
 At this stage of my soul-searching I am most interested in ~~emergency medicine~~
  ~~critical care~~ ~~anesthesiology~~ ~~neurosurgery~~ ~~cardiac surgery~~
- neurosurgery. Research-wise, broadly speaking, I am curious about
+ neurosurgery. Research-wise, I am curious about
 1. artificial intelligence, and why might neural networks have some already
 2. human intelligence, and why I might not have any still.
 
