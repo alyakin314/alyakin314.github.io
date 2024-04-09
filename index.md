@@ -38,9 +38,10 @@ description: Assistant Research Engineer at Johns Hopkins
 
 **Status Quo**
 
-I am currently (March 2024-March 2025) a visiting MD student researcher at NYU
-[OLAB](https://www.nyuolab.org/) under the supervsion of Dr. [Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
-After the completion of this research experience, I plan to return to finish my
+I am currently (March 2024-March 2025) a visiting medical (MD) student researcher
+at NYU [OLAB](https://www.nyuolab.org/) under the supervsion of Dr.
+[Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
+After completing this research experience, I plan to return to finish my
 MD at the Washington University School of Medicine in St. Louis.
 
 At this stage of my soul-searching I am most interested in ~~emergency medicine~~
