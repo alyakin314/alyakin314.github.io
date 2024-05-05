@@ -46,9 +46,12 @@ MD at the Washington University School of Medicine in St. Louis.
 
 At this stage of my soul-searching I am most interested in ~~emergency medicine~~
  ~~critical care~~ ~~anesthesiology~~ ~~neurosurgery~~ ~~cardiac surgery~~
- neurosurgery. Research-wise, I am curious about
+ neurosurgery.
+
+Research-wise, I am curious about
 1. artificial intelligence, and why might neural networks have some already
 2. human intelligence, and why I might not have any still.
+Most of my recent work has been on Large Language Models (LLMs), after they became cool.
 
 **Road So Far**
 
@@ -71,8 +74,7 @@ but later decided to only pursue the first two letters out of five.
 My previous research interests involved statistical inference on
 connectome networks, diagnostic and prognostic clinical decision support tools
 and other intersections of statistics and medicine. I especially appreciate
-causal inference machine learning methods and tools. Most of my recent work 
-has been on Large Language Models (LLMs), after they became cool.
+causal inference machine learning methods and tools.
 
 <!--
 I consider myself a frequentist in philosophy, but a Bayesian in practice.
