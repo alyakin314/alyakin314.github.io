@@ -55,8 +55,9 @@ Most of my recent work has been on Large Language Models (LLMs), after they beca
 
 **Road So Far**
 
-I graduated from Johns Hopkins University with a [BS in Computer Science](https://alyakin314.github.io/assets/papers/Alyakin_Motif_Discovery_in_the_Irregulary_Sampled_Time_Series_Data.pdf) in
-May 2019 and an MSE in Applied Mathematics & Statistics in December 2019.
+I graduated from Johns Hopkins University with a [BS in Computer Science](https://alyakin314.github.io/assets/papers/Alyakin_Motif_Discovery_in_the_Irregulary_Sampled_Time_Series_Data.pdf)
+in May 2019 and an [MSE in Applied Mathematics & Statistics](https://jscholarship.library.jhu.edu/server/api/core/bitstreams/f33e2b8e-d18d-4a03-b14c-bede28b441ec/content)
+in December 2019.
 While a student there I was fortunate to be advised by
 [Suchi Saria](https://suchisaria.jhu.edu/) and
 [Avanti Athreya](https://engineering.jhu.edu/ams/faculty/avanti-athreya/).
