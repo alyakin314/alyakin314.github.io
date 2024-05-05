@@ -51,6 +51,7 @@ At this stage of my soul-searching I am most interested in ~~emergency medicine~
 Research-wise, I am curious about
 1. artificial intelligence, and why might neural networks have some already
 2. human intelligence, and why I might not have any still.
+
 Most of my recent work has been on Large Language Models (LLMs), after they became cool.
 
 **Road So Far**
