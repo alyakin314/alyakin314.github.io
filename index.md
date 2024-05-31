@@ -38,20 +38,23 @@ description: Assistant Research Engineer at Johns Hopkins
 
 **Status Quo**
 
-I am currently (March 2024-March 2025) a visiting medical (MD) student researcher
-at NYU [OLAB](https://www.nyuolab.org/) under the supervsion of Dr.
+I am currently (March 2024-March 2025) a visiting medical (MD) student
+researcher at NYU [OLAB](https://www.nyuolab.org/) under the supervsion of
 [Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
-After completing this research experience, I plan to return to finish my
-MD at the Washington University School of Medicine in St. Louis. At this stage
-of my soul-searching I am most likely to pursue a carreer in ~~emergency medicine~~
- ~~critical care~~ ~~anesthesiology~~ ~~neurosurgery~~ ~~cardiac surgery~~
-neurosurgery.
+I am co-advised by [Eric Leuthardt] at my home institution (Washington
+University School of Medicine in Saint Louis). After completing this research
+experience, I plan to return to finish my MD at the WUSM.. At this stage
+of my soul-searching I am most likely to pursue a carreer in ~~emergency
+medicine~~ ~~critical care~~ ~~anesthesiology~~ ~~neurosurgery~~ ~~cardiac surgery~~ neurosurgery.
 
 Research-wise, I am curious about
-1. artificial intelligence, and why might neural networks have some already
+1. artificial intelligence, and why might neural networks have some already,
 2. human intelligence, and why I might not have any still.
 
 Most of my recent work has been on Large Language Models (LLMs), after they became cool.
+
+Every math answer I give you is always up to a
+sign/inverse/reciprocal/transpose/etc. Constants are overrated.
 
 **Road So Far**
 
@@ -72,18 +75,12 @@ causal inference from observational health data.
 I started an MD-PhD program at Washington University School of Medicine in 2021,
 but later decided to only pursue the first two letters out of five.
 
-My previous research interests involved statistical inference on
-connectome networks, diagnostic and prognostic clinical decision support tools
-and other intersections of statistics and medicine. I especially appreciate
-causal inference machine learning methods and tools.
+My research interests outsode of LLMs&Neurosurgery include statistical inference
+on connectome networks, diagnostic and prognostic clinical decision support
+tools, among other intersections of statistics and medicine.
 
 <!--
 I consider myself a frequentist in philosophy, but a Bayesian in practice.
--->
 
-Every math answer I give you is always up to a
-sign/inverse/reciprocal/transpose/etc. Constants are overrated.
-
-<!--
 I probably don't understand determinism...
 -->
