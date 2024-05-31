@@ -15,7 +15,7 @@ description: Assistant Research Engineer at Johns Hopkins
         <a href="https://neurosurgery.wustl.edu/">WUSM Neurosurgery</a><br/>
         <a href="https://www.leuthardtlab.com/">The Leuthardt Lab</a><br/>
         <br>
-        <a href="https://nyulangone.org/">NYU Langone</a><br/>
+        <a href="https://nyulangone.org/">New York University Langone Health</a><br/>
         <a href="https://med.nyu.edu/departments-institutes/neurosurgery/">NYU Neurosurgery</a><br/>
         <a href="https://www.nyuolab.org">OLAB</a><br/>
                 <!--
