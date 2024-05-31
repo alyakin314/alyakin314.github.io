@@ -41,11 +41,12 @@ description: Assistant Research Engineer at Johns Hopkins
 I am currently (March 2024-March 2025) a visiting medical (MD) student
 researcher at NYU [OLAB](https://www.nyuolab.org/) under the supervsion of
 [Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
-I am co-advised by [Eric Leuthardt] at my home institution (Washington
-University School of Medicine in Saint Louis). After completing this research
-experience, I plan to return to finish my MD at the WUSM.. At this stage
-of my soul-searching I am most likely to pursue a carreer in ~~emergency
-medicine~~ ~~critical care~~ ~~anesthesiology~~ ~~neurosurgery~~ ~~cardiac surgery~~ neurosurgery.
+I am co-advised by [Eric Leuthardt](https://neurosurgery.wustl.edu/people/eric-c-leuthardt-md/)
+at my home institution (Washington University School of Medicine in Saint
+Louis). After completing this research experience, I plan to return to finish
+my MD at the WUSM. At this stage of my soul-searching I am most likely to pursue
+a carreer in ~~emergency medicine~~ ~~critical care~~ ~~anesthesiology~~
+~~neurosurgery~~ ~~cardiac surgery~~ neurosurgery.
 
 Research-wise, I am curious about
 1. artificial intelligence, and why might neural networks have some already,
