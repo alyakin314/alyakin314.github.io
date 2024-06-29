@@ -39,13 +39,13 @@ description: Assistant Research Engineer at Johns Hopkins
 **Status Quo**
 
 I am currently (March 2024-March 2025) a visiting medical (MD) student
-researcher at NYU [OLAB](https://www.nyuolab.org/) under the supervsion of
+researcher at NYU [OLAB](https://www.nyuolab.org/) under the supervision of
 [Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
 I am co-advised by [Eric Leuthardt](https://neurosurgery.wustl.edu/people/eric-c-leuthardt-md/)
 at my home institution (Washington University School of Medicine in Saint
 Louis). After completing this research experience, I plan to return to finish
 my MD at the WUSM. At this stage of my soul-searching I am most likely to pursue
-a carreer in ~~emergency medicine~~ ~~critical care~~ ~~anesthesiology~~
+a career in ~~emergency medicine~~ ~~critical care~~ ~~anesthesiology~~
 ~~neurosurgery~~ ~~cardiac surgery~~ neurosurgery.
 
 Research-wise, I am curious about
@@ -76,7 +76,7 @@ causal inference from observational health data.
 I started an MD-PhD program at Washington University School of Medicine in 2021,
 but later decided to only pursue the first two letters out of five.
 
-My research interests outsode of LLMs&Neurosurgery include statistical inference
+My research interests outside of LLMs&Neurosurgery include statistical inference
 on connectome networks, diagnostic and prognostic clinical decision support
 tools, among other intersections of statistics and medicine.
 
