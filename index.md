@@ -71,10 +71,9 @@ alma mater's Department of Applied Mathematics & Statistics. I was a part of the
 [NeuroData](https://neurodata.io/) lab and primarily worked with
 [Carey Priebe](https://www.ams.jhu.edu/~priebe/) on various problems in
 statistical graph inference and with [Joshua Vogelstein](https://jovo.me/) on
-causal inference from observational health data.
-
-I started an MD-PhD program at Washington University School of Medicine in 2021,
-but later decided to only pursue the first two letters out of five.
+causal inference from observational health data. I started an MD-PhD program at
+Washington University School of Medicine in 2021, but later decided to only
+pursue the first two letters out of five.
 
 My research interests outside of LLMs&Neurosurgery include statistical inference
 on connectome networks, diagnostic and prognostic clinical decision support
