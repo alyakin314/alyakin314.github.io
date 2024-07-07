@@ -65,7 +65,6 @@ in December 2019.
 While a student there I was fortunate to be advised by
 [Suchi Saria](https://suchisaria.jhu.edu/) and
 [Avanti Athreya](https://engineering.jhu.edu/ams/faculty/avanti-athreya/).
-
 During ~~COVID~~ my gap year I worked as an Assistant Research Engineer at my
 alma mater's Department of Applied Mathematics & Statistics. I was a part of the
 [NeuroData](https://neurodata.io/) lab and primarily worked with
