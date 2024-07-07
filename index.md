@@ -75,6 +75,8 @@ Most of my recent work has been on Large Language Models (LLMs), after they beca
 inference on connectome networks, diagnostic and prognostic clinical decision
 support tools, among other intersections of statistics and medicine.
 
+**P.S.**
+
 Every math answer I give you is always up to a
 sign/inverse/reciprocal/transpose/etc. Constants are overrated.
 
