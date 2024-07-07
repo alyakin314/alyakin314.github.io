@@ -71,9 +71,11 @@ Research-wise, I am curious about
 1. artificial intelligence, and why might neural networks have some already,
 2. human intelligence, and why I might not have any still.
 
-Most of my recent work has been on Large Language Models (LLMs), after they became cool My research interests outside of LLMs&Neurosurgery include statistical
-inference on connectome networks, diagnostic and prognostic clinical decision
-support tools, among other intersections of statistics and medicine.
+Most of my recent work has been on Large Language Models (LLMs), after they
+became cool. My research interests outside of LLMs&Neurosurgery include
+statistical inference on connectome networks, diagnostic and prognostic
+clinical decision support tools, among other intersections of statistics and
+medicine.
 
 **P.S.**
 
