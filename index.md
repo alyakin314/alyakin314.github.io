@@ -48,17 +48,6 @@ my MD at the WUSM. At this stage of my soul-searching I am most likely to pursue
 a career in ~~emergency medicine~~ ~~critical care~~ ~~anesthesiology~~
 ~~neurosurgery~~ ~~cardiac surgery~~ neurosurgery.
 
-Research-wise, I am curious about
-1. artificial intelligence, and why might neural networks have some already,
-2. human intelligence, and why I might not have any still.
-
-Most of my recent work has been on Large Language Models (LLMs), after they became cool My research interests outside of LLMs&Neurosurgery include statistical
-inference on connectome networks, diagnostic and prognostic clinical decision
-support tools, among other intersections of statistics and medicine.
-
-Every math answer I give you is always up to a
-sign/inverse/reciprocal/transpose/etc. Constants are overrated.
-
 **Road So Far**
 
 I graduated from Johns Hopkins University with a [BS in Computer Science](https://alyakin314.github.io/assets/papers/Alyakin_Motif_Discovery_in_the_Irregulary_Sampled_Time_Series_Data.pdf)
@@ -75,6 +64,19 @@ statistical graph inference and with [Joshua Vogelstein](https://jovo.me/) on
 causal inference from observational health data. I started an MD-PhD program at
 Washington University School of Medicine in 2021, but later decided to only
 pursue the first two letters out of five.
+
+**Research Interests**
+
+Research-wise, I am curious about
+1. artificial intelligence, and why might neural networks have some already,
+2. human intelligence, and why I might not have any still.
+
+Most of my recent work has been on Large Language Models (LLMs), after they became cool My research interests outside of LLMs&Neurosurgery include statistical
+inference on connectome networks, diagnostic and prognostic clinical decision
+support tools, among other intersections of statistics and medicine.
+
+Every math answer I give you is always up to a
+sign/inverse/reciprocal/transpose/etc. Constants are overrated.
 
 <!--
 I consider myself a frequentist in philosophy, but a Bayesian in practice.
