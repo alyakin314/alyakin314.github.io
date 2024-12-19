@@ -38,7 +38,7 @@ description: Assistant Research Engineer at Johns Hopkins
 
 **Status Quo**
 
-Starting February 2025 I am again a full-time MD student at Washington
+Starting, February 2025 I am, again, a full-time MD student at Washington
 University of Saint Louis School of Medicine. I aim to apply to the 2026 
 Neurological Surgery Match. Very rarely I do get time to do AI research.
 <!--
@@ -62,7 +62,7 @@ alma mater's Department of Applied Mathematics & Statistics. I was a part of the
 statistical graph inference and with [Joshua Vogelstein](https://jovo.me/) on
 causal inference from observational health data. I started an MD-PhD program at
 Washington University School of Medicine in 2021, but later decided to only
-pursue the first two letters out of five. I took a research gap year in 2024
+pursue the first two letters out of five. In 2024, I took a research gap year
 during which I was a visiting researcher / AI engineer at NYU
 [OLAB](https://www.nyuolab.org/) under the supervision of Dr.
 [Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
