@@ -68,7 +68,8 @@ during which I was a visiting researcher / AI engineer at NYU
 [Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
 I was co-advised by Dr.
 [Eric Leuthardt](https://neurosurgery.wustl.edu/people/eric-c-leuthardt-md/)
-at my home institution.
+at my home institution. During that time I work on intersections of 
+vision-language models with the field of Neurosurgery.
 
 **Research Interests**
 
@@ -76,11 +77,12 @@ Research-wise, I am curious about
 1. artificial intelligence, and why might neural networks have some already,
 2. human intelligence, and why I might not have any still.
 
-Most of my recent work has been on Large Language Models (LLMs), after they
-became cool. My research interests outside of LLMs&Neurosurgery include
-statistical inference on connectome networks, diagnostic and prognostic
-clinical decision support tools, among other intersections of statistics and
-medicine.
+Most of my recent work has been on Large Language Models (LLMs) and 
+Vision-Language Models, after they became cool. My research interests outside
+of LLMs&Neurosurgery include statistical inference on connectome networks,
+diagnostic and prognostic clinical decision support tools, among other
+intersections of statistics and medicine. I also broadly care about causality
+and consciousness.
 
 **P.S.**
 
