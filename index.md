@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Anton Alyakin
-tagline: (sh)machine (sh)learner / aspiring craniotomist
-description: Assistant Research Engineer at Johns Hopkins
+tagline: aspiring craniotomist / (sh)machine (sh)learner 
+description: aspiring craniotomist / (sh)machine (sh)learner 
 ---
 <div class="container">
 	<div class = "span3">
@@ -38,7 +38,7 @@ description: Assistant Research Engineer at Johns Hopkins
 
 **Status Quo**
 
-Starting February, 2025 I, again, will be a full-time MD student at Washington
+Since March 2025 I am, again, a full-time medical student at Washington
 University of Saint Louis School of Medicine. I aim to apply to the 2026 
 Neurological Surgery Match. Very rarely I do get time to do AI research.
 <!--
