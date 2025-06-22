@@ -40,7 +40,7 @@ description: aspiring craniotomist / (sh)machine (sh)learner
 
 Since March 2025 I am, again, a full-time medical student at Washington
 University of Saint Louis School of Medicine. I aim to apply to the 2026 
-Neurological Surgery Match. Very rarely I do get time to do AI research.
+Neurological Surgery Match. Very rarely but I do get time to do AI research.
 <!--
 At this stage of my soul-searching I am most likely to pursue
 a career in ~~emergency medicine~~ ~~critical care~~ ~~anesthesiology~~
@@ -63,7 +63,7 @@ statistical graph inference and with [Joshua Vogelstein](https://jovo.me/) on
 causal inference from observational health data. I started an MD-PhD program at
 Washington University School of Medicine in 2021, but later decided to only
 pursue the first two letters out of five. In 2024, I took a research gap year
-during which I was a visiting researcher / AI engineer at NYU
+during which I was a CNS AI fellow at NYU
 [OLAB](https://www.nyuolab.org/) under the supervision of Dr.
 [Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
 I was co-advised by Dr.
