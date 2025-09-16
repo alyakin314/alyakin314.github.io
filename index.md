@@ -36,13 +36,12 @@ description: aspiring craniotomist / (sh)machine (sh)learner
 <br/>
 <br/>
 
-## Status Quo
+### Status Quo
 
 I am a medical student at Washington University in Saint Louis School of 
 Medicine. I am currently applying for the 2026 Neurological Surgery Match.
 
-
-**Road So Far**
+### Road So Far
 
 I graduated from Johns Hopkins University with a [BS in Computer Science](https://alyakin314.github.io/assets/papers/Alyakin_Motif_Discovery_in_the_Irregulary_Sampled_Time_Series_Data.pdf)
 in May 2019 and an [MSE in Applied Mathematics & Statistics](https://jscholarship.library.jhu.edu/server/api/core/bitstreams/f33e2b8e-d18d-4a03-b14c-bede28b441ec/content)
@@ -64,14 +63,13 @@ I was co-advised by
 at my home institution. During that time I worked on intersections of 
 vision-language models with neurosurgery.
 
-## **Research Interests**
+### Research Interests
 
 I have worked on various topics spanning connectome statistics, clinical 
 artificial intelligence, and computational safety.
 
-**Connectome Statistics**
+** Connectome Statistics **
 
-**Key Papers:**
 - [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-024-00629-0) (*Applied Network Science*, 2024) 
 - [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://onlinelibrary.wiley.com/doi/10.1002/sta4.411) (*Stat*, 2021) 
 
