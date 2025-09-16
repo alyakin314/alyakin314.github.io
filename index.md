@@ -36,16 +36,11 @@ description: aspiring craniotomist / (sh)machine (sh)learner
 <br/>
 <br/>
 
-**Status Quo**
+## Status Quo
 
-Since March 2025 I am, again, a full-time medical student at Washington
-University of Saint Louis School of Medicine. I aim to apply to the 2026 
-Neurological Surgery Match. Very rarely but I do get time to do AI research.
-<!--
-At this stage of my soul-searching I am most likely to pursue
-a career in ~~emergency medicine~~ ~~critical care~~ ~~anesthesiology~~
-~~neurosurgery~~ ~~cardiac surgery~~ neurosurgery.
--->
+I am a medical student at Washington University in Saint Louis School of 
+Medicine. I am currently applying for the 2026 Neurological Surgery Match.
+
 
 **Road So Far**
 
@@ -55,15 +50,13 @@ in December 2019.
 While a student there I was fortunate to be advised by
 [Suchi Saria](https://suchisaria.jhu.edu/) and
 [Avanti Athreya](https://engineering.jhu.edu/ams/faculty/avanti-athreya/).
-During ~~COVID~~ my gap year I worked as an Assistant Research Engineer at my
-alma mater's Department of Applied Mathematics & Statistics. I was a part of the
+During my gap year I worked as an Assistant Research Engineer at my alma mater's
+Department of Applied Mathematics & Statistics. I was a part of the
 [NeuroData](https://neurodata.io/) lab and primarily worked with
 [Carey Priebe](https://www.ams.jhu.edu/~priebe/) on various problems in
 statistical graph inference and with [Joshua Vogelstein](https://jovo.me/) on
-causal inference from observational health data. I started an MD-PhD program at
-Washington University School of Medicine in 2021, but later decided to only
-pursue the first two letters out of five. In 2024, I took a research gap year
-during which I was a CNS AI fellow at NYU
+causal inference from observational health data.
+In 2024, I took a research gap year during which I was a CNS AI fellow at NYU
 [OLAB](https://www.nyuolab.org/) under the supervision of
 [Dr. Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
 I was co-advised by
@@ -71,26 +64,25 @@ I was co-advised by
 at my home institution. During that time I worked on intersections of 
 vision-language models with neurosurgery.
 
-**Research Interests**
+## **Research Interests**
 
-Research-wise, I am curious about
-1. artificial intelligence, and why might neural networks have some already,
-2. human intelligence, and why I might not have any still.
+I have worked on various topics spanning connectome statistics, clinical 
+artificial intelligence, and computational safety.
 
-Most of my recent work has been on Large Language Models (LLMs) and 
-Vision-Language Models, after they became cool. My research interests outside
-of LLMs&Neurosurgery include statistical inference on connectome networks,
-diagnostic and prognostic clinical decision support tools, among other
-intersections of statistics and medicine. I also broadly care about causality
-and consciousness.
+**Connectome Statistics**
 
-**P.S.**
+**Key Papers:**
+- [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-024-00629-0) (*Applied Network Science*, 2024) 
+- [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://onlinelibrary.wiley.com/doi/10.1002/sta4.411) (*Stat*, 2021) 
 
-Every math answer I give you is always up to a
-sign/inverse/reciprocal/transpose/etc. Constants are overrated.
+** Clinical Artificial Intelligence **
 
-<!--
-I consider myself a frequentist in philosophy, but a Bayesian in practice.
+- [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://journals.lww.com/neurosurgery/) (*Neurosurgery*, 2025)
+- [MedMobile: A mobile-sized language model with clinical capabilities](https://arxiv.org/abs/2410.10991) (*BMJ Digital Health and AI*, to appear 2025)
+- [Repurposing the Scientific Literature with Vision-Language Models](https://arxiv.org/abs/2501.01388) (preprint, 2025)
 
-I probably don't understand determinism...
--->
+** Computational Safety **
+
+- [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://www.nature.com/nm/) (*Nature Medicine*, 2025)
+- [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2410.12049) (preprint, 2025)
+- [It is Too Many Options: Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://arxiv.org/abs/2501.01094) (preprint, 2025)
