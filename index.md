@@ -40,6 +40,8 @@ description: medical student and ai scientist
 
 I am a medical student at Washington University in Saint Louis School of 
 Medicine. I am currently applying for the 2026 Neurological Surgery Match.
+My research is in applying statistical and computational approachces to 
+neuroscience, neurosurgery, and medicine at large.
 
 ### Road So Far
 
@@ -55,6 +57,8 @@ Department of Applied Mathematics & Statistics. I was a part of the
 [Carey Priebe](https://www.ams.jhu.edu/~priebe/) on various problems in
 statistical graph inference and with [Joshua Vogelstein](https://jovo.me/) on
 causal inference from observational health data.
+
+I started medical school at WashU in 2021.
 In 2024, I took a research gap year during which I was a CNS AI fellow at NYU
 [OLAB](https://www.nyuolab.org/) under the supervision of
 [Dr. Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
