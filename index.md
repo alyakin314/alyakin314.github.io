@@ -75,23 +75,24 @@ notable papers are listed below.
 
 #### Connectome Statistics
 
-- [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://onlinelibrary.wiley.com/doi/10.1002/sta4.411) (*Stat*, 2021) 
-- [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-024-00629-0) (*Applied Network Science*, 2024) 
+- [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://doi.org/10.1002/sta4.429) (*Stat*, 2021)
+- [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-023-00607-x) (*Applied Network Science*, 2024)
 
 #### Causal Decision Support
 
-- [Using Machine Learning for Early Prediction of Cardiogenic Shock in Patients with Acute Heart Failure](https://www.sciencedirect.com/journal/journal-of-the-society-for-cardiovascular-angiography-and-interventions) (*Journal of the Society for Cardiovascular Angiography & Interventions*, 2022)
-- [Exploration of Residual Confounding in Analyses of Associations of Metformin Use and Outcomes in Adults With Type 2 Diabetes](https://jamanetwork.com/journals/jamanetworkopen) (*JAMA Network Open*, 2022)
-- [Clinical Prediction for Surgical versus Nonsurgical Interventions in Patients with Vertebral Osteomyelitis and Discitis](https://jss.amegroups.org/) (*Journal of Spine Surgery*, 2024)
+- [Using Machine Learning for Early Prediction of Cardiogenic Shock in Patients with Acute Heart Failure](https://doi.org/10.1016/j.jscai.2022.100308) (*Journal of the Society for Cardiovascular Angiography & Interventions*, 2022)
+- [Exploration of Residual Confounding in Analyses of Associations of Metformin Use and Outcomes in Adults With Type 2 Diabetes](https://doi.org/10.1001/jamanetworkopen.2022.41505) (*JAMA Network Open*, 2022)
+- [Clinical Prediction for Surgical versus Nonsurgical Interventions in Patients with Vertebral Osteomyelitis and Discitis](https://doi.org/10.21037/jss-23-111) (*Journal of Spine Surgery*, 2024)
 
 #### Clinical Artificial Intelligence
 
-- [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://journals.lww.com/neurosurgery/) (*Neurosurgery*, 2025)
-- [MedMobile: A mobile-sized language model with clinical capabilities](https://arxiv.org/abs/2410.10991) (*BMJ Digital Health and AI*, 2025)
-- [Repurposing the Scientific Literature with Vision-Language Models](https://arxiv.org/abs/2501.01388) (preprint, 2025)
+- [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://doi.org/10.1227/neu.0000000000003297) (*Neurosurgery*, 2025)
+- [MedMobile: A mobile-sized language model with clinical capabilities](https://arxiv.org/abs/2410.09019) (*BMJ Digital Health and AI*, 2025)
+- [Repurposing the Scientific Literature with Vision-Language Models](https://arxiv.org/abs/2502.19546) (preprint, 2025)
 
 #### Computational Safety
 
-- [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://www.nature.com/nm/) (*Nature Medicine*, 2025)
-- [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2410.12049) (preprint, 2025)
-- [It is Too Many Options: Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://arxiv.org/abs/2501.01094) (preprint, 2025)
+- [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://doi.org/10.1038/s41591-024-03445-1) (*Nature Medicine*, 2025)
+- [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
+- [It is Too Many Options: Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://arxiv.org/abs/2503.13508) (preprint, 2025)
+
