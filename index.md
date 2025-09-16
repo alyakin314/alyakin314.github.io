@@ -76,7 +76,7 @@ artificial intelligence, and computational safety.
 ** Clinical Artificial Intelligence **
 
 - [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://journals.lww.com/neurosurgery/) (*Neurosurgery*, 2025)
-- [MedMobile: A mobile-sized language model with clinical capabilities](https://arxiv.org/abs/2410.10991) (*BMJ Digital Health and AI*, to appear 2025)
+- [MedMobile: A mobile-sized language model with clinical capabilities](https://arxiv.org/abs/2410.10991) (*BMJ Digital Health and AI*, 2025)
 - [Repurposing the Scientific Literature with Vision-Language Models](https://arxiv.org/abs/2501.01388) (preprint, 2025)
 
 ** Computational Safety **
