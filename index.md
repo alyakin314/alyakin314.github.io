@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Anton Alyakin
-tagline: aspiring craniotomist / (sh)machine (sh)learner 
-description: aspiring craniotomist / (sh)machine (sh)learner 
+tagline: medical student and ai scientist 
+description: medical student and ai scientist
 ---
 <div class="container">
 	<div class = "span3">
@@ -65,14 +65,20 @@ vision-language models with neurosurgery.
 
 ### Research Interests
 
-I have worked on various topics spanning connectome statistics, clinical 
-artificial intelligence, and computational safety. Some notable papers are
-listed below.
+I have worked on various topics spanning connectome statistics, causal decision
+support, clinical artificial intelligence, and computational safety. Some
+notable papers are listed below.
 
 #### Connectome Statistics
 
-- [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-024-00629-0) (*Applied Network Science*, 2024) 
 - [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://onlinelibrary.wiley.com/doi/10.1002/sta4.411) (*Stat*, 2021) 
+- [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-024-00629-0) (*Applied Network Science*, 2024) 
+
+#### Causal Decision Support
+
+- [Using Machine Learning for Early Prediction of Cardiogenic Shock in Patients with Acute Heart Failure](https://www.sciencedirect.com/journal/journal-of-the-society-for-cardiovascular-angiography-and-interventions) (*Journal of the Society for Cardiovascular Angiography & Interventions*, 2022)
+- [Exploration of Residual Confounding in Analyses of Associations of Metformin Use and Outcomes in Adults With Type 2 Diabetes](https://jamanetwork.com/journals/jamanetworkopen) (*JAMA Network Open*, 2022)
+- [Clinical Prediction for Surgical versus Nonsurgical Interventions in Patients with Vertebral Osteomyelitis and Discitis](https://jss.amegroups.org/) (*Journal of Spine Surgery*, 2024)
 
 #### Clinical Artificial Intelligence
 
