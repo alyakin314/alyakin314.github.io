@@ -66,20 +66,21 @@ vision-language models with neurosurgery.
 ### Research Interests
 
 I have worked on various topics spanning connectome statistics, clinical 
-artificial intelligence, and computational safety.
+artificial intelligence, and computational safety. Some notable papers are
+listed below.
 
-** Connectome Statistics **
+#### Connectome Statistics
 
 - [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-024-00629-0) (*Applied Network Science*, 2024) 
 - [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://onlinelibrary.wiley.com/doi/10.1002/sta4.411) (*Stat*, 2021) 
 
-** Clinical Artificial Intelligence **
+#### Clinical Artificial Intelligence
 
 - [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://journals.lww.com/neurosurgery/) (*Neurosurgery*, 2025)
 - [MedMobile: A mobile-sized language model with clinical capabilities](https://arxiv.org/abs/2410.10991) (*BMJ Digital Health and AI*, 2025)
 - [Repurposing the Scientific Literature with Vision-Language Models](https://arxiv.org/abs/2501.01388) (preprint, 2025)
 
-** Computational Safety **
+#### Computational Safety
 
 - [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://www.nature.com/nm/) (*Nature Medicine*, 2025)
 - [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2410.12049) (preprint, 2025)
