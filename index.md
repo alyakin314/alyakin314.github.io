@@ -95,5 +95,4 @@ notable papers are listed below.
 - [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://doi.org/10.1038/s41591-024-03445-1) (*Nature Medicine*, 2025)
 - [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
 - [It is Too Many Options: Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://arxiv.org/abs/2503.13508) (preprint, 2025)
-- hello
 
