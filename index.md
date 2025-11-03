@@ -93,7 +93,7 @@ notable papers are listed below.
 #### Computational Safety
 
 - [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://doi.org/10.1038/s41591-024-03445-1) (*Nature Medicine*, 2025)
-- [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
 - [Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://arxiv.org/abs/2503.13508) (*Scientific Reports*, 2025)
+- [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
 - Large Language Models in Clinical Medicine: An LLMPowered Large-Scale Systematic Review (*Nature Medicine*, *to appear*, 2025)
 
