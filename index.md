@@ -87,8 +87,8 @@ notable papers are listed below.
 #### Clinical Artificial Intelligence
 
 - [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://doi.org/10.1227/neu.0000000000003297) (*Neurosurgery*, 2025)
+- [CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications](https://arxiv.org/abs/2502.19546) (preprint, 2025)
 - [MedMobile: A mobile-sized language model with clinical capabilities](https://arxiv.org/abs/2410.09019) (*BMJ Digital Health and AI*, 2025)
-- [Repurposing the Scientific Literature with Vision-Language Models](https://arxiv.org/abs/2502.19546) (preprint, 2025)
 
 #### Computational Safety
 
