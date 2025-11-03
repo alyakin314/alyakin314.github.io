@@ -73,10 +73,11 @@ I have worked on various topics spanning connectome statistics, causal decision
 support, clinical artificial intelligence, and computational safety. Some
 notable papers are listed below.
 
-#### Connectome Statistics
+#### Connectome and Graph-based Statistics
 
 - [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://doi.org/10.1002/sta4.429) (*Stat*, 2021)
 - [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-023-00607-x) (*Applied Network Science*, 2024)
+- [An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon Induction from Word Embedding Spaces](https://arxiv.org/pdf/2109.12640) (*Findings of the ACL: EMNLP 2021)
 
 #### Causal Decision Support
 
