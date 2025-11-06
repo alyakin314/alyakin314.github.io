@@ -64,8 +64,12 @@ In 2024, I took a research gap year during which I was a CNS AI fellow at NYU
 [Dr. Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
 I was co-advised by
 [Dr. Eric Leuthardt](https://neurosurgery.wustl.edu/people/eric-c-leuthardt-md/)
-at my home institution. During that time I worked on intersections of 
-vision-language models with neurosurgery.
+at my home institution. 
+During that time I trained the first neurosurgical chatbot that can view 
+imaging, [CNS-Obsidian](https://arxiv.org/abs/2502.19546), which was evaluated
+in a real world randomized trial. See some demos of it 
+[here](https://alyakin314.github.io/assets/converted-obsidian-final-both-sah.mp4) and
+[here](https://alyakin314.github.io/assets/converted-obsidian-final-base-stroke.mp4)!
 
 ### Research Interests
 
