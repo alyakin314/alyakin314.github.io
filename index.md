@@ -59,7 +59,7 @@ statistical graph inference and with [Joshua Vogelstein](https://jovo.me/) on
 causal inference from observational health data.
 
 I started medical school at WashU in 2021.
-In 2024, I took a research gap year during which I was a CNS AI fellow at NYU
+In 2024, I took a research year during which I was a CNS AI fellow at NYU
 [OLAB](https://www.nyuolab.org/) under the supervision of
 [Dr. Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
 I was co-advised by
