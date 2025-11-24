@@ -17,7 +17,7 @@ description: medical student and ai scientist
         <br>
         <a href="https://nyulangone.org/">New York University Langone Health</a><br/>
         <a href="https://med.nyu.edu/departments-institutes/neurosurgery/">NYU Neurosurgery</a><br/>
-        <a href="https://www.nyuolab.org">OLAB</a><br/>
+        <a href="https://nyuolab-website.vercel.app/">OLAB</a><br/>
                 <!--
         <a href="http://www.dbbs.wustl.edu/divprograms/BIDS/">Biomedical Informatics and Data Science</a><br/>
         <a href="http://mstp.wustl.edu//">Medical Scientist Training Program</a><br/>
@@ -59,8 +59,8 @@ statistical graph inference and with [Joshua Vogelstein](https://jovo.me/) on
 causal inference from observational health data.
 
 I started medical school at WashU in 2021.
-In 2024, I took a research year during which I was a CNS AI fellow at NYU
-[OLAB](https://www.nyuolab.org/) under the supervision of
+In 2024, I took a research year during which I was a [CNS AI fellow](https://nyuolab-website.vercel.app/clinical/neurosurgical-ai-fellowship) at NYU
+[OLAB](https://nyuolab-website.vercel.app/) under the supervision of
 [Dr. Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
 I was co-advised by
 [Dr. Eric Leuthardt](https://neurosurgery.wustl.edu/people/eric-c-leuthardt-md/)
