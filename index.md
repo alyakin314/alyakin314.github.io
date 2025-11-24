@@ -2,7 +2,7 @@
 layout: page
 title: Anton Alyakin
 tagline: medical student and ai scientist 
-description: medical student and ai scientist
+description: <br> medical student and ai scientist
 ---
 <div class="container">
 	<div class = "span3">
