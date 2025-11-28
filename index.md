@@ -67,7 +67,7 @@ I was co-advised by
 at my home institution. 
 During that time I trained the first neurosurgical chatbot that can view 
 imaging, 
-![Obsidian](https://alyakin314.github.io/assets/obsidian.png)
+<img src="https://alyakin314.github.io/assets/obsidian.png" width="40" style="vertical-align:middle;"> CNS-Obsidian
  [CNS-Obsidian](https://arxiv.org/abs/2502.19546), which was evaluated
 in a real world randomized trial. See some demos of it 
 [here](https://alyakin314.github.io/assets/converted-obsidian-final-both-sah.mp4) and
