@@ -66,7 +66,9 @@ I was co-advised by
 [Dr. Eric Leuthardt](https://neurosurgery.wustl.edu/people/eric-c-leuthardt-md/)
 at my home institution. 
 During that time I trained the first neurosurgical chatbot that can view 
-imaging, [CNS-Obsidian](https://arxiv.org/abs/2502.19546), which was evaluated
+imaging, 
+![Obsidian](https://alyakin314.github.io/assets/obsidian.png)
+ [CNS-Obsidian](https://arxiv.org/abs/2502.19546), which was evaluated
 in a real world randomized trial. See some demos of it 
 [here](https://alyakin314.github.io/assets/converted-obsidian-final-both-sah.mp4) and
 [here](https://alyakin314.github.io/assets/converted-obsidian-base-stroke.mp4)!
