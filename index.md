@@ -95,11 +95,14 @@ notable papers are listed below.
 
 - [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://doi.org/10.1227/neu.0000000000003297) (*Neurosurgery*, 2025)
 - [CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications](https://arxiv.org/abs/2502.19546) (preprint, 2025)
-- [MedMobile: A mobile-sized language model with clinical capabilities](https://arxiv.org/abs/2410.09019) (*BMJ Digital Health and AI*, 2025)
+- [MedMobile: A mobile-sized language model with clinical capabilities](https://doi.org/10.1136/bmjdhai-2025-000068) (*BMJ Digital Health and AI*, 2025)
 
 #### Computational Safety
 
 - [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://doi.org/10.1038/s41591-024-03445-1) (*Nature Medicine*, 2025)
-- [Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://arxiv.org/abs/2503.13508) (*Scientific Reports*, 2025)
+- [Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://doi.org/10.1038/s41598-025-26036-7) (*Scientific Reports*, 2025)
 - [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
 
+#### Other
+
+I also authored this commentary on the titles in AI: [“All You Need” is Not All You Need for a Paper Title: On the Origins of a Scientific Meme](https://github.com/alyakin314/All_You_Need/blob/main/All_You_Need.pdf)
