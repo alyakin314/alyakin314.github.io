@@ -91,18 +91,23 @@ notable papers are listed below.
 - [Exploration of Residual Confounding in Analyses of Associations of Metformin Use and Outcomes in Adults With Type 2 Diabetes](https://doi.org/10.1001/jamanetworkopen.2022.41505) (*JAMA Network Open*, 2022)
 - [Clinical Prediction for Surgical versus Nonsurgical Interventions in Patients with Vertebral Osteomyelitis and Discitis](https://doi.org/10.21037/jss-23-111) (*Journal of Spine Surgery*, 2024)
 
-#### Clinical Artificial Intelligence
+#### Clinical Artificial Intelligence Models
 
 - [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://doi.org/10.1227/neu.0000000000003297) (*Neurosurgery*, 2025)
 - [CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications](https://arxiv.org/abs/2502.19546) (preprint, 2025)
 - [MedMobile: A mobile-sized language model with clinical capabilities](https://doi.org/10.1136/bmjdhai-2025-000068) (*BMJ Digital Health and AI*, 2025)
+- [Generalist Foundation Models Are Not Clinical Enough for Hospital Operations](https://arxiv.org/abs/2511.13703) (preprint, 2025)
 
 #### Computational Safety
 
 - [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://doi.org/10.1038/s41591-024-03445-1) (*Nature Medicine*, 2025)
 - [Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://doi.org/10.1038/s41598-025-26036-7) (*Scientific Reports*, 2025)
 - [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
+- [Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions](https://doi.org/10.1227/neu.0000000000003878) (*Neurosurgery*, 2025)
+- [Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks](https://arxiv.org/abs/2512.01191) (preprint, 2025)
 
-#### Other
+#### Commentary
 
-I also authored this commentary on the titles in AI: [“All You Need” is Not All You Need for a Paper Title: On the Origins of a Scientific Meme](https://github.com/alyakin314/All_You_Need/blob/main/All_You_Need.pdf)
+- ["All You Need" is Not All You Need for a Paper Title: On the Origins of a Scientific Meme](https://arxiv.org/abs/2512.19700) (preprint, 2025)
+
+
