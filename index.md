@@ -64,7 +64,7 @@ In 2024, I took a research year during which I was a [CNS AI fellow](https://nyu
 [Dr. Eric Oermann](https://nyulangone.org/doctors/1235498403/eric-k-oermann).
 I was co-advised by
 [Dr. Eric Leuthardt](https://neurosurgery.wustl.edu/people/eric-c-leuthardt-md/)
-at my home institution. 
+at WashU. 
 During that time I trained the first neurosurgical chatbot that can view 
 imaging,<img src="https://alyakin314.github.io/assets/obsidian.png" width="20" style="vertical-align:middle;">[CNS-Obsidian](https://arxiv.org/abs/2502.19546), which was evaluated
 in a real world randomized trial. See some demos of it 
