@@ -103,6 +103,8 @@ notable papers are listed below.
 - [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
 - [Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions](https://doi.org/10.1227/neu.0000000000003878) (*Neurosurgery*, 2025)
 - [Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks](https://arxiv.org/abs/2512.01191) (preprint, 2025)
+- [LLM-assisted Systematic Review of Large Language Models in Clinical Medicine](https://doi.org/10.1038/s41591-026-04229-5) (*Nature Medicine*, 2026)
+
 
 #### Commentary
 
