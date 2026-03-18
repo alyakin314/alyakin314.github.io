@@ -92,9 +92,9 @@ notable papers are listed below.
 #### Clinical Artificial Intelligence Models
 
 - [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://doi.org/10.1227/neu.0000000000003297) (*Neurosurgery*, 2025)
-- [CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications](https://arxiv.org/abs/2502.19546) (preprint, 2025)
+- [CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications](https://arxiv.org/abs/2502.19546) (*Neurosurgery*, accepted)
 - [MedMobile: A mobile-sized language model with clinical capabilities](https://doi.org/10.1136/bmjdhai-2025-000068) (*BMJ Digital Health and AI*, 2025)
-- [Generalist Foundation Models Are Not Clinical Enough for Hospital Operations](https://arxiv.org/abs/2511.13703) (preprint, 2025)
+- [Lang1: Generalist Foundation Models Are Not Clinical Enough for Hospital Operations](https://arxiv.org/abs/2511.13703) (preprint, 2025)
 
 #### Computational Safety
 
@@ -103,6 +103,8 @@ notable papers are listed below.
 - [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
 - [Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions](https://doi.org/10.1227/neu.0000000000003878) (*Neurosurgery*, 2025)
 - [Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks](https://arxiv.org/abs/2512.01191) (preprint, 2025)
+- [LLM-assisted Systematic Review of Large Language Models in Clinical Medicine](https://doi.org/10.1038/s41591-026-04229-5) (*Nature Medicine*, 2026)
+
 
 #### Commentary
 
