@@ -14,11 +14,11 @@ description: medical student and ai scientist
         <a href="https://medicine.wustl.edu/">Washington University School of Medicine in St. Louis</a><br/>
         <a href="https://neurosurgery.wustl.edu/">WUSM Neurosurgery</a><br/>
         <a href="https://www.leuthardtlab.com/">The Leuthardt Lab</a><br/>
+			   <!--
         <br>
         <a href="https://nyulangone.org/">New York University Langone Health</a><br/>
         <a href="https://med.nyu.edu/departments-institutes/neurosurgery/">NYU Neurosurgery</a><br/>
         <a href="https://nyuolab-website.vercel.app/">OLAB</a><br/>
-                <!--
         <a href="http://www.dbbs.wustl.edu/divprograms/BIDS/">Biomedical Informatics and Data Science</a><br/>
         <a href="http://mstp.wustl.edu//">Medical Scientist Training Program</a><br/>
 		<a href="https://engineering.jhu.edu/ams/">Department of Applied Mathematics & Statistics</a><br/>
@@ -39,7 +39,7 @@ description: medical student and ai scientist
 ### Status Quo
 
 I am a medical student at Washington University in Saint Louis School of 
-Medicine. I am currently applying for the 2026 Neurological Surgery Match.
+Medicine. 
 My research is in applying statistical and computational approachces to 
 neuroscience, neurosurgery, and medicine at large.
 
@@ -79,9 +79,9 @@ notable papers are listed below.
 
 #### Connectome and Graph-based Statistics
 
+- [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-023-00607-x) (*Applied Network Science*, 2024)
 - [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://doi.org/10.1002/sta4.429) (*Stat*, 2021)
 - [An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon Induction from Word Embedding Spaces](https://arxiv.org/pdf/2109.12640) (*Findings of the ACL: EMNLP 2021*, 2021)
-- [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-023-00607-x) (*Applied Network Science*, 2024)
 
 #### Causal Decision Support
 
@@ -92,22 +92,20 @@ notable papers are listed below.
 #### Clinical Artificial Intelligence Models
 
 - [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://doi.org/10.1227/neu.0000000000003297) (*Neurosurgery*, 2025)
-- [CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications](https://arxiv.org/abs/2502.19546) (*Neurosurgery*, accepted)
+- [CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications](https://arxiv.org/abs/2502.19546) (*Neurosurgery*, 2026)
 - [MedMobile: A mobile-sized language model with clinical capabilities](https://doi.org/10.1136/bmjdhai-2025-000068) (*BMJ Digital Health and AI*, 2025)
 - [Lang1: Generalist Foundation Models Are Not Clinical Enough for Hospital Operations](https://arxiv.org/abs/2511.13703) (preprint, 2025)
 
 #### Computational Safety
 
 - [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://doi.org/10.1038/s41591-024-03445-1) (*Nature Medicine*, 2025)
-- [Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://doi.org/10.1038/s41598-025-26036-7) (*Scientific Reports*, 2025)
-- [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
-- [Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions](https://doi.org/10.1227/neu.0000000000003878) (*Neurosurgery*, 2025)
-- [Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks](https://arxiv.org/abs/2512.01191) (preprint, 2025)
 - [LLM-assisted Systematic Review of Large Language Models in Clinical Medicine](https://doi.org/10.1038/s41591-026-04229-5) (*Nature Medicine*, 2026)
-
+- [Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks](https://arxiv.org/abs/2512.01191) (*Nature Medicine*, accepted)
+- [Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://doi.org/10.1038/s41598-025-26036-7) (*Scientific Reports*, 2025)
+- [Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions](https://doi.org/10.1227/neu.0000000000003878) (*Neurosurgery*, 2025)
+- [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
 
 #### Commentary
 
 - ["All You Need" is Not All You Need for a Paper Title: On the Origins of a Scientific Meme](https://arxiv.org/abs/2512.19700) (preprint, 2025)
-
 
