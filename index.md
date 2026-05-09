@@ -13,8 +13,8 @@ description: medical student and ai scientist
 		<div style="text-align:right">
         <a href="https://medicine.wustl.edu/">Washington University School of Medicine in St. Louis</a><br/>
         <a href="https://neurosurgery.wustl.edu/">WUSM Neurosurgery</a><br/>
-        <a href="https://www.leuthardtlab.com/">The Leuthardt Lab</a><br/>
 			   <!--
+        <a href="https://www.leuthardtlab.com/">The Leuthardt Lab</a><br/>
         <br>
         <a href="https://nyulangone.org/">New York University Langone Health</a><br/>
         <a href="https://med.nyu.edu/departments-institutes/neurosurgery/">NYU Neurosurgery</a><br/>
