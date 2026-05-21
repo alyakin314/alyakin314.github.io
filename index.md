@@ -65,7 +65,7 @@ I was co-advised by
 [Dr. Eric Leuthardt](https://neurosurgery.wustl.edu/people/eric-c-leuthardt-md/)
 at WashU. 
 During that time I trained the first neurosurgical chatbot that can view 
-imaging,<img src="https://alyakin314.github.io/assets/obsidian.png" width="20" style="vertical-align:middle;">[CNS-Obsidian](https://arxiv.org/abs/2502.19546), which was evaluated
+imaging,<img src="https://alyakin314.github.io/assets/obsidian.png" width="20" style="vertical-align:middle;">[CNS-Obsidian](https://doi.org/10.1227/neu.0000000000004070), which was evaluated
 in a real world randomized trial. See some demos of it 
 [here](https://alyakin314.github.io/assets/converted-obsidian-final-both-sah.mp4) and
 [here](https://alyakin314.github.io/assets/converted-obsidian-base-stroke.mp4)!
@@ -77,11 +77,21 @@ I have worked on various topics spanning connectome statistics, causal decision
 support, clinical artificial intelligence, and computational safety. Some
 notable papers are listed below.
 
-#### Connectome and Graph-based Statistics
+#### Clinical Artificial Intelligence Models
 
-- [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://doi.org/10.1002/sta4.429) (*Stat*, 2021)
-- [An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon Induction from Word Embedding Spaces](https://arxiv.org/pdf/2109.12640) (*Findings of the ACL: EMNLP 2021*, 2021)
-- [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-023-00607-x) (*Applied Network Science*, 2024)
+- [CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications](https://doi.org/10.1227/neu.0000000000004070) (*Neurosurgery*, 2026)
+- [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://doi.org/10.1227/neu.0000000000003297) (*Neurosurgery*, 2025)
+- [MedMobile: A mobile-sized language model with clinical capabilities](https://doi.org/10.1136/bmjdhai-2025-000068) (*BMJ Digital Health and AI*, 2025)
+- [Lang1: Generalist Foundation Models Are Not Clinical Enough for Hospital Operations](https://arxiv.org/abs/2511.13703) (preprint, 2025)
+
+#### Computational Safety
+
+- [Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks](https://arxiv.org/abs/2512.01191) (*Nature Medicine*, accepted)
+- [LLM-assisted Systematic Review of Large Language Models in Clinical Medicine](https://doi.org/10.1038/s41591-026-04229-5) (*Nature Medicine*, 2026)
+- [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://doi.org/10.1038/s41591-024-03445-1) (*Nature Medicine*, 2025)
+- [Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://doi.org/10.1038/s41598-025-26036-7) (*Scientific Reports*, 2025)
+- [Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions](https://doi.org/10.1227/neu.0000000000003878) (*Neurosurgery*, 2025)
+- [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
 
 #### Causal Decision Support
 
@@ -89,22 +99,11 @@ notable papers are listed below.
 - [Exploration of Residual Confounding in Analyses of Associations of Metformin Use and Outcomes in Adults With Type 2 Diabetes](https://doi.org/10.1001/jamanetworkopen.2022.41505) (*JAMA Network Open*, 2022)
 - [Clinical Prediction for Surgical versus Nonsurgical Interventions in Patients with Vertebral Osteomyelitis and Discitis](https://doi.org/10.21037/jss-23-111) (*Journal of Spine Surgery*, 2024)
 
-#### Clinical Artificial Intelligence Models
+#### Connectome and Graph-based Statistics
 
-- [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://doi.org/10.1227/neu.0000000000003297) (*Neurosurgery*, 2025)
-- [CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications](https://arxiv.org/abs/2502.19546) (*Neurosurgery*, accepted)
-- [MedMobile: A mobile-sized language model with clinical capabilities](https://doi.org/10.1136/bmjdhai-2025-000068) (*BMJ Digital Health and AI*, 2025)
-- [Lang1: Generalist Foundation Models Are Not Clinical Enough for Hospital Operations](https://arxiv.org/abs/2511.13703) (preprint, 2025)
-
-#### Computational Safety
-
-- [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://doi.org/10.1038/s41591-024-03445-1) (*Nature Medicine*, 2025)
-- [Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://doi.org/10.1038/s41598-025-26036-7) (*Scientific Reports*, 2025)
-- [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
-- [Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions](https://doi.org/10.1227/neu.0000000000003878) (*Neurosurgery*, 2025)
-- [Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks](https://arxiv.org/abs/2512.01191) (preprint, 2025)
-- [LLM-assisted Systematic Review of Large Language Models in Clinical Medicine](https://doi.org/10.1038/s41591-026-04229-5) (*Nature Medicine*, 2026)
-
+- [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://doi.org/10.1002/sta4.429) (*Stat*, 2021)
+- [An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon Induction from Word Embedding Spaces](https://arxiv.org/pdf/2109.12640) (*Findings of the ACL: EMNLP 2021*, 2021)
+- [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-023-00607-x) (*Applied Network Science*, 2024)
 
 #### Commentary
 
