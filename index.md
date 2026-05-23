@@ -41,7 +41,7 @@ description: medical student and ai scientist
 I am a medical student at Washington University in Saint Louis School of 
 Medicine. I am currently applying for the 2026 Neurological Surgery Match.
 My research is in applying statistical and computational approachces to 
-neuroscience, neurosurgery, and medicine at large.
+surgery and medicine at large.
 
 ### Road So Far
 
@@ -93,17 +93,17 @@ notable papers are listed below.
 - [Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions](https://doi.org/10.1227/neu.0000000000003878) (*Neurosurgery*, 2025)
 - [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
 
-#### Causal Decision Support
-
-- [Using Machine Learning for Early Prediction of Cardiogenic Shock in Patients with Acute Heart Failure](https://doi.org/10.1016/j.jscai.2022.100308) (*Journal of the Society for Cardiovascular Angiography & Interventions*, 2022)
-- [Exploration of Residual Confounding in Analyses of Associations of Metformin Use and Outcomes in Adults With Type 2 Diabetes](https://doi.org/10.1001/jamanetworkopen.2022.41505) (*JAMA Network Open*, 2022)
-- [Clinical Prediction for Surgical versus Nonsurgical Interventions in Patients with Vertebral Osteomyelitis and Discitis](https://doi.org/10.21037/jss-23-111) (*Journal of Spine Surgery*, 2024)
-
 #### Connectome and Graph-based Statistics
 
 - [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://doi.org/10.1002/sta4.429) (*Stat*, 2021)
 - [An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon Induction from Word Embedding Spaces](https://arxiv.org/pdf/2109.12640) (*Findings of the ACL: EMNLP 2021*, 2021)
 - [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-023-00607-x) (*Applied Network Science*, 2024)
+
+#### Causal Decision Support
+
+- [Using Machine Learning for Early Prediction of Cardiogenic Shock in Patients with Acute Heart Failure](https://doi.org/10.1016/j.jscai.2022.100308) (*Journal of the Society for Cardiovascular Angiography & Interventions*, 2022)
+- [Exploration of Residual Confounding in Analyses of Associations of Metformin Use and Outcomes in Adults With Type 2 Diabetes](https://doi.org/10.1001/jamanetworkopen.2022.41505) (*JAMA Network Open*, 2022)
+- [Clinical Prediction for Surgical versus Nonsurgical Interventions in Patients with Vertebral Osteomyelitis and Discitis](https://doi.org/10.21037/jss-23-111) (*Journal of Spine Surgery*, 2024)
 
 #### Commentary
 
