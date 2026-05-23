@@ -73,9 +73,7 @@ in a real world randomized trial. See some demos of it
 
 ### Research Interests
 
-I have worked on various topics spanning connectome statistics, causal decision
-support, clinical artificial intelligence, and computational safety. Some
-notable papers are listed below.
+I have worked on various topics spanning clinical artificial intelligence, and computational safety, and connectome statistics. Some notable papers are listed below.
 
 #### Clinical Artificial Intelligence Models
 
@@ -98,28 +96,6 @@ notable papers are listed below.
 - [Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics](https://doi.org/10.1007/s41109-023-00607-x) (*Applied Network Science*, 2024)
 - [Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics](https://doi.org/10.1002/sta4.429) (*Stat*, 2021)
 - [An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon Induction from Word Embedding Spaces](https://arxiv.org/pdf/2109.12640) (*Findings of the ACL: EMNLP 2021*, 2021)
-
-#### Causal Decision Support
-
-- [Using Machine Learning for Early Prediction of Cardiogenic Shock in Patients with Acute Heart Failure](https://doi.org/10.1016/j.jscai.2022.100308) (*Journal of the Society for Cardiovascular Angiography & Interventions*, 2022)
-- [Exploration of Residual Confounding in Analyses of Associations of Metformin Use and Outcomes in Adults With Type 2 Diabetes](https://doi.org/10.1001/jamanetworkopen.2022.41505) (*JAMA Network Open*, 2022)
-- [Clinical Prediction for Surgical versus Nonsurgical Interventions in Patients with Vertebral Osteomyelitis and Discitis](https://doi.org/10.21037/jss-23-111) (*Journal of Spine Surgery*, 2024)
-
-#### Clinical Artificial Intelligence Models
-
-- [CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model](https://doi.org/10.1227/neu.0000000000003297) (*Neurosurgery*, 2025)
-- [CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications](https://arxiv.org/abs/2502.19546) (*Neurosurgery*, 2026)
-- [MedMobile: A mobile-sized language model with clinical capabilities](https://doi.org/10.1136/bmjdhai-2025-000068) (*BMJ Digital Health and AI*, 2025)
-- [Lang1: Generalist Foundation Models Are Not Clinical Enough for Hospital Operations](https://arxiv.org/abs/2511.13703) (preprint, 2025)
-
-#### Computational Safety
-
-- [Medical Large Language Models are Vulnerable to Data-poisoning Attacks](https://doi.org/10.1038/s41591-024-03445-1) (*Nature Medicine*, 2025)
-- [LLM-assisted Systematic Review of Large Language Models in Clinical Medicine](https://doi.org/10.1038/s41591-026-04229-5) (*Nature Medicine*, 2026)
-- [Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks](https://arxiv.org/abs/2512.01191) (*Nature Medicine*, accepted)
-- [Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education](https://doi.org/10.1038/s41598-025-26036-7) (*Scientific Reports*, 2025)
-- [Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions](https://doi.org/10.1227/neu.0000000000003878) (*Neurosurgery*, 2025)
-- [Medical Large Language Models are Easily Distracted](https://arxiv.org/abs/2504.01201) (preprint, 2025)
 
 #### Commentary
 
