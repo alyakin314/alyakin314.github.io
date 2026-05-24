@@ -133,17 +133,17 @@
       width: 100%;
       display: block;
       margin-bottom: 1.5rem;
-      filter: sepia(0.35) saturate(0.85) brightness(0.92);
+      filter: sepia(0.22) saturate(0.9) brightness(0.95);
       box-shadow: 0 30px 60px -30px rgba(0,0,0,0.6);
     }
     h1.name {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-weight: 400;
-      font-size: 3.2rem;
-      line-height: 0.98;
-      margin: 0 0 0.6rem 0;
-      letter-spacing: -0.005em;
+      font-size: 2.5rem;
+      line-height: 1.05;
+      margin: 0 0 0.5rem 0;
+      letter-spacing: -0.01em;
       color: var(--ink-bright);
     }
     .tagline {
@@ -362,18 +362,10 @@
       line-height: 1.25;
     }
 
-    .divider {
-      text-align: center;
-      color: var(--accent);
-      opacity: 0.45;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      letter-spacing: 0.8em;
-      margin: 3rem 0 2.5rem;
-    }
+    .divider { display: none; }
 
     /* ===== publications ===== */
-    section.section { margin-bottom: 3.5rem; }
+    section.section { margin-bottom: 2.75rem; }
     section.section.last { margin-bottom: 0; }
 
     .pub-group { margin-bottom: 2.5rem; }
@@ -409,6 +401,19 @@
     }
     a.pub:hover .pub-year { color: var(--accent); }
     .pub-body { line-height: 1.45; }
+    .pub-authors {
+      display: block;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+      line-height: 1.45;
+      letter-spacing: 0.005em;
+    }
+    .pub-authors strong {
+      color: var(--ink-bright);
+      font-weight: 500;
+    }
     .pub-title {
       font-family: 'Crimson Pro', Georgia, serif;
       font-style: italic;
@@ -468,9 +473,9 @@
     <div class="links">
       <a href="/assets/AntonAlyakinCV.pdf" target="_blank" rel="noreferrer"><span class="emoji">📜</span> CV</a>
       <a href="https://scholar.google.com/citations?user=5rDtuRIAAAAJ" target="_blank" rel="noreferrer"><span class="emoji">🎓</span> Scholar</a>
-      <a href="https://huggingface.co/alyakin314" target="_blank" rel="noreferrer"><span class="emoji">🤗</span> HF</a>
-      <a href="https://github.com/alyakin314" target="_blank" rel="noreferrer"><span class="emoji">🐙</span> GitHub</a>
       <a href="https://www.linkedin.com/in/anton-a-64a58a9b" target="_blank" rel="noreferrer"><span class="emoji">🤝</span> LinkedIn</a>
+      <a href="https://github.com/alyakin314" target="_blank" rel="noreferrer"><span class="emoji">🐙</span> GitHub</a>
+      <a href="https://huggingface.co/alyakin314" target="_blank" rel="noreferrer"><span class="emoji">🤗</span> HF</a>
     </div>
   </nav>
 
@@ -480,30 +485,30 @@
       <div class="sticky">
         <img class="portrait" src="/assets/pics/anton_alyakin.jpg" alt="Anton Alyakin">
 
-        <h1 class="name">Anton<br>Alyakin</h1>
+        <h1 class="name">Anton Alyakin</h1>
         <div class="tagline">Medical Student &nbsp;·&nbsp; AI Scientist</div>
 
         <div class="cv-block">
           <div class="head">Education</div>
           <div class="cv-row">
-            <span class="year mono">2021–</span>
+            <span class="year mono">2021–27</span>
             <span class="what">
               <a href="https://medicine.wustl.edu/" target="_blank" rel="noreferrer">Washington University</a>
               <span class="role">MD candidate</span>
             </span>
           </div>
           <div class="cv-row">
-            <span class="year mono">2019</span>
+            <span class="year mono">2019–19</span>
             <span class="what">
               <a href="https://engineering.jhu.edu/ams/" target="_blank" rel="noreferrer">Johns Hopkins</a>
               <span class="role">MSE, Applied Math &amp; Stats</span>
             </span>
           </div>
           <div class="cv-row">
-            <span class="year mono">2019</span>
+            <span class="year mono">2015–19</span>
             <span class="what">
               <a href="https://www.cs.jhu.edu/" target="_blank" rel="noreferrer">Johns Hopkins</a>
-              <span class="role">BS, Computer Science</span>
+              <span class="role">BS, Computer Science and Applied Math &amp; Stats</span>
             </span>
           </div>
         </div>
@@ -511,14 +516,13 @@
         <div class="cv-block">
           <div class="head">Research</div>
           <div class="cv-row">
-            <span class="year mono">2024–25</span>
+            <span class="year mono">2024–26</span>
             <span class="what">
               <a href="https://nyuolab-website.vercel.app/" target="_blank" rel="noreferrer">NYU OLAB</a>
-              <span class="role">CNS AI Fellow</span>
             </span>
           </div>
           <div class="cv-row">
-            <span class="year mono">2021–</span>
+            <span class="year mono">2023–26</span>
             <span class="what">
               <a href="https://neurosurgery.wustl.edu/" target="_blank" rel="noreferrer">WUSM Neurosurgery</a>
             </span>
@@ -527,7 +531,12 @@
             <span class="year mono">2019–21</span>
             <span class="what">
               <a href="https://neurodata.io/" target="_blank" rel="noreferrer">NeuroData @ JHU</a>
-              <span class="role">Research Engineer</span>
+            </span>
+          </div>
+          <div class="cv-row">
+            <span class="year mono">2017–19</span>
+            <span class="what">
+              <a href="https://suchisaria.jhu.edu/" target="_blank" rel="noreferrer">Saria Lab @ JHU</a>
             </span>
           </div>
         </div>
@@ -554,17 +563,15 @@
         </div>
       </section>
 
-      <div class="divider">— · —</div>
-
       <section class="section">
         <header class="section-header">
           <span class="numeral">II</span>
           <span class="rule"></span>
-          <span class="label">Road So Far</span>
+          <span class="label">Background</span>
         </header>
         <div class="prose">
-          <p>I graduated from Johns Hopkins with a <a href="/assets/papers/Alyakin_Motif_Discovery_in_the_Irregulary_Sampled_Time_Series_Data.pdf" target="_blank" rel="noreferrer">BS in Computer Science</a> in May 2019 and an <a href="https://jscholarship.library.jhu.edu/server/api/core/bitstreams/f33e2b8e-d18d-4a03-b14c-bede28b441ec/content" target="_blank" rel="noreferrer">MSE in Applied Mathematics &amp; Statistics</a> in December 2019. While there I was fortunate to be advised by <a href="https://suchisaria.jhu.edu/" target="_blank" rel="noreferrer">Suchi Saria</a> and <a href="https://engineering.jhu.edu/ams/faculty/avanti-athreya/" target="_blank" rel="noreferrer">Avanti Athreya</a>. During my gap year I worked as an Assistant Research Engineer at my alma mater. I was a part of the <a href="https://neurodata.io/" target="_blank" rel="noreferrer">NeuroData</a> lab where I worked with <a href="https://www.ams.jhu.edu/~priebe/" target="_blank" rel="noreferrer">Carey Priebe</a> on statistical graph inference and with <a href="https://jovo.me/" target="_blank" rel="noreferrer">Joshua Vogelstein</a> on causal inference from observational health data.</p>
-          <p>I started medical school at WashU in 2021. In 2024, I took a research year during which I was the <a href="https://nyuolab-website.vercel.app/clinical/neurosurgical-ai-fellowship" target="_blank" rel="noreferrer">CNS AI fellow</a> at NYU's <a href="https://nyuolab-website.vercel.app/" target="_blank" rel="noreferrer">OLAB</a> under <a href="https://nyulangone.org/doctors/1235498403/eric-k-oermann" target="_blank" rel="noreferrer">Dr. Eric Oermann</a>, co-advised by <a href="https://neurosurgery.wustl.edu/people/eric-c-leuthardt-md/" target="_blank" rel="noreferrer">Dr. Eric Leuthardt</a> at WashU. During that time I trained the first neurosurgical chatbot that can view imaging — <a href="https://doi.org/10.1227/neu.0000000000004070" target="_blank" rel="noreferrer">CNS-Obsidian</a> — which was evaluated in a real-world randomized trial.</p>
+          <p>I graduated from Johns Hopkins with a <a href="/assets/papers/Alyakin_Motif_Discovery_in_the_Irregulary_Sampled_Time_Series_Data.pdf" target="_blank" rel="noreferrer">BS in Computer Science</a> in May 2019 and an <a href="https://jscholarship.library.jhu.edu/server/api/core/bitstreams/f33e2b8e-d18d-4a03-b14c-bede28b441ec/content" target="_blank" rel="noreferrer">MSE in Applied Mathematics &amp; Statistics</a> in December 2019. While there I was fortunate to be advised by <a href="https://suchisaria.jhu.edu/" target="_blank" rel="noreferrer">Suchi Saria</a> and <a href="https://engineering.jhu.edu/ams/faculty/avanti-athreya/" target="_blank" rel="noreferrer">Avanti Athreya</a>. During my gap year I returned to my alma mater and joined the <a href="https://neurodata.io/" target="_blank" rel="noreferrer">NeuroData</a> lab, where I worked with <a href="https://www.ams.jhu.edu/~priebe/" target="_blank" rel="noreferrer">Carey Priebe</a> on statistical graph inference and with <a href="https://jovo.me/" target="_blank" rel="noreferrer">Joshua Vogelstein</a> on causal inference from observational health data.</p>
+          <p>I started medical school at WashU in 2021. In 2024, I took a research year at NYU's <a href="https://nyuolab-website.vercel.app/" target="_blank" rel="noreferrer">OLAB</a> under <a href="https://nyulangone.org/doctors/1235498403/eric-k-oermann" target="_blank" rel="noreferrer">Dr. Eric Oermann</a>, co-advised by <a href="https://neurosurgery.wustl.edu/people/eric-c-leuthardt-md/" target="_blank" rel="noreferrer">Dr. Eric Leuthardt</a> at WashU. During that time I trained the first neurosurgical chatbot that can view imaging — <a href="https://doi.org/10.1227/neu.0000000000004070" target="_blank" rel="noreferrer">CNS-Obsidian</a> — which was evaluated in a real-world randomized trial.</p>
 
           <div class="demos">
             <div class="demos-intro">See <strong>CNS-Obsidian</strong> read imaging in three real-world neurosurgical scenarios:</div>
@@ -575,7 +582,7 @@
               </a>
               <a class="demo" href="/assets/converted-obsidian-base-stroke.mp4" target="_blank" rel="noreferrer">
                 <span class="demo-play"><svg width="8" height="10" viewBox="0 0 8 10" fill="currentColor"><path d="M0 0 L8 5 L0 10 Z"/></svg></span>
-                <span class="demo-label">Stroke</span>
+                <span class="demo-label">Acute ischemic stroke</span>
               </a>
               <a class="demo" href="/assets/converted-obsidian-base-seh.mp4" target="_blank" rel="noreferrer">
                 <span class="demo-play"><svg width="8" height="10" viewBox="0 0 8 10" fill="currentColor"><path d="M0 0 L8 5 L0 10 Z"/></svg></span>
@@ -585,8 +592,6 @@
           </div>
         </div>
       </section>
-
-      <div class="divider">— · —</div>
 
       <section class="section last">
         <header class="section-header">
@@ -603,19 +608,19 @@
           <div class="pub-list">
             <a class="pub" href="https://doi.org/10.1227/neu.0000000000004070" target="_blank" rel="noreferrer">
               <span class="pub-year">2026</span>
-              <span class="pub-body"><span class="pub-title">CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications</span><span class="pub-venue">Neurosurgery</span></span>
+              <span class="pub-body"><span class="pub-authors"><strong>A. Alyakin</strong>, J. Stryker, D. A. Alber, et al.</span><span class="pub-title">CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications</span><span class="pub-venue">Neurosurgery</span></span>
             </a>
             <a class="pub" href="https://doi.org/10.1227/neu.0000000000003297" target="_blank" rel="noreferrer">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model</span><span class="pub-venue">Neurosurgery</span></span>
+              <span class="pub-body"><span class="pub-authors"><strong>A. Alyakin</strong>, D. Kurland, D. Alber, et al.</span><span class="pub-title">CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model</span><span class="pub-venue">Neurosurgery</span></span>
             </a>
             <a class="pub" href="https://doi.org/10.1136/bmjdhai-2025-000068" target="_blank" rel="noreferrer">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">MedMobile: A mobile-sized language model with clinical capabilities</span><span class="pub-venue">BMJ Digital Health &amp; AI</span></span>
+              <span class="pub-body"><span class="pub-authors">K. Vishwanath, J. Stryker, <strong>A. Alyakin</strong>, D. A. Alber, E. K. Oermann</span><span class="pub-title">MedMobile: A mobile-sized language model with clinical capabilities</span><span class="pub-venue">BMJ Digital Health &amp; AI</span></span>
             </a>
             <a class="pub" href="https://arxiv.org/abs/2511.13703" target="_blank" rel="noreferrer">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">Lang1: Generalist Foundation Models Are Not Clinical Enough for Hospital Operations</span><span class="pub-venue">preprint</span></span>
+              <span class="pub-body"><span class="pub-authors">L. Y. Jiang, A. Chen, X. Han, …, <strong>A. Alyakin</strong>, et al.</span><span class="pub-title">Lang1: Generalist Foundation Models Are Not Clinical Enough for Hospital Operations</span><span class="pub-venue">preprint</span></span>
             </a>
           </div>
         </div>
@@ -625,27 +630,27 @@
           <div class="pub-list">
             <a class="pub" href="https://arxiv.org/abs/2512.01191" target="_blank" rel="noreferrer">
               <span class="pub-year">2026</span>
-              <span class="pub-body"><span class="pub-title">Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks</span><span class="pub-venue">Nature Medicine (accepted)</span></span>
+              <span class="pub-body"><span class="pub-authors">K. Vishwanath, <strong>A. Alyakin</strong>, M. Ghosh, et al.</span><span class="pub-title">Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks</span><span class="pub-venue">Nature Medicine (accepted)</span></span>
             </a>
             <a class="pub" href="https://doi.org/10.1038/s41591-026-04229-5" target="_blank" rel="noreferrer">
               <span class="pub-year">2026</span>
-              <span class="pub-body"><span class="pub-title">LLM-assisted Systematic Review of Large Language Models in Clinical Medicine</span><span class="pub-venue">Nature Medicine</span></span>
+              <span class="pub-body"><span class="pub-authors">S. F. Chen, <strong>A. Alyakin</strong>, A. Seas, et al.</span><span class="pub-title">LLM-assisted Systematic Review of Large Language Models in Clinical Medicine</span><span class="pub-venue">Nature Medicine</span></span>
             </a>
             <a class="pub" href="https://doi.org/10.1038/s41591-024-03445-1" target="_blank" rel="noreferrer">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">Medical Large Language Models are Vulnerable to Data-poisoning Attacks</span><span class="pub-venue">Nature Medicine</span></span>
+              <span class="pub-body"><span class="pub-authors">D. A. Alber, Z. Yang, <strong>A. Alyakin</strong>, et al.</span><span class="pub-title">Medical Large Language Models are Vulnerable to Data-poisoning Attacks</span><span class="pub-venue">Nature Medicine</span></span>
             </a>
             <a class="pub" href="https://doi.org/10.1038/s41598-025-26036-7" target="_blank" rel="noreferrer">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education</span><span class="pub-venue">Scientific Reports</span></span>
+              <span class="pub-body"><span class="pub-authors">S. Singh, <strong>A. Alyakin</strong>, D. A. Alber, et al.</span><span class="pub-title">Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education</span><span class="pub-venue">Scientific Reports</span></span>
             </a>
             <a class="pub" href="https://doi.org/10.1227/neu.0000000000003878" target="_blank" rel="noreferrer">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions</span><span class="pub-venue">Neurosurgery</span></span>
+              <span class="pub-body"><span class="pub-authors">K. Vishwanath, <strong>A. Alyakin</strong>, M. Ghosh, et al.</span><span class="pub-title">Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions</span><span class="pub-venue">Neurosurgery</span></span>
             </a>
             <a class="pub" href="https://arxiv.org/abs/2504.01201" target="_blank" rel="noreferrer">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">Medical Large Language Models are Easily Distracted</span><span class="pub-venue">preprint</span></span>
+              <span class="pub-body"><span class="pub-authors">K. Vishwanath, <strong>A. Alyakin</strong>, J. V. Lee, et al.</span><span class="pub-title">Medical Large Language Models are Easily Distracted</span><span class="pub-venue">preprint</span></span>
             </a>
           </div>
         </div>
@@ -655,15 +660,15 @@
           <div class="pub-list">
             <a class="pub" href="https://doi.org/10.1007/s41109-023-00607-x" target="_blank" rel="noreferrer">
               <span class="pub-year">2024</span>
-              <span class="pub-body"><span class="pub-title">Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices, with Applications to Connectomics</span><span class="pub-venue">Applied Network Science</span></span>
+              <span class="pub-body"><span class="pub-authors"><strong>A. A. Alyakin</strong>, J. Agterberg, H. S. Helm, C. E. Priebe</span><span class="pub-title">Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices, with Applications to Connectomics</span><span class="pub-venue">Applied Network Science</span></span>
             </a>
             <a class="pub" href="https://doi.org/10.1002/sta4.429" target="_blank" rel="noreferrer">
               <span class="pub-year">2021</span>
-              <span class="pub-body"><span class="pub-title">Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation, with Applications in Connectomics</span><span class="pub-venue">Stat</span></span>
+              <span class="pub-body"><span class="pub-authors">J. Chung, B. Varjavand, J. Arroyo, <strong>A. Alyakin</strong>, et al.</span><span class="pub-title">Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation, with Applications in Connectomics</span><span class="pub-venue">Stat</span></span>
             </a>
             <a class="pub" href="https://arxiv.org/pdf/2109.12640" target="_blank" rel="noreferrer">
               <span class="pub-year">2021</span>
-              <span class="pub-body"><span class="pub-title">An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon Induction from Word Embedding Spaces</span><span class="pub-venue">Findings of the ACL: EMNLP</span></span>
+              <span class="pub-body"><span class="pub-authors">K. Marchisio, Y. Park, A. Saad-Eldin, <strong>A. Alyakin</strong>, et al.</span><span class="pub-title">An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon Induction from Word Embedding Spaces</span><span class="pub-venue">Findings of the ACL: EMNLP</span></span>
             </a>
           </div>
         </div>
@@ -673,7 +678,7 @@
           <div class="pub-list">
             <a class="pub" href="https://arxiv.org/abs/2512.19700" target="_blank" rel="noreferrer">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">"All You Need" is Not All You Need for a Paper Title: On the Origins of a Scientific Meme</span><span class="pub-venue">preprint</span></span>
+              <span class="pub-body"><span class="pub-authors"><strong>A. Alyakin</strong></span><span class="pub-title">"All You Need" is Not All You Need for a Paper Title: On the Origins of a Scientific Meme</span><span class="pub-venue">preprint</span></span>
             </a>
           </div>
         </div>
