@@ -233,45 +233,6 @@
     .swatch.s-knob { color: var(--knob); }
     .swatch.s-z { color: var(--z); }
 
-    .section-note {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--muted);
-      margin: -0.75rem 0 1.6rem;
-      max-width: 68ch;
-    }
-
-    .struggles {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      max-width: 68ch;
-      border-bottom: 1px solid var(--rule);
-    }
-    .struggles li {
-      padding: 1.15rem 0;
-      border-top: 1px solid var(--rule);
-    }
-    .struggles .q {
-      display: block;
-      font-family: var(--display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 1.3;
-      color: var(--ink-bright);
-      margin-bottom: 0.4rem;
-    }
-    .struggles .a {
-      display: block;
-      font-size: 16.5px;
-      line-height: 1.62;
-      color: var(--ink);
-    }
-    .struggles .a em { color: var(--ink-bright); font-style: italic; }
-
     .colophon {
       margin-top: 2.2rem;
       font-size: 14.5px;
@@ -340,7 +301,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section last">
     <header class="section-header">
       <span class="numeral">II</span>
       <span class="rule"></span>
@@ -372,35 +333,6 @@
         </span>
       </a>
     </div>
-  </section>
-
-  <section class="section last">
-    <header class="section-header">
-      <span class="numeral">III</span>
-      <span class="rule"></span>
-      <span class="label">What I Was Stuck On</span>
-    </header>
-
-    <p class="section-note">Asking these, one at a time, is what produced the instruments above.</p>
-
-    <ul class="struggles">
-      <li>
-        <span class="q">What exactly is a qubit's Hilbert space?</span>
-        <span class="a">It is <em>&#8450;&#178;</em>, a pair of complex numbers. The catch is that states are rays in it, not vectors.</span>
-      </li>
-      <li>
-        <span class="q">How many degrees of freedom is that?</span>
-        <span class="a">Four real parameters, minus normalization, minus global phase, leaves two. That ladder is why every source seemed to disagree.</span>
-      </li>
-      <li>
-        <span class="q">So there are only two?</span>
-        <span class="a">Yes, <em>&#952;</em> and <em>&#966;</em>. They are physically real but not readable: a measurement returns one bit.</span>
-      </li>
-      <li>
-        <span class="q">Why can I not just plot it on Cartesian axes?</span>
-        <span class="a">They are angles, not coordinates, and what survives is a sphere. Orthogonal states sit antipodal, not perpendicular.</span>
-      </li>
-    </ul>
 
     <p class="colophon">Built with <a href="https://claude.com/claude-code" target="_blank" rel="noreferrer">Claude</a>, like most things around here lately.</p>
   </section>
