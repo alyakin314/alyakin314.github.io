@@ -232,8 +232,8 @@ function upd(){
   document.getElementById('E12').textContent=fc(sc*n[0],-sc*n[1]);
   document.getElementById('E21').textContent=fc(sc*n[0],sc*n[1]);
   var hi=Math.max(a,b),lo=Math.min(a,b);
-  document.getElementById('TR').textContent='trace = '+sg(a)+' + '+nm(b)+' = '+nm(a+b);
-  document.getElementById('DT').textContent='det = '+sg(a)+' \u00D7 '+nm(b)+' = '+nm(a*b);
+  document.getElementById('TR').textContent='trace = '+sg(a)+' + '+sg(b)+' = '+nm(a+b);
+  document.getElementById('DT').textContent='det = '+sg(a)+' \u00D7 '+sg(b)+' = '+nm(a*b);
   document.getElementById('ST').textContent='eigenvalues '+nm(hi)+', '+nm(lo);
 }
 function pre(t,p,a,b){
