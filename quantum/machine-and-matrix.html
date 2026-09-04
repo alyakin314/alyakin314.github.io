@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The machine and its matrix · Anton Alyakin</title>
+<meta name="description" content="A qubit measurement apparatus shown beside the 2x2 Hermitian matrix it corresponds to.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#e8dfc9; --ink-2:#9a8a72; --ink-3:#7b6d59;
+  --ground:#1a1614; --panel:#221c19; --sunk:#2b2320;
+  --rule:rgba(232,223,201,.11); --rule-2:rgba(232,223,201,.26);
+  --link:#d4a04a;
+  --z:#9c93ee; --x:#43c39a; --y:#e8834f; --pt:#e46d9e;
+  --knob:#43c39a; --state:#e46d9e; --warm:#e8834f; --lit:#ffc94a;
+  --radius:3px;
+  --sans:ui-sans-serif,-apple-system,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --serif:'Crimson Pro',Georgia,serif;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --b:var(--rule); --t:var(--ink-3);
+  --text-primary:var(--ink); --text-secondary:var(--ink-2);
+  --surface-1:var(--sunk); --surface-2:var(--panel);
+  --border-strong:var(--rule-2); --text-accent:var(--link);
+  --font-sans:var(--sans); --font-mono:var(--mono);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font:400 16px/1.65 var(--sans);
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:780px;margin:0 auto;padding:56px 24px 80px}
+h1{font:500 27px/1.25 var(--sans);letter-spacing:-.01em;margin:0 0 14px}
+.lede{color:var(--ink-2);margin:0 0 34px;max-width:62ch}
+.instrument{
+  background:var(--panel); border:1px solid var(--rule);
+  border-radius:12px; padding:20px 22px 22px; margin:0 0 34px;
+}
+svg{display:block;width:100%;height:auto}
+.rowc{display:flex;align-items:center;gap:12px;margin-top:11px;font-size:13.5px;color:var(--ink-2)}
+.rowc>span:first-child{min-width:104px}
+.readout{font:400 12.5px/1.5 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink-2)}
+input[type=range]{-webkit-appearance:none;appearance:none;background:transparent;height:20px;margin:0;flex:1;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:3px;background:var(--rule-2);border-radius:2px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:var(--panel);border:1px solid var(--rule-2);margin-top:-7px}
+input[type=range]::-moz-range-track{height:3px;background:var(--rule-2);border-radius:2px}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:var(--panel);border:1px solid var(--rule-2)}
+input[type=range]:focus-visible{outline:2px solid var(--link);outline-offset:4px;border-radius:4px}
+input[type=number]{
+  width:82px;font:400 13.5px var(--mono);color:var(--ink);
+  background:var(--panel);border:1px solid var(--rule-2);
+  border-radius:var(--radius);padding:6px 8px;
+}
+input[type=number]:focus-visible{outline:2px solid var(--link);outline-offset:1px}
+button{font:400 13.5px var(--sans);color:var(--ink);background:transparent;border:1px solid var(--rule-2);border-radius:var(--radius);padding:6px 13px;cursor:pointer}
+button:hover{background:var(--sunk)}
+button:active{transform:scale(.98)}
+button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.t{font:400 14px var(--sans);fill:var(--ink)}
+.ts{font:400 12px var(--sans);fill:var(--ink-2)}
+.th{font:500 14px var(--sans);fill:var(--ink)}
+.mono-t{font:400 14px var(--mono);fill:var(--ink)}
+.mono-h{font:500 14px var(--mono);fill:var(--ink)}
+.notes{margin:0;padding:0;list-style:none;max-width:64ch}
+.notes li{padding:11px 0;border-top:1px solid var(--rule);color:var(--ink-2)}
+.notes li b{font-weight:500;color:var(--ink)}
+.back{display:inline-block;margin-top:38px;font-size:14px;color:var(--link);text-decoration:none}
+.back:hover{text-decoration:underline}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* ===== site chrome: matches alyakin314.github.io ===== */
+body{font-family:var(--serif);font-weight:380;font-size:17.5px;line-height:1.65;text-rendering:optimizeLegibility}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.35) 100%)}
+.wrap{position:relative;z-index:2;max-width:860px;padding:2.5rem 1.75rem 4rem}
+
+nav.top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;
+  margin:0 0 3rem;padding-bottom:1.1rem;border-bottom:1px solid var(--rule)}
+nav.top .brand{font-family:var(--display);font-style:italic;font-weight:500;font-size:18px;
+  letter-spacing:.04em;color:var(--ink);text-decoration:none}
+nav.top .links{display:flex;gap:.85rem;align-items:baseline;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+nav.top .links a{position:relative;color:var(--ink-2);text-decoration:none;padding-bottom:4px;
+  transition:color 200ms ease}
+nav.top .links a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:var(--link);transform:scaleX(0);transition:transform 220ms ease}
+nav.top .links a:hover{color:var(--link)}
+nav.top .links a:hover::after{transform:scaleX(1)}
+
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--link);margin:0 0 .85rem}
+h1{font-family:var(--display);font-style:italic;font-weight:400;font-size:2.5rem;line-height:1.06;
+  letter-spacing:-.01em;color:var(--ink);margin:0 0 .9rem}
+.lede{font-family:var(--serif);font-size:17.5px;line-height:1.72;color:var(--ink-2);
+  margin:0 0 2.1rem;max-width:64ch}
+
+.instrument{background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+  box-shadow:0 30px 60px -40px rgba(0,0,0,.7);padding:22px 24px 24px;margin:0 0 2.4rem}
+.rowc{font-family:var(--sans)}
+
+.notes{border-bottom:1px solid var(--rule)}
+.notes li{font-family:var(--serif);font-size:16.5px;line-height:1.62;padding:.85rem 0}
+.notes li b{color:var(--ink);font-weight:600}
+
+.back{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;margin-top:2.6rem;transition:color 200ms ease}
+.back:hover{color:var(--link);text-decoration:none}
+
+footer.bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+footer.bottom .friend{font-family:var(--display);font-style:italic;text-transform:none;
+  letter-spacing:.02em;font-size:13px}
+footer.bottom .friend .amp{color:var(--link);margin:0 .15em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="top">
+  <a class="brand" href="/">Anton Alyakin</a>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/quantum/">All three instruments</a>
+  </div>
+</nav>
+
+<h1>The machine and its matrix</h1>
+<p class="lede">An observable is not a new ingredient. It is a knob direction and two numbers painted on a dial, packaged as a Hermitian matrix. The state sliders never touch the matrix; the knob sliders never touch its trace or determinant.</p>
+
+<div class="instrument">
+<h2 class="sr">A prepared state and knob axis on a Bloch sphere, two lamps with editable labels and probabilities, and the Hermitian matrix those settings define.</h2>
+<svg viewBox="0 0 680 380" role="img"><title>Qubit machine with matrix</title><desc>Bloch sphere with state and knob axis, two lamps with probabilities, and the corresponding two by two Hermitian matrix.</desc>
+
+<circle cx="125" cy="120" r="85" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<ellipse cx="125" cy="120" rx="85" ry="30" fill="none" stroke="var(--b)" stroke-width="0.5" stroke-dasharray="4 4"/>
+<line id="KA" x1="125" y1="205" x2="125" y2="35" stroke="var(--knob)" stroke-width="2"/>
+<circle id="KP" cx="125" cy="35" r="4.5" fill="var(--knob)"/>
+<circle id="KN" cx="125" cy="205" r="4.5" fill="var(--knob)"/>
+<text class="ts" id="TP" x="125" y="24" text-anchor="middle">+1</text>
+<text class="ts" id="TN" x="125" y="224" text-anchor="middle">&#8722;1</text>
+<line id="SV" x1="125" y1="120" x2="125" y2="35" stroke="var(--state)" stroke-width="3" stroke-linecap="round"/>
+<circle id="SP" cx="125" cy="35" r="6" fill="var(--state)"/>
+
+<rect x="240" y="30" width="400" height="80" rx="12" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<circle id="LA" cx="272" cy="70" r="14" fill="var(--surface-1)" stroke="var(--border-strong)" stroke-width="0.5"/>
+<text class="ts" x="300" y="60">lamp A</text>
+<text class="th" id="VA" x="300" y="82">+1</text>
+<rect x="400" y="72" width="220" height="10" rx="5" fill="var(--surface-1)"/>
+<rect id="PA" x="400" y="72" width="220" height="10" rx="5" fill="var(--knob)"/>
+<text class="ts" id="QA" x="620" y="60" text-anchor="end">100%</text>
+
+<rect x="240" y="125" width="400" height="80" rx="12" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<circle id="LB" cx="272" cy="165" r="14" fill="var(--surface-1)" stroke="var(--border-strong)" stroke-width="0.5"/>
+<text class="ts" x="300" y="155">lamp B</text>
+<text class="th" id="VB" x="300" y="177">&#8722;1</text>
+<rect x="400" y="167" width="220" height="10" rx="5" fill="var(--surface-1)"/>
+<rect id="PB" x="400" y="167" width="0" height="10" rx="5" fill="var(--warm)"/>
+<text class="ts" id="QB" x="620" y="155" text-anchor="end">0%</text>
+
+<text class="t" x="140" y="305" text-anchor="end">A =</text>
+<path d="M182 235 L170 235 L170 355 L182 355" fill="none" stroke="var(--t)" stroke-width="1"/>
+<path d="M498 235 L510 235 L510 355 L498 355" fill="none" stroke="var(--t)" stroke-width="1"/>
+<text class="mono-t" id="E11" x="250" y="280" text-anchor="middle">1.00</text>
+<text class="mono-t" id="E12" x="430" y="280" text-anchor="middle">0.00</text>
+<text class="mono-t" id="E21" x="250" y="325" text-anchor="middle">0.00</text>
+<text class="mono-t" id="E22" x="430" y="325" text-anchor="middle">&#8722;1.00</text>
+<text class="ts" x="548" y="282">&#10216;A&#10217; expected</text>
+<text class="mono-h" id="EX" x="548" y="308">1.00</text>
+</svg>
+
+<div class="rowc"><span style="color:var(--state)">state tilt</span><input type="range" id="st" min="0" max="180" value="0" step="1" oninput="upd()"><span id="stl" style="min-width:46px;text-align:right">0&#176;</span></div>
+<div class="rowc"><span style="color:var(--state)">state swing</span><input type="range" id="sp" min="0" max="360" value="0" step="1" oninput="upd()"><span id="spl" style="min-width:46px;text-align:right">0&#176;</span></div>
+<div class="rowc"><span style="color:var(--knob)">knob tilt</span><input type="range" id="kt" min="0" max="180" value="0" step="1" oninput="upd()"><span id="ktl" style="min-width:46px;text-align:right">0&#176;</span></div>
+<div class="rowc"><span style="color:var(--knob)">knob swing</span><input type="range" id="kp" min="0" max="360" value="0" step="1" oninput="upd()"><span id="kpl" style="min-width:46px;text-align:right">0&#176;</span></div>
+<div class="rowc"><span>lamp labels</span><input type="number" id="la" value="1" step="0.5" oninput="upd()"><input type="number" id="lb" value="-1" step="0.5" oninput="upd()"></div>
+<div class="rowc" style="flex-wrap:wrap;gap:8px">
+<button onclick="pre(0,0,1,-1)">&#963;z</button>
+<button onclick="pre(90,0,1,-1)">&#963;x</button>
+<button onclick="pre(90,90,1,-1)">&#963;y</button>
+<button onclick="pre(0,0,1,0)">|0&#10217;&#10216;0|</button>
+<button onclick="pre(35,20,1,1)">identity</button>
+</div>
+<div class="rowc" style="flex-wrap:wrap;gap:8px">
+<button onclick="run(1)">run once</button>
+<button onclick="run(100)">run &#215;100</button>
+<button onclick="rst()">reset tally</button>
+</div>
+<div class="rowc readout" id="ST">runs 0</div>
+</div>
+
+<ul class="notes">
+<li><b>&#963;z, then &#963;x, then &#963;y.</b> Same labels, knob rotated. The ones jump off-diagonal, then go imaginary. The i in &#963;y is not mysterious, real-positive and real-negative are taken, so the third perpendicular direction has nowhere left to live but the imaginary axis.</li>
+<li><b>Identity, then spin the knob.</b> All four entries stay frozen. Both lamps read the same number, so the direction means nothing. That is the all-label-no-knob observable, and the reason the space of distinct measurements is three-dimensional rather than four.</li>
+<li><b>Trace and determinant.</b> The sum and the product of your two labels. Turn the knob and they hold; type a new label and they move. The matrix separates hardware from notebook without your having to diagonalize anything.</li>
+<li><b>The check that matters.</b> The observed mean from the tally converges on the &#10216;A&#10217; box, which is just &#10216;&#968;|A|&#968;&#10217;. Left side is the experiment, right side is the arithmetic. Their agreeing is the only reason the matrix was worth introducing.</li>
+</ul>
+
+<a class="back" href="/quantum/">&#8592; all three instruments</a>
+
+<footer class="bottom">
+  <span class="friend">&copy; Anton Alyakin <span class="amp">&amp;</span> his friend Claude</span>
+  <span>St. Louis &nbsp;&middot;&nbsp; MMXXVI</span>
+</footer>
+
+</div>
+<script>
+var SX=125,SY=120,SR=85,nA=0,nB=0,TM=null;
+function pj(x,y,z){return [SX+SR*0.7071*(y-x), SY+SR*(0.25*(x+y)-z)];}
+function dr(t,p){
+  t=t*Math.PI/180;p=p*Math.PI/180;
+  return [Math.sin(t)*Math.cos(p),Math.sin(t)*Math.sin(p),Math.cos(t)];
+}
+function fc(re,im){
+  var r=(Math.abs(re)<0.005?0:re).toFixed(2);
+  if(Math.abs(im)<0.005) return r;
+  return r+(im<0?' \u2212 ':' + ')+Math.abs(im).toFixed(2)+'i';
+}
+function upd(){
+  var st=+document.getElementById('st').value,sp=+document.getElementById('sp').value;
+  var kt=+document.getElementById('kt').value,kp=+document.getElementById('kp').value;
+  document.getElementById('stl').textContent=st+'\u00B0';
+  document.getElementById('spl').textContent=sp+'\u00B0';
+  document.getElementById('ktl').textContent=kt+'\u00B0';
+  document.getElementById('kpl').textContent=kp+'\u00B0';
+  var s=dr(st,sp),n=dr(kt,kp);
+  var a=+document.getElementById('la').value,b=+document.getElementById('lb').value;
+  var off=(a+b)/2,sc=(a-b)/2;
+  var q=pj(s[0],s[1],s[2]);
+  document.getElementById('SV').setAttribute('x2',q[0]);
+  document.getElementById('SV').setAttribute('y2',q[1]);
+  document.getElementById('SP').setAttribute('cx',q[0]);
+  document.getElementById('SP').setAttribute('cy',q[1]);
+  var u=pj(n[0],n[1],n[2]),v=pj(-n[0],-n[1],-n[2]),K=document.getElementById('KA');
+  K.setAttribute('x1',v[0]);K.setAttribute('y1',v[1]);
+  K.setAttribute('x2',u[0]);K.setAttribute('y2',u[1]);
+  document.getElementById('KP').setAttribute('cx',u[0]);
+  document.getElementById('KP').setAttribute('cy',u[1]);
+  document.getElementById('KN').setAttribute('cx',v[0]);
+  document.getElementById('KN').setAttribute('cy',v[1]);
+  var du=Math.hypot(u[0]-SX,u[1]-SY)||1,dv=Math.hypot(v[0]-SX,v[1]-SY)||1;
+  var TP=document.getElementById('TP'),TN=document.getElementById('TN');
+  TP.setAttribute('x',u[0]+(u[0]-SX)/du*16);
+  TP.setAttribute('y',u[1]+(u[1]-SY)/du*16+4);
+  TN.setAttribute('x',v[0]+(v[0]-SX)/dv*16);
+  TN.setAttribute('y',v[1]+(v[1]-SY)/dv*16+4);
+  TP.textContent=(a>0?'+':'')+a;
+  TN.textContent=(b>0?'+':'')+b;
+  document.getElementById('VA').textContent=(a>0?'+':'')+a;
+  document.getElementById('VB').textContent=(b>0?'+':'')+b;
+  var c=s[0]*n[0]+s[1]*n[1]+s[2]*n[2], pA=(1+c)/2;
+  document.getElementById('PA').setAttribute('width',Math.max(0,pA*220));
+  document.getElementById('PB').setAttribute('width',Math.max(0,(1-pA)*220));
+  document.getElementById('QA').textContent=Math.round(pA*100)+'%';
+  document.getElementById('QB').textContent=Math.round((1-pA)*100)+'%';
+  document.getElementById('E11').textContent=fc(off+sc*n[2],0);
+  document.getElementById('E22').textContent=fc(off-sc*n[2],0);
+  document.getElementById('E12').textContent=fc(sc*n[0],-sc*n[1]);
+  document.getElementById('E21').textContent=fc(sc*n[0],sc*n[1]);
+  var ex=pA*a+(1-pA)*b;
+  document.getElementById('EX').textContent=ex.toFixed(2);
+  var tot=nA+nB;
+  document.getElementById('ST').textContent=
+    'runs '+tot+'   A '+nA+'   B '+nB+
+    (tot?'   observed mean '+((nA*a+nB*b)/tot).toFixed(3):'')+
+    '   trace '+(a+b).toFixed(2)+'   det '+(a*b).toFixed(2);
+  return pA;
+}
+function fl(id){
+  document.getElementById(id).setAttribute('fill','var(--lit)');
+  if(TM)clearTimeout(TM);
+  TM=setTimeout(function(){
+    document.getElementById('LA').setAttribute('fill','var(--surface-1)');
+    document.getElementById('LB').setAttribute('fill','var(--surface-1)');
+  },420);
+}
+function run(k){
+  var pA=upd(),last='LA';
+  for(var i=0;i<k;i++){
+    if(Math.random()<pA){nA++;last='LA';}else{nB++;last='LB';}
+  }
+  fl(last);upd();
+}
+function rst(){nA=0;nB=0;upd();}
+function pre(t,p,a,b){
+  document.getElementById('kt').value=t;
+  document.getElementById('kp').value=p;
+  document.getElementById('la').value=a;
+  document.getElementById('lb').value=b;
+  upd();
+}
+upd();
+</script>
+</body>
+</html>

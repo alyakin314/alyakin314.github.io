@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amplitudes and phase · Anton Alyakin</title>
+<meta name="description" content="A qubit in six complex planes: twelve real numbers driven by two sliders, plus a global phase that changes nothing measurable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#e8dfc9; --ink-2:#9a8a72; --ink-3:#7b6d59;
+  --ground:#1a1614; --panel:#221c19; --sunk:#2b2320;
+  --rule:rgba(232,223,201,.11); --rule-2:rgba(232,223,201,.26);
+  --link:#d4a04a;
+  --z:#9c93ee; --x:#43c39a; --y:#e8834f; --pt:#e46d9e;
+  --knob:#43c39a; --state:#e46d9e; --warm:#e8834f; --lit:#ffc94a;
+  --radius:3px;
+  --sans:ui-sans-serif,-apple-system,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --serif:'Crimson Pro',Georgia,serif;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --b:var(--rule); --t:var(--ink-3);
+  --text-primary:var(--ink); --text-secondary:var(--ink-2);
+  --surface-1:var(--sunk); --surface-2:var(--panel);
+  --border-strong:var(--rule-2); --text-accent:var(--link);
+  --font-sans:var(--sans); --font-mono:var(--mono);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font:400 16px/1.65 var(--sans);
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:780px;margin:0 auto;padding:56px 24px 80px}
+h1{font:500 27px/1.25 var(--sans);letter-spacing:-.01em;margin:0 0 14px}
+.lede{color:var(--ink-2);margin:0 0 34px;max-width:62ch}
+.instrument{
+  background:var(--panel); border:1px solid var(--rule);
+  border-radius:12px; padding:20px 22px 22px; margin:0 0 34px;
+}
+svg{display:block;width:100%;height:auto}
+.rowc{display:flex;align-items:center;gap:12px;margin-top:11px;font-size:13.5px;color:var(--ink-2)}
+.rowc>span:first-child{min-width:104px}
+.readout{font:400 12.5px/1.5 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink-2)}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;background:transparent;height:20px;margin:0;flex:1;cursor:pointer;
+}
+input[type=range]::-webkit-slider-runnable-track{height:3px;background:var(--rule-2);border-radius:2px}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:17px;height:17px;border-radius:50%;
+  background:var(--panel);border:1px solid var(--rule-2);margin-top:-7px;
+}
+input[type=range]::-moz-range-track{height:3px;background:var(--rule-2);border-radius:2px}
+input[type=range]::-moz-range-thumb{
+  width:15px;height:15px;border-radius:50%;background:var(--panel);border:1px solid var(--rule-2)
+}
+input[type=range]:focus-visible{outline:2px solid var(--link);outline-offset:4px;border-radius:4px}
+button{
+  font:400 13.5px var(--sans);color:var(--ink);background:transparent;
+  border:1px solid var(--rule-2);border-radius:var(--radius);
+  padding:6px 13px;cursor:pointer;
+}
+button:hover{background:var(--sunk)}
+button:active{transform:scale(.98)}
+button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.t{font:400 14px var(--sans);fill:var(--ink)}
+.ts{font:400 12px var(--sans);fill:var(--ink-2)}
+.th{font:500 14px var(--sans);fill:var(--ink)}
+.notes{margin:0;padding:0;list-style:none;max-width:64ch}
+.notes li{padding:11px 0;border-top:1px solid var(--rule);color:var(--ink-2)}
+.notes li b{font-weight:500;color:var(--ink)}
+.back{display:inline-block;margin-top:38px;font-size:14px;color:var(--link);text-decoration:none}
+.back:hover{text-decoration:underline}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* ===== site chrome: matches alyakin314.github.io ===== */
+body{font-family:var(--serif);font-weight:380;font-size:17.5px;line-height:1.65;text-rendering:optimizeLegibility}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.35) 100%)}
+.wrap{position:relative;z-index:2;max-width:860px;padding:2.5rem 1.75rem 4rem}
+
+nav.top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;
+  margin:0 0 3rem;padding-bottom:1.1rem;border-bottom:1px solid var(--rule)}
+nav.top .brand{font-family:var(--display);font-style:italic;font-weight:500;font-size:18px;
+  letter-spacing:.04em;color:var(--ink);text-decoration:none}
+nav.top .links{display:flex;gap:.85rem;align-items:baseline;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+nav.top .links a{position:relative;color:var(--ink-2);text-decoration:none;padding-bottom:4px;
+  transition:color 200ms ease}
+nav.top .links a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:var(--link);transform:scaleX(0);transition:transform 220ms ease}
+nav.top .links a:hover{color:var(--link)}
+nav.top .links a:hover::after{transform:scaleX(1)}
+
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--link);margin:0 0 .85rem}
+h1{font-family:var(--display);font-style:italic;font-weight:400;font-size:2.5rem;line-height:1.06;
+  letter-spacing:-.01em;color:var(--ink);margin:0 0 .9rem}
+.lede{font-family:var(--serif);font-size:17.5px;line-height:1.72;color:var(--ink-2);
+  margin:0 0 2.1rem;max-width:64ch}
+
+.instrument{background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+  box-shadow:0 30px 60px -40px rgba(0,0,0,.7);padding:22px 24px 24px;margin:0 0 2.4rem}
+.rowc{font-family:var(--sans)}
+
+.notes{border-bottom:1px solid var(--rule)}
+.notes li{font-family:var(--serif);font-size:16.5px;line-height:1.62;padding:.85rem 0}
+.notes li b{color:var(--ink);font-weight:600}
+
+.back{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;margin-top:2.6rem;transition:color 200ms ease}
+.back:hover{color:var(--link);text-decoration:none}
+
+footer.bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+footer.bottom .friend{font-family:var(--display);font-style:italic;text-transform:none;
+  letter-spacing:.02em;font-size:13px}
+footer.bottom .friend .amp{color:var(--link);margin:0 .15em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="top">
+  <a class="brand" href="/">Anton Alyakin</a>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/quantum/">All three instruments</a>
+  </div>
+</nav>
+
+<h1>Amplitudes and phase</h1>
+<p class="lede">A qubit state has two complex amplitudes, but you can ask for its amplitude along any of six axis states, twelve real numbers in all. Two sliders drive every one of them. A third slider changes nothing you could ever measure.</p>
+
+<div class="instrument">
+<h2 class="sr">A Bloch sphere beside six complex planes, one per axis state, driven by polar angle, relative phase, and a global phase.</h2>
+<svg viewBox="0 0 680 390" role="img"><title>Bloch sphere with six amplitude phasors</title><desc>A Bloch sphere showing the state as a point, and six complex planes showing the amplitude of that state along each of the six axis states.</desc>
+
+<circle cx="175" cy="195" r="105" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<ellipse cx="175" cy="195" rx="105" ry="37" fill="none" stroke="var(--b)" stroke-width="0.5" stroke-dasharray="4 4"/>
+<line x1="175" y1="195" x2="175" y2="90" stroke="var(--t)" stroke-width="0.5"/>
+<line x1="175" y1="195" x2="175" y2="300" stroke="var(--t)" stroke-width="0.5"/>
+<line x1="175" y1="195" x2="101" y2="221" stroke="var(--t)" stroke-width="0.5"/>
+<line x1="175" y1="195" x2="249" y2="169" stroke="var(--t)" stroke-width="0.5" stroke-dasharray="3 3"/>
+<line x1="175" y1="195" x2="249" y2="221" stroke="var(--t)" stroke-width="0.5"/>
+<line x1="175" y1="195" x2="101" y2="169" stroke="var(--t)" stroke-width="0.5" stroke-dasharray="3 3"/>
+<text class="ts" x="175" y="78" text-anchor="middle">|0&#10217;</text>
+<text class="ts" x="175" y="318" text-anchor="middle">|1&#10217;</text>
+<text class="ts" x="101" y="245" text-anchor="middle">|+&#10217;</text>
+<text class="ts" x="249" y="152" text-anchor="middle">|&#8722;&#10217;</text>
+<text class="ts" x="249" y="245" text-anchor="middle">|+i&#10217;</text>
+<text class="ts" x="101" y="152" text-anchor="middle">|&#8722;i&#10217;</text>
+<line id="BV" x1="175" y1="195" x2="175" y2="90" stroke="var(--pt)" stroke-width="2.5" stroke-linecap="round"/>
+<circle id="BP" cx="175" cy="90" r="6" fill="var(--pt)"/>
+
+<circle cx="370" cy="140" r="40" fill="none" stroke="var(--b)" stroke-width="0.5" stroke-dasharray="4 4"/>
+<line x1="330" y1="140" x2="410" y2="140" stroke="var(--b)" stroke-width="0.5"/>
+<line x1="370" y1="100" x2="370" y2="180" stroke="var(--b)" stroke-width="0.5"/>
+<line id="L_z0" x1="370" y1="140" x2="370" y2="100" stroke="var(--z)" stroke-width="2.5" stroke-linecap="round"/>
+<circle id="D_z0" cx="370" cy="100" r="3.5" fill="var(--z)"/>
+<text class="th" x="370" y="88" text-anchor="middle">&#10216;0|&#968;&#10217;</text>
+<text class="ts" id="P_z0" x="370" y="198" text-anchor="middle">p = 1.00</text>
+
+<circle cx="485" cy="140" r="40" fill="none" stroke="var(--b)" stroke-width="0.5" stroke-dasharray="4 4"/>
+<line x1="445" y1="140" x2="525" y2="140" stroke="var(--b)" stroke-width="0.5"/>
+<line x1="485" y1="100" x2="485" y2="180" stroke="var(--b)" stroke-width="0.5"/>
+<line id="L_x0" x1="485" y1="140" x2="485" y2="140" stroke="var(--x)" stroke-width="2.5" stroke-linecap="round"/>
+<circle id="D_x0" cx="485" cy="140" r="3.5" fill="var(--x)"/>
+<text class="th" x="485" y="88" text-anchor="middle">&#10216;+|&#968;&#10217;</text>
+<text class="ts" id="P_x0" x="485" y="198" text-anchor="middle">p = 0.50</text>
+
+<circle cx="600" cy="140" r="40" fill="none" stroke="var(--b)" stroke-width="0.5" stroke-dasharray="4 4"/>
+<line x1="560" y1="140" x2="640" y2="140" stroke="var(--b)" stroke-width="0.5"/>
+<line x1="600" y1="100" x2="600" y2="180" stroke="var(--b)" stroke-width="0.5"/>
+<line id="L_y0" x1="600" y1="140" x2="600" y2="140" stroke="var(--y)" stroke-width="2.5" stroke-linecap="round"/>
+<circle id="D_y0" cx="600" cy="140" r="3.5" fill="var(--y)"/>
+<text class="th" x="600" y="88" text-anchor="middle">&#10216;+i|&#968;&#10217;</text>
+<text class="ts" id="P_y0" x="600" y="198" text-anchor="middle">p = 0.50</text>
+
+<circle cx="370" cy="290" r="40" fill="none" stroke="var(--b)" stroke-width="0.5" stroke-dasharray="4 4"/>
+<line x1="330" y1="290" x2="410" y2="290" stroke="var(--b)" stroke-width="0.5"/>
+<line x1="370" y1="250" x2="370" y2="330" stroke="var(--b)" stroke-width="0.5"/>
+<line id="L_z1" x1="370" y1="290" x2="370" y2="290" stroke="var(--z)" stroke-width="2.5" stroke-linecap="round"/>
+<circle id="D_z1" cx="370" cy="290" r="3.5" fill="var(--z)"/>
+<text class="th" x="370" y="238" text-anchor="middle">&#10216;1|&#968;&#10217;</text>
+<text class="ts" id="P_z1" x="370" y="348" text-anchor="middle">p = 0.00</text>
+
+<circle cx="485" cy="290" r="40" fill="none" stroke="var(--b)" stroke-width="0.5" stroke-dasharray="4 4"/>
+<line x1="445" y1="290" x2="525" y2="290" stroke="var(--b)" stroke-width="0.5"/>
+<line x1="485" y1="250" x2="485" y2="330" stroke="var(--b)" stroke-width="0.5"/>
+<line id="L_x1" x1="485" y1="290" x2="485" y2="290" stroke="var(--x)" stroke-width="2.5" stroke-linecap="round"/>
+<circle id="D_x1" cx="485" cy="290" r="3.5" fill="var(--x)"/>
+<text class="th" x="485" y="238" text-anchor="middle">&#10216;&#8722;|&#968;&#10217;</text>
+<text class="ts" id="P_x1" x="485" y="348" text-anchor="middle">p = 0.50</text>
+
+<circle cx="600" cy="290" r="40" fill="none" stroke="var(--b)" stroke-width="0.5" stroke-dasharray="4 4"/>
+<line x1="560" y1="290" x2="640" y2="290" stroke="var(--b)" stroke-width="0.5"/>
+<line x1="600" y1="250" x2="600" y2="330" stroke="var(--b)" stroke-width="0.5"/>
+<line id="L_y1" x1="600" y1="290" x2="600" y2="290" stroke="var(--y)" stroke-width="2.5" stroke-linecap="round"/>
+<circle id="D_y1" cx="600" cy="290" r="3.5" fill="var(--y)"/>
+<text class="th" x="600" y="238" text-anchor="middle">&#10216;&#8722;i|&#968;&#10217;</text>
+<text class="ts" id="P_y1" x="600" y="348" text-anchor="middle">p = 0.50</text>
+</svg>
+
+<div class="rowc"><span>&#952; polar</span><input type="range" id="th" min="0" max="180" value="0" step="1" oninput="upd()"><span id="thl" style="min-width:46px;text-align:right">0&#176;</span></div>
+<div class="rowc"><span>&#966; relative</span><input type="range" id="ph" min="0" max="360" value="0" step="1" oninput="upd()"><span id="phl" style="min-width:46px;text-align:right">0&#176;</span></div>
+<div class="rowc"><span style="color:var(--link)">&#947; global</span><input type="range" id="ga" min="0" max="360" value="0" step="1" oninput="upd()"><span id="gal" style="min-width:46px;text-align:right">0&#176;</span></div>
+<div class="rowc" style="flex-wrap:wrap;gap:8px">
+<button onclick="setp(0,0)">|0&#10217;</button>
+<button onclick="setp(180,0)">|1&#10217;</button>
+<button onclick="setp(90,0)">|+&#10217;</button>
+<button onclick="setp(90,180)">|&#8722;&#10217;</button>
+<button onclick="setp(90,90)">|+i&#10217;</button>
+<button onclick="setp(90,270)">|&#8722;i&#10217;</button>
+<button id="sb" onclick="spin()">spin &#947;</button>
+</div>
+<div class="rowc readout" id="ro">x = 0.00 &nbsp; y = 0.00 &nbsp; z = 1.00 &nbsp; |r| = 1.00</div>
+</div>
+
+<ul class="notes">
+<li><b>Spin &#947;.</b> All six phasors rotate rigidly and forever. Every probability stays frozen and the sphere point does not move at all. That is what unphysical means operationally.</li>
+<li><b>Slide &#966;.</b> The point circles a line of latitude. The two Z dials stay put while the X and Y columns swing. This is a real degree of freedom that looks superficially like &#947;.</li>
+<li><b>Slide &#952;.</b> The point rides a meridian and every column responds.</li>
+<li><b>Why twelve numbers, two knobs.</b> Fixing &#947; is a gauge choice worth one parameter. Each column obeys p&#8330; + p&#8331; = 1, worth three more. And the X and Y amplitudes are linear combinations of the Z pair, so four of the six dials carry no new information.</li>
+</ul>
+
+<a class="back" href="/quantum/">&#8592; all three instruments</a>
+
+<footer class="bottom">
+  <span class="friend">&copy; Anton Alyakin <span class="amp">&amp;</span> his friend Claude</span>
+  <span>St. Louis &nbsp;&middot;&nbsp; MMXXVI</span>
+</footer>
+
+</div>
+<script>
+var R=40,SR=105,SX=175,SY=195,T=null;
+var C={z0:[370,140],x0:[485,140],y0:[600,140],z1:[370,290],x1:[485,290],y1:[600,290]};
+function upd(){
+  var th=+document.getElementById('th').value,
+      ph=+document.getElementById('ph').value,
+      ga=+document.getElementById('ga').value;
+  document.getElementById('thl').textContent=th+'\u00B0';
+  document.getElementById('phl').textContent=ph+'\u00B0';
+  document.getElementById('gal').textContent=ga+'\u00B0';
+  var t=th*Math.PI/180, p=ph*Math.PI/180, g=ga*Math.PI/180,
+      c=Math.cos(t/2), s=Math.sin(t/2);
+  var ar=c*Math.cos(g), ai=c*Math.sin(g),
+      br=s*Math.cos(p+g), bi=s*Math.sin(p+g), q=Math.SQRT1_2;
+  var A={z0:[ar,ai],z1:[br,bi],
+         x0:[(ar+br)*q,(ai+bi)*q],x1:[(ar-br)*q,(ai-bi)*q],
+         y0:[(ar+bi)*q,(ai-br)*q],y1:[(ar-bi)*q,(ai+br)*q]};
+  var pr={};
+  for(var k in A){
+    var re=A[k][0], im=A[k][1], cx=C[k][0], cy=C[k][1];
+    var px=cx+re*R, py=cy-im*R;
+    document.getElementById('L_'+k).setAttribute('x2',px);
+    document.getElementById('L_'+k).setAttribute('y2',py);
+    document.getElementById('D_'+k).setAttribute('cx',px);
+    document.getElementById('D_'+k).setAttribute('cy',py);
+    pr[k]=re*re+im*im;
+    document.getElementById('P_'+k).textContent='p = '+pr[k].toFixed(2);
+  }
+  var X=pr.x0-pr.x1, Y=pr.y0-pr.y1, Z=pr.z0-pr.z1;
+  var sx=SX+SR*0.7071*(Y-X), sy=SY+SR*(0.25*(X+Y)-Z);
+  document.getElementById('BV').setAttribute('x2',sx);
+  document.getElementById('BV').setAttribute('y2',sy);
+  document.getElementById('BP').setAttribute('cx',sx);
+  document.getElementById('BP').setAttribute('cy',sy);
+  document.getElementById('ro').textContent=
+    'x = '+X.toFixed(2)+'   y = '+Y.toFixed(2)+'   z = '+Z.toFixed(2)+
+    '   |r| = '+Math.sqrt(X*X+Y*Y+Z*Z).toFixed(2);
+}
+function setp(a,b){
+  document.getElementById('th').value=a;
+  document.getElementById('ph').value=b;
+  upd();
+}
+function spin(){
+  var b=document.getElementById('sb');
+  if(T){clearInterval(T);T=null;b.textContent='spin \u03B3';return;}
+  b.textContent='stop \u03B3';
+  T=setInterval(function(){
+    var e=document.getElementById('ga');
+    e.value=(+e.value+2)%360;
+    upd();
+  },40);
+}
+upd();
+</script>
+</body>
+</html>

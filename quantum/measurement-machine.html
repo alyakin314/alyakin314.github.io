@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The measurement machine · Anton Alyakin</title>
+<meta name="description" content="Prepare a qubit state, point the apparatus, watch a lamp light. The probabilities depend only on the angle between them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#e8dfc9; --ink-2:#9a8a72; --ink-3:#7b6d59;
+  --ground:#1a1614; --panel:#221c19; --sunk:#2b2320;
+  --rule:rgba(232,223,201,.11); --rule-2:rgba(232,223,201,.26);
+  --link:#d4a04a;
+  --z:#9c93ee; --x:#43c39a; --y:#e8834f; --pt:#e46d9e;
+  --knob:#43c39a; --state:#e46d9e; --warm:#e8834f; --lit:#ffc94a;
+  --radius:3px;
+  --sans:ui-sans-serif,-apple-system,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --serif:'Crimson Pro',Georgia,serif;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --b:var(--rule); --t:var(--ink-3);
+  --text-primary:var(--ink); --text-secondary:var(--ink-2);
+  --surface-1:var(--sunk); --surface-2:var(--panel);
+  --border-strong:var(--rule-2); --text-accent:var(--link);
+  --font-sans:var(--sans); --font-mono:var(--mono);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font:400 16px/1.65 var(--sans);
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:780px;margin:0 auto;padding:56px 24px 80px}
+h1{font:500 27px/1.25 var(--sans);letter-spacing:-.01em;margin:0 0 14px}
+.lede{color:var(--ink-2);margin:0 0 34px;max-width:62ch}
+.instrument{
+  background:var(--panel); border:1px solid var(--rule);
+  border-radius:12px; padding:20px 22px 22px; margin:0 0 34px;
+}
+svg{display:block;width:100%;height:auto}
+.rowc{display:flex;align-items:center;gap:12px;margin-top:11px;font-size:13.5px;color:var(--ink-2)}
+.rowc>span:first-child{min-width:104px}
+.readout{font:400 12.5px/1.5 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink-2)}
+input[type=range]{-webkit-appearance:none;appearance:none;background:transparent;height:20px;margin:0;flex:1;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:3px;background:var(--rule-2);border-radius:2px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:var(--panel);border:1px solid var(--rule-2);margin-top:-7px}
+input[type=range]::-moz-range-track{height:3px;background:var(--rule-2);border-radius:2px}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:var(--panel);border:1px solid var(--rule-2)}
+input[type=range]:focus-visible{outline:2px solid var(--link);outline-offset:4px;border-radius:4px}
+input[type=number]{
+  width:82px;font:400 13.5px var(--mono);color:var(--ink);
+  background:var(--panel);border:1px solid var(--rule-2);
+  border-radius:var(--radius);padding:6px 8px;
+}
+input[type=number]:focus-visible{outline:2px solid var(--link);outline-offset:1px}
+button{font:400 13.5px var(--sans);color:var(--ink);background:transparent;border:1px solid var(--rule-2);border-radius:var(--radius);padding:6px 13px;cursor:pointer}
+button:hover{background:var(--sunk)}
+button:active{transform:scale(.98)}
+button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.t{font:400 14px var(--sans);fill:var(--ink)}
+.ts{font:400 12px var(--sans);fill:var(--ink-2)}
+.th{font:500 14px var(--sans);fill:var(--ink)}
+.notes{margin:0;padding:0;list-style:none;max-width:64ch}
+.notes li{padding:11px 0;border-top:1px solid var(--rule);color:var(--ink-2)}
+.notes li b{font-weight:500;color:var(--ink)}
+.back{display:inline-block;margin-top:38px;font-size:14px;color:var(--link);text-decoration:none}
+.back:hover{text-decoration:underline}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* ===== site chrome: matches alyakin314.github.io ===== */
+body{font-family:var(--serif);font-weight:380;font-size:17.5px;line-height:1.65;text-rendering:optimizeLegibility}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.35) 100%)}
+.wrap{position:relative;z-index:2;max-width:860px;padding:2.5rem 1.75rem 4rem}
+
+nav.top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;
+  margin:0 0 3rem;padding-bottom:1.1rem;border-bottom:1px solid var(--rule)}
+nav.top .brand{font-family:var(--display);font-style:italic;font-weight:500;font-size:18px;
+  letter-spacing:.04em;color:var(--ink);text-decoration:none}
+nav.top .links{display:flex;gap:.85rem;align-items:baseline;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+nav.top .links a{position:relative;color:var(--ink-2);text-decoration:none;padding-bottom:4px;
+  transition:color 200ms ease}
+nav.top .links a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:var(--link);transform:scaleX(0);transition:transform 220ms ease}
+nav.top .links a:hover{color:var(--link)}
+nav.top .links a:hover::after{transform:scaleX(1)}
+
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--link);margin:0 0 .85rem}
+h1{font-family:var(--display);font-style:italic;font-weight:400;font-size:2.5rem;line-height:1.06;
+  letter-spacing:-.01em;color:var(--ink);margin:0 0 .9rem}
+.lede{font-family:var(--serif);font-size:17.5px;line-height:1.72;color:var(--ink-2);
+  margin:0 0 2.1rem;max-width:64ch}
+
+.instrument{background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+  box-shadow:0 30px 60px -40px rgba(0,0,0,.7);padding:22px 24px 24px;margin:0 0 2.4rem}
+.rowc{font-family:var(--sans)}
+
+.notes{border-bottom:1px solid var(--rule)}
+.notes li{font-family:var(--serif);font-size:16.5px;line-height:1.62;padding:.85rem 0}
+.notes li b{color:var(--ink);font-weight:600}
+
+.back{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;margin-top:2.6rem;transition:color 200ms ease}
+.back:hover{color:var(--link);text-decoration:none}
+
+footer.bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+footer.bottom .friend{font-family:var(--display);font-style:italic;text-transform:none;
+  letter-spacing:.02em;font-size:13px}
+footer.bottom .friend .amp{color:var(--link);margin:0 .15em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="top">
+  <a class="brand" href="/">Anton Alyakin</a>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/quantum/">All three instruments</a>
+  </div>
+</nav>
+
+<h1>The measurement machine</h1>
+<p class="lede">A state goes in, one of two lamps lights, and you write down whatever number that lamp displays. Pink is what you prepared. Teal is where you pointed the apparatus. The whole physics is the angle between them.</p>
+
+<div class="instrument">
+<h2 class="sr">A Bloch sphere showing a prepared state and a knob axis, feeding two lamps with editable numeric labels, probability bars, and running statistics.</h2>
+<svg viewBox="0 0 680 300" role="img"><title>Qubit measurement machine</title><desc>A prepared state and a measurement axis on a sphere, feeding two lamps with numeric labels and probability bars.</desc>
+
+<circle cx="155" cy="165" r="110" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<ellipse cx="155" cy="165" rx="110" ry="39" fill="none" stroke="var(--b)" stroke-width="0.5" stroke-dasharray="4 4"/>
+<line id="KA" x1="155" y1="275" x2="155" y2="55" stroke="var(--knob)" stroke-width="2"/>
+<circle id="KP" cx="155" cy="55" r="5" fill="var(--knob)"/>
+<circle id="KN" cx="155" cy="275" r="5" fill="var(--knob)"/>
+<text class="ts" id="TP" x="155" y="42" text-anchor="middle">+1</text>
+<text class="ts" id="TN" x="155" y="292" text-anchor="middle">&#8722;1</text>
+<line id="SV" x1="155" y1="165" x2="155" y2="55" stroke="var(--state)" stroke-width="3" stroke-linecap="round"/>
+<circle id="SP" cx="155" cy="55" r="6" fill="var(--state)"/>
+
+<rect x="320" y="45" width="320" height="100" rx="12" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<circle id="LA" cx="352" cy="79" r="15" fill="var(--surface-1)" stroke="var(--border-strong)" stroke-width="0.5"/>
+<text class="ts" x="382" y="70">lamp A</text>
+<text class="th" id="VA" x="382" y="92">+1</text>
+<rect x="382" y="107" width="238" height="10" rx="5" fill="var(--surface-1)"/>
+<rect id="PA" x="382" y="107" width="238" height="10" rx="5" fill="var(--knob)"/>
+<text class="ts" id="QA" x="620" y="92" text-anchor="end">100%</text>
+
+<rect x="320" y="170" width="320" height="100" rx="12" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<circle id="LB" cx="352" cy="204" r="15" fill="var(--surface-1)" stroke="var(--border-strong)" stroke-width="0.5"/>
+<text class="ts" x="382" y="195">lamp B</text>
+<text class="th" id="VB" x="382" y="217">&#8722;1</text>
+<rect x="382" y="232" width="238" height="10" rx="5" fill="var(--surface-1)"/>
+<rect id="PB" x="382" y="232" width="0" height="10" rx="5" fill="var(--warm)"/>
+<text class="ts" id="QB" x="620" y="217" text-anchor="end">0%</text>
+</svg>
+
+<div class="rowc"><span style="color:var(--state)">state tilt</span><input type="range" id="st" min="0" max="180" value="0" step="1" oninput="upd()"><span id="stl" style="min-width:46px;text-align:right">0&#176;</span></div>
+<div class="rowc"><span style="color:var(--state)">state swing</span><input type="range" id="sp" min="0" max="360" value="0" step="1" oninput="upd()"><span id="spl" style="min-width:46px;text-align:right">0&#176;</span></div>
+<div class="rowc"><span style="color:var(--knob)">knob tilt</span><input type="range" id="kt" min="0" max="180" value="0" step="1" oninput="upd()"><span id="ktl" style="min-width:46px;text-align:right">0&#176;</span></div>
+<div class="rowc"><span style="color:var(--knob)">knob swing</span><input type="range" id="kp" min="0" max="360" value="0" step="1" oninput="upd()"><span id="kpl" style="min-width:46px;text-align:right">0&#176;</span></div>
+<div class="rowc"><span>lamp labels</span><input type="number" id="la" value="1" step="0.5" oninput="upd()"><input type="number" id="lb" value="-1" step="0.5" oninput="upd()"></div>
+<div class="rowc" style="flex-wrap:wrap;gap:8px">
+<button onclick="run(1)">run once</button>
+<button onclick="run(100)">run &#215;100</button>
+<button onclick="rst()">reset tally</button>
+</div>
+<div class="rowc readout" id="ST">runs 0</div>
+</div>
+
+<ul class="notes">
+<li><b>Type into the label boxes.</b> Change &#177;1 to 7 and 3, or to 5 and 5. The percentages do not flinch and the lamps fire identically. Only the mean moves, because the mean is the one quantity that reads your notebook.</li>
+<li><b>Move the knob, state fixed.</b> Every knob position is a different question. There is a whole sphere of them.</li>
+<li><b>Move the state, knob fixed.</b> The probabilities sweep the same way, because only the relative angle exists.</li>
+<li><b>Set them perpendicular, then run &#215;100.</b> Coin flips. Re-align them and it is deterministic. Same apparatus, same state space. The randomness lives entirely in the relationship.</li>
+<li><b>On collapse.</b> After a run the state really has jumped onto the lit lamp's direction. The pink point stays where you put it so that run &#215;100 means a hundred fresh preparations, not one state measured a hundred times. Those are different experiments.</li>
+</ul>
+
+<a class="back" href="/quantum/">&#8592; all three instruments</a>
+
+<footer class="bottom">
+  <span class="friend">&copy; Anton Alyakin <span class="amp">&amp;</span> his friend Claude</span>
+  <span>St. Louis &nbsp;&middot;&nbsp; MMXXVI</span>
+</footer>
+
+</div>
+<script>
+var SX=155,SY=165,SR=110,nA=0,nB=0,TA=null;
+function pj(x,y,z){return [SX+SR*0.7071*(y-x), SY+SR*(0.25*(x+y)-z)];}
+function dr(t,p){
+  t=t*Math.PI/180;p=p*Math.PI/180;
+  return [Math.sin(t)*Math.cos(p),Math.sin(t)*Math.sin(p),Math.cos(t)];
+}
+function upd(){
+  var st=+document.getElementById('st').value,sp=+document.getElementById('sp').value;
+  var kt=+document.getElementById('kt').value,kp=+document.getElementById('kp').value;
+  document.getElementById('stl').textContent=st+'\u00B0';
+  document.getElementById('spl').textContent=sp+'\u00B0';
+  document.getElementById('ktl').textContent=kt+'\u00B0';
+  document.getElementById('kpl').textContent=kp+'\u00B0';
+  var s=dr(st,sp),n=dr(kt,kp);
+  var a=+document.getElementById('la').value,b=+document.getElementById('lb').value;
+  var q=pj(s[0],s[1],s[2]);
+  document.getElementById('SV').setAttribute('x2',q[0]);
+  document.getElementById('SV').setAttribute('y2',q[1]);
+  document.getElementById('SP').setAttribute('cx',q[0]);
+  document.getElementById('SP').setAttribute('cy',q[1]);
+  var u=pj(n[0],n[1],n[2]),v=pj(-n[0],-n[1],-n[2]),K=document.getElementById('KA');
+  K.setAttribute('x1',v[0]);K.setAttribute('y1',v[1]);
+  K.setAttribute('x2',u[0]);K.setAttribute('y2',u[1]);
+  document.getElementById('KP').setAttribute('cx',u[0]);
+  document.getElementById('KP').setAttribute('cy',u[1]);
+  document.getElementById('KN').setAttribute('cx',v[0]);
+  document.getElementById('KN').setAttribute('cy',v[1]);
+  var du=Math.hypot(u[0]-SX,u[1]-SY)||1,dv=Math.hypot(v[0]-SX,v[1]-SY)||1;
+  var TP=document.getElementById('TP'),TN=document.getElementById('TN');
+  TP.setAttribute('x',u[0]+(u[0]-SX)/du*17);
+  TP.setAttribute('y',u[1]+(u[1]-SY)/du*17+4);
+  TN.setAttribute('x',v[0]+(v[0]-SX)/dv*17);
+  TN.setAttribute('y',v[1]+(v[1]-SY)/dv*17+4);
+  TP.textContent=(a>0?'+':'')+a;
+  TN.textContent=(b>0?'+':'')+b;
+  document.getElementById('VA').textContent=(a>0?'+':'')+a;
+  document.getElementById('VB').textContent=(b>0?'+':'')+b;
+  var c=s[0]*n[0]+s[1]*n[1]+s[2]*n[2], pA=(1+c)/2;
+  document.getElementById('PA').setAttribute('width',Math.max(0,pA*238));
+  document.getElementById('PB').setAttribute('width',Math.max(0,(1-pA)*238));
+  document.getElementById('QA').textContent=Math.round(pA*100)+'%';
+  document.getElementById('QB').textContent=Math.round((1-pA)*100)+'%';
+  var tot=nA+nB, pred=pA*a+(1-pA)*b;
+  document.getElementById('ST').textContent=
+    'runs '+tot+'   A '+nA+'   B '+nB+
+    (tot?'   observed mean '+((nA*a+nB*b)/tot).toFixed(3):'')+
+    '   expected '+pred.toFixed(3);
+  return pA;
+}
+function fl(id){
+  document.getElementById(id).setAttribute('fill','var(--lit)');
+  if(TA)clearTimeout(TA);
+  TA=setTimeout(function(){
+    document.getElementById('LA').setAttribute('fill','var(--surface-1)');
+    document.getElementById('LB').setAttribute('fill','var(--surface-1)');
+  },420);
+}
+function run(k){
+  var pA=upd(),last='LA';
+  for(var i=0;i<k;i++){
+    if(Math.random()<pA){nA++;last='LA';}else{nB++;last='LB';}
+  }
+  fl(last);upd();
+}
+function rst(){nA=0;nB=0;upd();}
+upd();
+</script>
+</body>
+</html>

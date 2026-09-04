@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantum · Anton Alyakin</title>
+  <meta name="description" content="Three interactive instruments for a single qubit: amplitudes and phase, a measurement apparatus, and the Hermitian matrix behind it.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #1a1614;
+      --bg-soft: #221c19;
+      --ink: #e8dfc9;
+      --ink-bright: #f4ead2;
+      --muted: #9a8a72;
+      --accent: #d4a04a;
+      --rule: rgba(232,223,201,0.10);
+      --rule-warm: rgba(212,160,74,0.22);
+      --state: #e46d9e;
+      --knob: #43c39a;
+      --z: #9c93ee;
+      --serif: 'Crimson Pro', Georgia, serif;
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-weight: 380;
+      font-size: 17.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.35) 100%);
+      z-index: 1;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 1.75rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ===== top nav ===== */
+    nav.top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3.5rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid var(--rule);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav.top .brand {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+      color: var(--ink-bright);
+      text-decoration: none;
+    }
+    nav.top .links {
+      display: flex;
+      gap: 0.85rem;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      align-items: baseline;
+      flex-wrap: wrap;
+      font-family: var(--mono);
+    }
+    nav.top .links a {
+      color: var(--muted);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 200ms ease;
+    }
+    nav.top .links a::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform 220ms ease;
+    }
+    nav.top .links a:hover { color: var(--accent); }
+    nav.top .links a:hover::after { transform: scaleX(1); }
+
+    /* ===== masthead ===== */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.9rem;
+    }
+    h1 {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 3rem;
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+      margin: 0 0 1.6rem;
+      color: var(--ink-bright);
+    }
+
+    /* ===== sections ===== */
+    section.section { margin-bottom: 3rem; }
+    section.section.last { margin-bottom: 0; }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .section-header .numeral {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+    }
+    .section-header .rule {
+      flex: 1;
+      height: 1px;
+      background: var(--ink);
+      opacity: 0.12;
+    }
+    .section-header .label {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      color: var(--ink-bright);
+    }
+
+    .prose { font-size: 17.5px; line-height: 1.72; }
+    .prose p { margin: 0 0 1.1em 0; max-width: 66ch; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose a {
+      color: var(--ink-bright);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(212,160,74,0.4);
+      padding-bottom: 1px;
+      transition: color 200ms ease, border-color 200ms ease;
+    }
+    .prose a:hover { color: var(--accent); border-color: var(--accent); }
+    .dropcap::first-letter {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 4.6em;
+      line-height: 0.82;
+      float: left;
+      padding: 0.06em 0.09em 0 0;
+      color: var(--accent);
+    }
+
+    /* ===== instrument cards ===== */
+    .cards { border-bottom: 1px solid var(--rule); }
+    a.card {
+      display: grid;
+      grid-template-columns: 3.5rem 1fr;
+      gap: 1rem;
+      padding: 1.15rem 0;
+      border-top: 1px solid var(--rule);
+      text-decoration: none;
+      color: inherit;
+      align-items: baseline;
+      transition: background 200ms ease;
+    }
+    a.card:hover { background: rgba(212,160,74,0.05); }
+    a.card:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+    .card-index {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      transition: color 200ms ease;
+    }
+    a.card:hover .card-index { color: var(--accent); }
+    .card-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 420;
+      font-size: 19px;
+      color: var(--ink-bright);
+      display: block;
+    }
+    a.card:hover .card-title {
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+    .card-desc {
+      display: block;
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: var(--muted);
+      margin-top: 0.3rem;
+      max-width: 62ch;
+    }
+    .card-desc .swatch {
+      font-style: normal;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1px;
+    }
+    .swatch.s-state { color: var(--state); }
+    .swatch.s-knob { color: var(--knob); }
+    .swatch.s-z { color: var(--z); }
+
+    .colophon {
+      margin-top: 2.2rem;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--muted);
+      font-style: italic;
+      max-width: 62ch;
+    }
+    .colophon a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(212,160,74,0.3);
+    }
+    .colophon a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ===== footer ===== */
+    footer.bottom {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-family: var(--mono);
+    }
+    footer.bottom .friend {
+      font-family: var(--display);
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      font-size: 13px;
+    }
+    footer.bottom .friend .amp { color: var(--accent); margin: 0 0.15em; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a class="brand" href="/">Anton Alyakin</a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/assets/AntonAlyakinCV.pdf" target="_blank" rel="noreferrer">CV</a>
+      <a href="https://github.com/alyakin314" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </nav>
+
+  <p class="eyebrow">An interest, not a credential</p>
+  <h1>Quantum</h1>
+
+  <section class="section">
+    <header class="section-header">
+      <span class="numeral">I</span>
+      <span class="rule"></span>
+      <span class="label">Why This Is Here</span>
+    </header>
+    <div class="prose dropcap">
+      <p>Quantum mechanics is one of the things I think about often and have never done formal work in. It has stayed a reading habit for about a decade, which is long enough that I should either publish something or admit it is a hobby. This page is the admission.</p>
+      <p>What keeps pulling me back is the size of the thing. The formalism for a single qubit fits on a napkin, and it is still counterintuitive on the twentieth pass. A qubit has exactly two degrees of freedom. Nearly every confusing number in the subject, four amplitudes, three Bloch coordinates, twelve real numbers, turns out to be bookkeeping wrapped around those two.</p>
+      <p>So I built instruments instead of writing an argument. Each one is a claim you can check by dragging a slider, which is the only kind of claim about this subject I trust myself to make.</p>
+    </div>
+  </section>
+
+  <section class="section last">
+    <header class="section-header">
+      <span class="numeral">II</span>
+      <span class="rule"></span>
+      <span class="label">Three Instruments</span>
+    </header>
+
+    <div class="cards">
+      <a class="card" href="/quantum/phase-and-amplitudes.html">
+        <span class="card-index">i.</span>
+        <span>
+          <span class="card-title">Amplitudes and phase</span>
+          <span class="card-desc">Six complex planes, twelve real numbers, two sliders that drive all of them. A third slider spins every dial forever and changes nothing you could ever measure. That last one is the whole point.</span>
+        </span>
+      </a>
+
+      <a class="card" href="/quantum/measurement-machine.html">
+        <span class="card-index">ii.</span>
+        <span>
+          <span class="card-title">The measurement machine</span>
+          <span class="card-desc">Prepare a <span class="swatch s-state">state</span>, point the <span class="swatch s-knob">apparatus</span>, watch a lamp light. The probabilities depend on nothing but the angle between those two arrows. Run it a thousand times and watch the counts find the curve.</span>
+        </span>
+      </a>
+
+      <a class="card" href="/quantum/machine-and-matrix.html">
+        <span class="card-index">iii.</span>
+        <span>
+          <span class="card-title">The machine and its matrix</span>
+          <span class="card-desc">The same apparatus with its 2&times;2 Hermitian matrix beside it. An observable is not a new ingredient, it is a knob direction and two numbers painted on a dial. Turn the knob and the entries rearrange; relabel the dial and the trace moves.</span>
+        </span>
+      </a>
+    </div>
+
+    <p class="colophon">Inline SVG and vanilla JavaScript, no dependencies and no build step. The 3D look is a hand-rolled isometric projection, two lines of arithmetic per point. Built with <a href="https://claude.com/claude-code" target="_blank" rel="noreferrer">Claude</a>, like most things around here lately.</p>
+  </section>
+
+  <footer class="bottom">
+    <span class="friend">&copy; Anton Alyakin <span class="amp">&amp;</span> his friend Claude</span>
+    <span>St. Louis &nbsp;&middot;&nbsp; MMXXVI</span>
+  </footer>
+
+</div>
+</body>
+</html>
