@@ -233,6 +233,16 @@
     .swatch.s-knob { color: var(--knob); }
     .swatch.s-z { color: var(--z); }
 
+    .section-note {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: -0.75rem 0 1.6rem;
+      max-width: 68ch;
+    }
+
     .struggles {
       margin: 0;
       padding: 0;
@@ -342,6 +352,7 @@
         <span class="card-index">i.</span>
         <span>
           <span class="card-title">Amplitudes and phase</span>
+          <span class="card-desc">I expected twelve numbers to mean twelve things to learn. The &#947; slider moves all of them and changes no physics.</span>
         </span>
       </a>
 
@@ -349,7 +360,7 @@
         <span class="card-index">ii.</span>
         <span>
           <span class="card-title">The measurement machine</span>
-          <span class="card-desc">Prepare a <span class="swatch s-state">state</span>, point the <span class="swatch s-knob">apparatus</span>, watch a lamp light.</span>
+          <span class="card-desc">Prepare a <span class="swatch s-state">state</span>, point the <span class="swatch s-knob">apparatus</span>, watch a lamp light. The state is continuous, the outcome is one bit.</span>
         </span>
       </a>
 
@@ -357,6 +368,7 @@
         <span class="card-index">iii.</span>
         <span>
           <span class="card-title">The machine and its matrix</span>
+          <span class="card-desc">The matrix looked like a new ingredient. It is the same experiment written down, so the arithmetic can agree with the tally.</span>
         </span>
       </a>
     </div>
@@ -369,22 +381,24 @@
       <span class="label">What I Was Stuck On</span>
     </header>
 
+    <p class="section-note">Asking these, one at a time, is what produced the instruments above.</p>
+
     <ul class="struggles">
       <li>
         <span class="q">What exactly is a qubit's Hilbert space?</span>
-        <span class="a">It is <em>&#8450;&#178;</em>, a pair of complex numbers with the usual inner product. Being finite-dimensional, it is complete for free, so none of the analytic machinery that makes Hilbert spaces intimidating actually shows up. The part that tripped me is that the Hilbert space is &#8450;&#178; but the space of <em>states</em> is not: two vectors differing by normalization or by an overall phase are the same physical situation, so states are rays rather than vectors.</span>
+        <span class="a">It is <em>&#8450;&#178;</em>, a pair of complex numbers. The catch is that states are rays in it, not vectors.</span>
       </li>
       <li>
         <span class="q">How many degrees of freedom is that?</span>
-        <span class="a">The answer kept moving because the question is underspecified. A raw vector in &#8450;&#178; has four real parameters; imposing normalization leaves three; quotienting the global phase leaves two. Two is the count for a pure state. Mixed states have three, the Bloch ball, and gates have three as well, since SU(2) does, which is the collision that made every source seem to disagree.</span>
+        <span class="a">Four real parameters, minus normalization, minus global phase, leaves two. That ladder is why every source seemed to disagree.</span>
       </li>
       <li>
         <span class="q">So there are only two?</span>
-        <span class="a">Yes, two angles, &#952; and &#966;. What makes two feel wrong is that continuous parameters sound like unbounded storage, and they are not: a measurement returns one bit, and Holevo's theorem caps the classical information you can retrieve from one qubit at exactly one bit. The two are physically real, they decide interference and evolution, they are simply not readable.</span>
+        <span class="a">Yes, <em>&#952;</em> and <em>&#966;</em>. They are physically real but not readable: a measurement returns one bit.</span>
       </li>
       <li>
         <span class="q">Why can I not just plot it on Cartesian axes?</span>
-        <span class="a">Because the two parameters that survive are angles, not coordinates. Normalization and global phase are not projections onto axes, they are quotients, and what they leave behind is a sphere rather than a plane. A sphere admits no flat chart that neither tears nor distorts, which is also why <em>|0&#10217;</em> and <em>|1&#10217;</em> sit at opposite poles despite being orthogonal: the Bloch picture runs on half-angles, so orthogonal in &#8450;&#178; means antipodal here, and perpendicular axes are exactly the wrong intuition.</span>
+        <span class="a">They are angles, not coordinates, and what survives is a sphere. Orthogonal states sit antipodal, not perpendicular.</span>
       </li>
     </ul>
 
