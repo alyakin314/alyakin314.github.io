@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The measurement machine · Anton Alyakin</title>
-<meta name="description" content="Prepare a qubit state, point the apparatus, watch a lamp light. The probabilities depend only on the angle between them.">
+<title>The Hermitian matrix · Anton Alyakin</title>
+<meta name="description" content="A 2x2 Hermitian matrix has four real degrees of freedom: two eigenvalues and the direction of its eigenbasis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -63,6 +63,8 @@ button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 .t{font:400 14px var(--sans);fill:var(--ink)}
 .ts{font:400 12px var(--sans);fill:var(--ink-2)}
 .th{font:500 14px var(--sans);fill:var(--ink)}
+.mono-t{font:400 14px var(--mono);fill:var(--ink)}
+.mono-h{font:500 14px var(--mono);fill:var(--ink)}
 .notes{margin:0;padding:0;list-style:none;max-width:64ch}
 .notes li{padding:11px 0;border-top:1px solid var(--rule);color:var(--ink-2)}
 .notes li b{font-weight:500;color:var(--ink)}
@@ -123,7 +125,7 @@ footer.bottom .friend .amp{color:var(--link);margin:0 .15em}
     <a class="brand" href="/">Anton Alyakin</a>
     <div class="links">
       <a href="/assets/AntonAlyakinCV.pdf" target="_blank" rel="noreferrer"><span class="emoji">📜</span> CV</a>
-      <a href="/quantum/"><span class="emoji">⚛️</span> Quantum</a>
+      <!-- <a href="/quantum/"><span class="emoji">⚛️</span> Quantum</a> -->
       <a href="https://scholar.google.com/citations?user=5rDtuRIAAAAJ" target="_blank" rel="noreferrer"><span class="emoji">🎓</span> Scholar</a>
       <a href="https://www.linkedin.com/in/anton-a-64a58a9b" target="_blank" rel="noreferrer"><span class="emoji">🤝</span> LinkedIn</a>
       <a href="https://github.com/alyakin314" target="_blank" rel="noreferrer"><span class="emoji">🐙</span> GitHub</a>
@@ -131,59 +133,47 @@ footer.bottom .friend .amp{color:var(--link);margin:0 .15em}
     </div>
   </nav>
 
-<h1>The measurement machine</h1>
-<p class="lede">I kept expecting to read the state off the outcome. You cannot: the state is continuous and the lamp is one bit. Pink is what you prepared, teal is where you pointed, and the angle between them is the whole of it.</p>
+<h1>The Hermitian matrix</h1>
 
 <div class="instrument">
-<h2 class="sr">A Bloch sphere showing a prepared state and a knob axis, feeding two lamps with editable numeric labels, probability bars, and running statistics.</h2>
-<svg viewBox="0 0 680 300" role="img"><title>Qubit measurement machine</title><desc>A prepared state and a measurement axis on a sphere, feeding two lamps with numeric labels and probability bars.</desc>
+<h2 class="sr">A knob direction and two dial numbers, and the two by two Hermitian matrix they produce, with its trace, determinant and eigenvalues.</h2>
+<svg viewBox="0 0 680 250" role="img"><title>A Hermitian matrix and its four degrees of freedom</title><desc>A sphere carrying the knob axis, beside the two by two Hermitian matrix that the axis direction and the two dial numbers produce.</desc>
 
-<circle cx="155" cy="165" r="110" fill="none" stroke="var(--b)" stroke-width="0.5"/>
-<ellipse cx="155" cy="165" rx="110" ry="39" fill="none" stroke="var(--b)" stroke-width="0.5" stroke-dasharray="4 4"/>
-<line id="KA" x1="155" y1="275" x2="155" y2="55" stroke="var(--knob)" stroke-width="2"/>
-<circle id="KP" cx="155" cy="55" r="5" fill="var(--knob)"/>
-<circle id="KN" cx="155" cy="275" r="5" fill="var(--knob)"/>
-<text class="ts" id="TP" x="155" y="42" text-anchor="middle">+1</text>
-<text class="ts" id="TN" x="155" y="292" text-anchor="middle">&#8722;1</text>
-<line id="SV" x1="155" y1="165" x2="155" y2="55" stroke="var(--state)" stroke-width="3" stroke-linecap="round"/>
-<circle id="SP" cx="155" cy="55" r="6" fill="var(--state)"/>
+<circle cx="125" cy="120" r="85" fill="none" stroke="var(--b)" stroke-width="0.5"/>
+<ellipse cx="125" cy="120" rx="85" ry="30" fill="none" stroke="var(--b)" stroke-width="0.5" stroke-dasharray="4 4"/>
+<line id="KA" x1="125" y1="205" x2="125" y2="35" stroke="var(--knob)" stroke-width="2"/>
+<circle id="KP" cx="125" cy="35" r="4.5" fill="var(--knob)"/>
+<circle id="KN" cx="125" cy="205" r="4.5" fill="var(--knob)"/>
+<text class="ts" id="TP" x="125" y="24" text-anchor="middle">+1</text>
+<text class="ts" id="TN" x="125" y="224" text-anchor="middle">&#8722;1</text>
 
-<rect x="320" y="45" width="320" height="100" rx="12" fill="none" stroke="var(--b)" stroke-width="0.5"/>
-<circle id="LA" cx="352" cy="79" r="15" fill="var(--surface-1)" stroke="var(--border-strong)" stroke-width="0.5"/>
-<text class="ts" x="382" y="70">lamp A</text>
-<text class="th" id="VA" x="382" y="92">+1</text>
-<rect x="382" y="107" width="238" height="10" rx="5" fill="var(--surface-1)"/>
-<rect id="PA" x="382" y="107" width="238" height="10" rx="5" fill="var(--knob)"/>
-<text class="ts" id="QA" x="620" y="92" text-anchor="end">100%</text>
-
-<rect x="320" y="170" width="320" height="100" rx="12" fill="none" stroke="var(--b)" stroke-width="0.5"/>
-<circle id="LB" cx="352" cy="204" r="15" fill="var(--surface-1)" stroke="var(--border-strong)" stroke-width="0.5"/>
-<text class="ts" x="382" y="195">lamp B</text>
-<text class="th" id="VB" x="382" y="217">&#8722;1</text>
-<rect x="382" y="232" width="238" height="10" rx="5" fill="var(--surface-1)"/>
-<rect id="PB" x="382" y="232" width="0" height="10" rx="5" fill="var(--warm)"/>
-<text class="ts" id="QB" x="620" y="217" text-anchor="end">0%</text>
+<text class="th" x="268" y="127">A =</text>
+<path d="M317 55 L305 55 L305 190 L317 190" fill="none" stroke="var(--rule-2)" stroke-width="1"/>
+<path d="M598 55 L610 55 L610 190 L598 190" fill="none" stroke="var(--rule-2)" stroke-width="1"/>
+<text class="mono-t" id="E11" x="390" y="107" text-anchor="middle">1.00</text>
+<text class="mono-t" id="E12" x="530" y="107" text-anchor="middle">0.00</text>
+<text class="mono-t" id="E21" x="390" y="152" text-anchor="middle">0.00</text>
+<text class="mono-t" id="E22" x="530" y="152" text-anchor="middle">&#8722;1.00</text>
 </svg>
 
-<div class="rowc"><span style="color:var(--state)">state tilt</span><input type="range" id="st" min="0" max="180" value="0" step="1" oninput="upd()"><span id="stl" style="min-width:46px;text-align:right">0&#176;</span></div>
-<div class="rowc"><span style="color:var(--state)">state swing</span><input type="range" id="sp" min="0" max="360" value="0" step="1" oninput="upd()"><span id="spl" style="min-width:46px;text-align:right">0&#176;</span></div>
 <div class="rowc"><span style="color:var(--knob)">knob tilt</span><input type="range" id="kt" min="0" max="180" value="0" step="1" oninput="upd()"><span id="ktl" style="min-width:46px;text-align:right">0&#176;</span></div>
 <div class="rowc"><span style="color:var(--knob)">knob swing</span><input type="range" id="kp" min="0" max="360" value="0" step="1" oninput="upd()"><span id="kpl" style="min-width:46px;text-align:right">0&#176;</span></div>
-<div class="rowc"><span>lamp labels</span><input type="number" id="la" value="1" step="0.5" oninput="upd()"><input type="number" id="lb" value="-1" step="0.5" oninput="upd()"></div>
+<div class="rowc"><span>dial labels</span><input type="number" id="la" value="1" step="0.5" oninput="upd()"><input type="number" id="lb" value="-1" step="0.5" oninput="upd()"></div>
 <div class="rowc" style="flex-wrap:wrap;gap:8px">
-<button onclick="run(1)">run once</button>
-<button onclick="run(100)">run &#215;100</button>
-<button onclick="rst()">reset tally</button>
+<button onclick="pre(0,0,1,-1)">&#963;z</button>
+<button onclick="pre(90,0,1,-1)">&#963;x</button>
+<button onclick="pre(90,90,1,-1)">&#963;y</button>
+<button onclick="pre(0,0,1,0)">|0&#10217;&#10216;0|</button>
+<button onclick="pre(35,20,1,1)">identity</button>
 </div>
-<div class="rowc readout" id="ST">runs 0</div>
+<div class="rowc readout" id="ST">trace 0.00</div>
 </div>
 
 <ul class="notes">
-<li><b>Type into the label boxes.</b> Change &#177;1 to 7 and 3, or to 5 and 5. The percentages do not flinch and the lamps fire identically. Only the mean moves, because the mean is the one quantity that reads your notebook.</li>
-<li><b>Move the knob, state fixed.</b> Every knob position is a different question. There is a whole sphere of them.</li>
-<li><b>Move the state, knob fixed.</b> The probabilities sweep the same way, because only the relative angle exists.</li>
-<li><b>Set them perpendicular, then run &#215;100.</b> Coin flips. Re-align them and it is deterministic. Same apparatus, same state space. The randomness lives entirely in the relationship.</li>
-<li><b>On collapse.</b> After a run the state really has jumped onto the lit lamp's direction. The pink point stays where you put it so that run &#215;100 means a hundred fresh preparations, not one state measured a hundred times. Those are different experiments.</li>
+<li><b>Turn the knob.</b> The entries rearrange. Trace, determinant and eigenvalues all hold still.</li>
+<li><b>Retype a label.</b> Trace, determinant and eigenvalues move. The knob has not shifted.</li>
+<li><b>Where the four live.</b> Two eigenvalues and two angles for the eigenbasis. The four matrix entries look like four numbers, but Hermiticity forces the diagonal real and pins the lower-left to the conjugate of the upper-right.</li>
+<li><b>Identity.</b> Set both labels equal and the knob stops mattering. A repeated eigenvalue leaves no eigenbasis to point.</li>
 </ul>
 
 <a class="back" href="/quantum/">&#8592; all three instruments</a>
@@ -195,26 +185,24 @@ footer.bottom .friend .amp{color:var(--link);margin:0 .15em}
 
 </div>
 <script>
-var SX=155,SY=165,SR=110,nA=0,nB=0,TA=null;
+var SX=125,SY=120,SR=85;
 function pj(x,y,z){return [SX+SR*0.7071*(y-x), SY+SR*(0.25*(x+y)-z)];}
 function dr(t,p){
   t=t*Math.PI/180;p=p*Math.PI/180;
   return [Math.sin(t)*Math.cos(p),Math.sin(t)*Math.sin(p),Math.cos(t)];
 }
+function fc(re,im){
+  var r=(Math.abs(re)<0.005?0:re).toFixed(2);
+  if(Math.abs(im)<0.005) return r;
+  return r+(im<0?' \u2212 ':' + ')+Math.abs(im).toFixed(2)+'i';
+}
 function upd(){
-  var st=+document.getElementById('st').value,sp=+document.getElementById('sp').value;
   var kt=+document.getElementById('kt').value,kp=+document.getElementById('kp').value;
-  document.getElementById('stl').textContent=st+'\u00B0';
-  document.getElementById('spl').textContent=sp+'\u00B0';
   document.getElementById('ktl').textContent=kt+'\u00B0';
   document.getElementById('kpl').textContent=kp+'\u00B0';
-  var s=dr(st,sp),n=dr(kt,kp);
+  var n=dr(kt,kp);
   var a=+document.getElementById('la').value,b=+document.getElementById('lb').value;
-  var q=pj(s[0],s[1],s[2]);
-  document.getElementById('SV').setAttribute('x2',q[0]);
-  document.getElementById('SV').setAttribute('y2',q[1]);
-  document.getElementById('SP').setAttribute('cx',q[0]);
-  document.getElementById('SP').setAttribute('cy',q[1]);
+  var off=(a+b)/2,sc=(a-b)/2;
   var u=pj(n[0],n[1],n[2]),v=pj(-n[0],-n[1],-n[2]),K=document.getElementById('KA');
   K.setAttribute('x1',v[0]);K.setAttribute('y1',v[1]);
   K.setAttribute('x2',u[0]);K.setAttribute('y2',u[1]);
@@ -224,42 +212,28 @@ function upd(){
   document.getElementById('KN').setAttribute('cy',v[1]);
   var du=Math.hypot(u[0]-SX,u[1]-SY)||1,dv=Math.hypot(v[0]-SX,v[1]-SY)||1;
   var TP=document.getElementById('TP'),TN=document.getElementById('TN');
-  TP.setAttribute('x',u[0]+(u[0]-SX)/du*17);
-  TP.setAttribute('y',u[1]+(u[1]-SY)/du*17+4);
-  TN.setAttribute('x',v[0]+(v[0]-SX)/dv*17);
-  TN.setAttribute('y',v[1]+(v[1]-SY)/dv*17+4);
+  TP.setAttribute('x',u[0]+(u[0]-SX)/du*16);
+  TP.setAttribute('y',u[1]+(u[1]-SY)/du*16+4);
+  TN.setAttribute('x',v[0]+(v[0]-SX)/dv*16);
+  TN.setAttribute('y',v[1]+(v[1]-SY)/dv*16+4);
   TP.textContent=(a>0?'+':'')+a;
   TN.textContent=(b>0?'+':'')+b;
-  document.getElementById('VA').textContent=(a>0?'+':'')+a;
-  document.getElementById('VB').textContent=(b>0?'+':'')+b;
-  var c=s[0]*n[0]+s[1]*n[1]+s[2]*n[2], pA=(1+c)/2;
-  document.getElementById('PA').setAttribute('width',Math.max(0,pA*238));
-  document.getElementById('PB').setAttribute('width',Math.max(0,(1-pA)*238));
-  document.getElementById('QA').textContent=Math.round(pA*100)+'%';
-  document.getElementById('QB').textContent=Math.round((1-pA)*100)+'%';
-  var tot=nA+nB, pred=pA*a+(1-pA)*b;
+  document.getElementById('E11').textContent=fc(off+sc*n[2],0);
+  document.getElementById('E22').textContent=fc(off-sc*n[2],0);
+  document.getElementById('E12').textContent=fc(sc*n[0],-sc*n[1]);
+  document.getElementById('E21').textContent=fc(sc*n[0],sc*n[1]);
+  var hi=Math.max(a,b),lo=Math.min(a,b);
   document.getElementById('ST').textContent=
-    'runs '+tot+'   A '+nA+'   B '+nB+
-    (tot?'   observed mean '+((nA*a+nB*b)/tot).toFixed(3):'')+
-    '   expected '+pred.toFixed(3);
-  return pA;
+    'trace '+(a+b).toFixed(2)+'   det '+(a*b).toFixed(2)+
+    '   eigenvalues '+hi.toFixed(2)+', '+lo.toFixed(2);
 }
-function fl(id){
-  document.getElementById(id).setAttribute('fill','var(--lit)');
-  if(TA)clearTimeout(TA);
-  TA=setTimeout(function(){
-    document.getElementById('LA').setAttribute('fill','var(--surface-1)');
-    document.getElementById('LB').setAttribute('fill','var(--surface-1)');
-  },420);
+function pre(t,p,a,b){
+  document.getElementById('kt').value=t;
+  document.getElementById('kp').value=p;
+  document.getElementById('la').value=a;
+  document.getElementById('lb').value=b;
+  upd();
 }
-function run(k){
-  var pA=upd(),last='LA';
-  for(var i=0;i<k;i++){
-    if(Math.random()<pA){nA++;last='LA';}else{nB++;last='LB';}
-  }
-  fl(last);upd();
-}
-function rst(){nA=0;nB=0;upd();}
 upd();
 </script>
 </body>

@@ -117,6 +117,12 @@
     nav.top .links a:hover::after { transform: scaleX(1); }
 
     /* ===== masthead ===== */
+    .h1-emoji {
+      font-size: 0.42em;
+      font-style: normal;
+      vertical-align: 0.55em;
+      margin-right: 0.28em;
+    }
     h1 {
       font-family: var(--display);
       font-style: italic;
@@ -280,7 +286,7 @@
     <a class="brand" href="/">Anton Alyakin</a>
     <div class="links">
       <a href="/assets/AntonAlyakinCV.pdf" target="_blank" rel="noreferrer"><span class="emoji">📜</span> CV</a>
-      <a href="/quantum/"><span class="emoji">⚛️</span> Quantum</a>
+      <!-- <a href="/quantum/"><span class="emoji">⚛️</span> Quantum</a> -->
       <a href="https://scholar.google.com/citations?user=5rDtuRIAAAAJ" target="_blank" rel="noreferrer"><span class="emoji">🎓</span> Scholar</a>
       <a href="https://www.linkedin.com/in/anton-a-64a58a9b" target="_blank" rel="noreferrer"><span class="emoji">🤝</span> LinkedIn</a>
       <a href="https://github.com/alyakin314" target="_blank" rel="noreferrer"><span class="emoji">🐙</span> GitHub</a>
@@ -288,7 +294,7 @@
     </div>
   </nav>
 
-  <h1>Quantum</h1>
+  <h1><span class="h1-emoji">⚛️</span>Quantum</h1>
 
   <section class="section">
     <header class="section-header">
@@ -313,15 +319,15 @@
         <span class="card-index">i.</span>
         <span>
           <span class="card-title">Amplitudes and phase</span>
-          <span class="card-desc">I expected twelve numbers to mean twelve things to learn. The &#947; slider moves all of them and changes no physics.</span>
+          <span class="card-desc">Groking the dimensionality of Hilbert space vs. Bloch sphere.</span>
         </span>
       </a>
 
-      <a class="card" href="/quantum/measurement-machine.html">
+      <a class="card" href="/quantum/hermitian-matrix.html">
         <span class="card-index">ii.</span>
         <span>
-          <span class="card-title">The measurement machine</span>
-          <span class="card-desc">Prepare a <span class="swatch s-state">state</span>, point the <span class="swatch s-knob">apparatus</span>, watch a lamp light. The state is continuous, the outcome is one bit.</span>
+          <span class="card-title">The Hermitian matrix</span>
+          <span class="card-desc">Groking the four degrees of freedom in a Hermitian matrix.</span>
         </span>
       </a>
 
@@ -329,7 +335,7 @@
         <span class="card-index">iii.</span>
         <span>
           <span class="card-title">The machine and its matrix</span>
-          <span class="card-desc">The matrix looked like a new ingredient. It is the same experiment written down, so the arithmetic can agree with the tally.</span>
+          <span class="card-desc">Groking why the arithmetic and the experiment agree.</span>
         </span>
       </a>
     </div>
