@@ -218,6 +218,12 @@ function dr(t,p){
   t=t*Math.PI/180;p=p*Math.PI/180;
   return [Math.sin(t)*Math.cos(p),Math.sin(t)*Math.sin(p),Math.cos(t)];
 }
+function nm(v){
+  var s=(Math.abs(v)<0.005?0:v).toFixed(2).replace(/\.?0+$/,'');
+  if(s===''||s==='-')s='0';
+  return s.replace('-','\u2212');
+}
+function sg(v){var s=nm(v);return s.charAt(0)==='\u2212'?s:'+'+s;}
 function fc(re,im){
   var r=(Math.abs(re)<0.005?0:re).toFixed(2);
   if(Math.abs(im)<0.005) return r;
@@ -270,7 +276,8 @@ function upd(){
   document.getElementById('ST').textContent=
     'runs '+tot+'   A '+nA+'   B '+nB+
     (tot?'   observed mean '+((nA*a+nB*b)/tot).toFixed(3):'')+
-    '   trace '+(a+b).toFixed(2)+'   det '+(a*b).toFixed(2);
+    '   trace = '+sg(a)+' + '+sg(b)+' = '+nm(a+b)+
+    '   det = '+sg(a)+' \u00D7 '+nm(b)+' = '+nm(a*b);
   return pA;
 }
 function fl(id){

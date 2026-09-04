@@ -63,6 +63,7 @@ button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 .t{font:400 14px var(--sans);fill:var(--ink)}
 .ts{font:400 12px var(--sans);fill:var(--ink-2)}
 .th{font:500 14px var(--sans);fill:var(--ink)}
+.mono-s{font:400 12.5px var(--mono);fill:var(--ink-2)}
 .mono-t{font:400 14px var(--mono);fill:var(--ink)}
 .mono-h{font:500 14px var(--mono);fill:var(--ink)}
 .notes{margin:0;padding:0;list-style:none;max-width:64ch}
@@ -154,6 +155,8 @@ footer.bottom .friend .amp{color:var(--link);margin:0 .15em}
 <text class="mono-t" id="E12" x="530" y="107" text-anchor="middle">0.00</text>
 <text class="mono-t" id="E21" x="390" y="152" text-anchor="middle">0.00</text>
 <text class="mono-t" id="E22" x="530" y="152" text-anchor="middle">&#8722;1.00</text>
+<text class="mono-s" id="TR" x="610" y="218" text-anchor="end">trace = +1 + &#8722;1 = 0</text>
+<text class="mono-s" id="DT" x="610" y="238" text-anchor="end">det = +1 &#215; &#8722;1 = &#8722;1</text>
 </svg>
 
 <div class="rowc"><span style="color:var(--knob)">knob tilt</span><input type="range" id="kt" min="0" max="180" value="0" step="1" oninput="upd()"><span id="ktl" style="min-width:46px;text-align:right">0&#176;</span></div>
@@ -166,7 +169,7 @@ footer.bottom .friend .amp{color:var(--link);margin:0 .15em}
 <button onclick="pre(0,0,1,0)">|0&#10217;&#10216;0|</button>
 <button onclick="pre(35,20,1,1)">identity</button>
 </div>
-<div class="rowc readout" id="ST">trace 0.00</div>
+<div class="rowc readout" id="ST">eigenvalues 1, &#8722;1</div>
 </div>
 
 <ul class="notes">
@@ -191,6 +194,12 @@ function dr(t,p){
   t=t*Math.PI/180;p=p*Math.PI/180;
   return [Math.sin(t)*Math.cos(p),Math.sin(t)*Math.sin(p),Math.cos(t)];
 }
+function nm(v){
+  var s=(Math.abs(v)<0.005?0:v).toFixed(2).replace(/\.?0+$/,'');
+  if(s===''||s==='-')s='0';
+  return s.replace('-','\u2212');
+}
+function sg(v){var s=nm(v);return s.charAt(0)==='\u2212'?s:'+'+s;}
 function fc(re,im){
   var r=(Math.abs(re)<0.005?0:re).toFixed(2);
   if(Math.abs(im)<0.005) return r;
@@ -223,9 +232,9 @@ function upd(){
   document.getElementById('E12').textContent=fc(sc*n[0],-sc*n[1]);
   document.getElementById('E21').textContent=fc(sc*n[0],sc*n[1]);
   var hi=Math.max(a,b),lo=Math.min(a,b);
-  document.getElementById('ST').textContent=
-    'trace '+(a+b).toFixed(2)+'   det '+(a*b).toFixed(2)+
-    '   eigenvalues '+hi.toFixed(2)+', '+lo.toFixed(2);
+  document.getElementById('TR').textContent='trace = '+sg(a)+' + '+nm(b)+' = '+nm(a+b);
+  document.getElementById('DT').textContent='det = '+sg(a)+' \u00D7 '+nm(b)+' = '+nm(a*b);
+  document.getElementById('ST').textContent='eigenvalues '+nm(hi)+', '+nm(lo);
 }
 function pre(t,p,a,b){
   document.getElementById('kt').value=t;
