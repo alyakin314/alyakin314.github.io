@@ -84,7 +84,8 @@ nav.top .brand{font-family:var(--display);font-style:italic;font-weight:500;font
 nav.top .links{display:flex;gap:.85rem;align-items:baseline;flex-wrap:wrap;
   font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
 nav.top .links a{position:relative;color:var(--ink-2);text-decoration:none;padding-bottom:4px;
-  transition:color 200ms ease}
+  transition:color 200ms ease;display:inline-flex;align-items:baseline;gap:.35em}
+nav.top .links a .emoji{font-size:13px;letter-spacing:normal;transform:translateY(1px)}
 nav.top .links a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;
   background:var(--link);transform:scaleX(0);transition:transform 220ms ease}
 nav.top .links a:hover{color:var(--link)}
@@ -121,12 +122,16 @@ footer.bottom .friend .amp{color:var(--link);margin:0 .15em}
 <div class="wrap">
 
 <nav class="top">
-  <a class="brand" href="/">Anton Alyakin</a>
-  <div class="links">
-    <a href="/">Home</a>
-    <a href="/quantum/">All three instruments</a>
-  </div>
-</nav>
+    <a class="brand" href="/">Anton Alyakin</a>
+    <div class="links">
+      <a href="/assets/AntonAlyakinCV.pdf" target="_blank" rel="noreferrer"><span class="emoji">📜</span> CV</a>
+      <a href="/quantum/"><span class="emoji">⚛️</span> Quantum</a>
+      <a href="https://scholar.google.com/citations?user=5rDtuRIAAAAJ" target="_blank" rel="noreferrer"><span class="emoji">🎓</span> Scholar</a>
+      <a href="https://www.linkedin.com/in/anton-a-64a58a9b" target="_blank" rel="noreferrer"><span class="emoji">🤝</span> LinkedIn</a>
+      <a href="https://github.com/alyakin314" target="_blank" rel="noreferrer"><span class="emoji">🐙</span> GitHub</a>
+      <a href="https://huggingface.co/alyakin314" target="_blank" rel="noreferrer"><span class="emoji">🤗</span> HF</a>
+    </div>
+  </nav>
 
 <h1>The machine and its matrix</h1>
 <p class="lede">An observable is not a new ingredient. It is a knob direction and two numbers painted on a dial, packaged as a Hermitian matrix. The state sliders never touch the matrix; the knob sliders never touch its trace or determinant.</p>
