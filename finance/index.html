@@ -465,10 +465,23 @@ function series() {
     let x0;
     if (state.align === "low") x0 = c.lo;
     else if (state.align === "halving") x0 = c.halving;
-    else { if (c.top === null) { notes.push(c.name + " has no confirmed top yet, so it can't be aligned by top."); continue; } x0 = c.top; }
+    else if (c.top !== null) x0 = c.top;
+    else {
+      // no confirmed top yet: assume it comes the average bottom-to-top time of the last three completed cycles
+      const done = cycles.filter(k => k.top !== null && k !== c).slice(-3);
+      if (!done.length) { notes.push(c.name + " has no confirmed top yet, so it can't be aligned by top."); continue; }
+      const avg = Math.round(done.reduce((a, k) => a + (k.top - k.lo), 0) / done.length);
+      x0 = c.lo + avg; c.estTop = x0;
+      notes.push(c.name + "'s top is assumed " + avg + " days after its bottom, on " + dateOf(x0) + ", the average bottom-to-top time of " + done.map(k => k.name).join(", ") + ".");
+    }
     let base = c.lowPrice;
     if (state.scale === "anchor") {
       if (x0 >= c.lo && x0 <= c.end) base = CLOSES[x0];
+      else if (state.align === "top") {
+        // day 0 is the assumed top: use the extrapolated peak gain, as the same-scale view does
+        base = c.lowPrice * Math.exp(c.estLogGain);
+        notes.push(c.name + "'s top price is assumed to be " + fmt$(base) + ", an extrapolated peak gain of " + Math.exp(c.estLogGain).toFixed(1) + "× its bottom.");
+      }
       else {
         // day-0 price not known yet. Every halving so far has landed below the previous cycle's top
         // (0.57, 0.45, 0.96 of it, drifting up), so assume the most recent ratio repeats.
