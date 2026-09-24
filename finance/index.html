@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Finance · Anton Alyakin</title>
+<meta name="description" content="Personal dashboard: crypto and equity prices, Bitcoin cycles, spot Bitcoin ETF flows, Fed odds and CPI.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --serif:'Crimson Pro',Georgia,serif;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --mono:'JetBrains Mono',ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sans:ui-sans-serif,-apple-system,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  /* light: warm paper version of the site's palette */
+  --bg:#f3eee4; --panel:#faf7f0; --sunk:#ebe4d6; --ink:#2a2420; --muted:#6f6250;
+  --line:rgba(42,36,32,.13); --rule-2:rgba(42,36,32,.28); --grid:rgba(42,36,32,.08);
+  --accent:#8f6418; --vignette:rgba(0,0,0,.05); --shadow:0 30px 60px -40px rgba(0,0,0,.25);
+  --c1:#7d8494; --c2:#6b61d6; --c3:#0f6b52; --c4:#c2306b; --c5:#8f6418;
+  --up:#1f8a5a; --down:#c23a2f;
+  --cut2:#0f6b52; --cut1:#4fae8f; --hold:#a8a196; --hike1:#e07f9e; --hike2:#c2306b; --seg-ink:#1a1614; --seg-ink-deep:#ffffff;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1a1614; --panel:#221c19; --sunk:#2b2320; --ink:#e8dfc9; --muted:#9a8a72;
+    --line:rgba(232,223,201,.11); --rule-2:rgba(232,223,201,.26); --grid:rgba(232,223,201,.07);
+    --accent:#d4a04a; --vignette:rgba(0,0,0,.35); --shadow:0 30px 60px -40px rgba(0,0,0,.7);
+    --c1:#6f7788; --c2:#9c93ee; --c3:#2fae86; --c4:#ee7fae; --c5:#d4a04a;
+    --up:#43c39a; --down:#f0574d;
+    --cut2:#2fae86; --cut1:#7fd4b8; --hold:#6f6a60; --hike1:#f4a7c6; --hike2:#ee7fae; --seg-ink-deep:#1a1614;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1a1614; --panel:#221c19; --sunk:#2b2320; --ink:#e8dfc9; --muted:#9a8a72;
+  --line:rgba(232,223,201,.11); --rule-2:rgba(232,223,201,.26); --grid:rgba(232,223,201,.07);
+  --accent:#d4a04a; --vignette:rgba(0,0,0,.35); --shadow:0 30px 60px -40px rgba(0,0,0,.7);
+  --c1:#6f7788; --c2:#9c93ee; --c3:#2fae86; --c4:#ee7fae; --c5:#d4a04a;
+  --up:#43c39a; --down:#f0574d;
+  --cut2:#2fae86; --cut1:#7fd4b8; --hold:#6f6a60; --hike1:#f4a7c6; --hike2:#ee7fae; --seg-ink-deep:#1a1614;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-weight:380;font-size:17.5px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(ellipse at center,transparent 50%,var(--vignette) 100%)}
+.wrap{position:relative;z-index:2;max-width:960px;margin:0 auto;padding:2.5rem 1.75rem 4rem}
+
+/* ===== site chrome: matches alyakin314.github.io ===== */
+nav.top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;
+  margin:0 0 3.5rem;padding-bottom:1.1rem;border-bottom:1px solid var(--line)}
+nav.top .brand{font-family:var(--display);font-style:italic;font-weight:500;font-size:18px;
+  letter-spacing:.04em;color:var(--ink);text-decoration:none}
+nav.top .links{display:flex;gap:.85rem;align-items:baseline;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+nav.top .links a{position:relative;color:var(--muted);text-decoration:none;padding-bottom:4px;
+  transition:color 200ms ease;display:inline-flex;align-items:baseline;gap:.35em}
+nav.top .links a .emoji{font-size:13px;letter-spacing:normal;transform:translateY(1px)}
+nav.top .links a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:var(--accent);transform:scaleX(0);transition:transform 220ms ease}
+nav.top .links a:hover{color:var(--accent)}
+nav.top .links a:hover::after{transform:scaleX(1)}
+
+.h1-emoji{font-size:.42em;font-style:normal;vertical-align:.55em;margin-right:.28em}
+h1{font-family:var(--display);font-style:italic;font-weight:400;font-size:3rem;line-height:1.02;
+  letter-spacing:-.01em;margin:0 0 .7rem;color:var(--ink)}
+.source,.meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0}
+.source{margin-bottom:2.8rem;line-height:1.9}
+.meta{margin:-.7rem 0 1.1rem;line-height:1.9}
+
+section.section{margin-bottom:3.2rem}
+section.section.last{margin-bottom:0}
+.section-header{display:flex;align-items:baseline;gap:1.25rem;margin-bottom:1.5rem}
+.section-header .numeral{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--accent)}
+.section-header .rule{flex:1;height:1px;background:var(--ink);opacity:.12}
+.section-header .label{font-family:var(--display);font-style:italic;font-weight:400;font-size:18px;
+  letter-spacing:.05em;color:var(--ink)}
+
+footer.bottom{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+footer.bottom .friend{font-family:var(--display);font-style:italic;text-transform:none;
+  letter-spacing:.02em;font-size:13px}
+footer.bottom .friend .amp{color:var(--accent);margin:0 .15em}
+
+/* ===== shared instrument bits ===== */
+.sans{font-family:var(--sans)}
+.up{color:var(--up)} .down{color:var(--down)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);padding:14px 12px 8px;font-family:var(--sans);min-width:0}
+.panel h3{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:400;margin:0 0 10px}
+.cbox{position:relative;height:300px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:14px 0 8px}
+.note{color:var(--muted);font-size:13px;line-height:1.5;margin:8px 4px 0;min-height:1.2em;font-family:var(--sans)}
+.note:empty{display:none}
+.empty{color:var(--muted);font-family:var(--sans);font-size:13.5px;padding:18px 4px}
+
+/* tiles */
+.tiles{display:grid;gap:10px;font-family:var(--sans)}
+.cols-5{grid-template-columns:repeat(5,1fr)}
+.tile{border:1px solid var(--line);border-radius:3px;padding:10px 11px 9px;background:var(--panel);min-width:0;display:flex;flex-direction:column}
+.tile .tk{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile .px{font-size:19px;font-weight:500;margin:3px 0 2px;font-variant-numeric:tabular-nums;letter-spacing:-.01em;white-space:nowrap;display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.tile .px>span:first-child{overflow:hidden;text-overflow:ellipsis}
+.tile .px .cap{font-size:13px;font-weight:400;color:var(--muted);letter-spacing:0;flex:none}
+.tile .chg{font-size:12px;display:grid;grid-template-columns:auto 1fr;column-gap:8px;row-gap:1px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tile .chg span{color:var(--muted)}
+.tile .chg b{font-weight:500;text-align:right}
+.tile.big .px{font-size:22px}
+.tile .sub{font-size:12px;color:var(--muted);margin-top:auto;padding-top:4px;font-variant-numeric:tabular-nums}
+
+/* tables */
+.stats{margin-top:1.4rem;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4;font-variant-numeric:tabular-nums}
+th,td{text-align:right;padding:7px 9px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:top}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:400}
+th:first-child,td:first-child{text-align:left}
+td:first-child{font-weight:500}
+td .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:-1px}
+td.zero{color:var(--muted);opacity:.6}
+table.cpi td:first-child{font-weight:400}
+table.cpi tr.lvl0 td:first-child,table.cpi tr.lvl1 td:first-child{font-weight:500}
+table.cpi tr.lvl2 td:first-child{padding-left:22px}
+table.cpi tr.lvl3 td:first-child{padding-left:36px;color:var(--muted)}
+td .ibar{display:inline-block;height:9px;border-radius:2px;vertical-align:0;margin-right:6px;opacity:.85}
+td .ibar.pos{background:var(--accent)} td .ibar.neg{background:var(--c2)}
+#cpiTable td:last-child{min-width:150px;text-align:left}
+#cpiTable td:last-child b{font-weight:500}
+
+/* cycles */
+.controls{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:flex-end;padding:16px 0 18px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:var(--sans)}
+.group{display:flex;flex-direction:column;gap:7px}
+.group>span{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--rule-2);border-radius:3px;overflow:hidden}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13.5px;padding:6px 12px;cursor:pointer;
+  transition:color 160ms ease,background 160ms ease}
+.seg button+button{border-left:1px solid var(--rule-2)}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--sunk);color:var(--ink);font-weight:500}
+.seg button:focus-visible,.check input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.check{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink);cursor:pointer;padding-bottom:7px}
+.check input{width:15px;height:15px;accent-color:var(--accent);margin:0}
+.chart-panel{margin-top:18px;padding:16px 14px 10px}
+.chart-box{position:relative;height:min(62vh,540px);min-height:340px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 4px 2px}
+.legend button{border:0;background:none;color:var(--ink);font:inherit;font-size:13.5px;display:flex;align-items:center;gap:7px;cursor:pointer;padding:3px 2px;border-radius:3px}
+.legend button.off{opacity:.38;text-decoration:line-through}
+.legend i{display:inline-block;width:18px;height:3px;border-radius:2px;background:var(--sw)}
+.legend button.dashed i{background:repeating-linear-gradient(90deg,var(--sw) 0 5px,transparent 5px 8px)}
+.legend button:focus-visible{outline:2px solid var(--accent)}
+#stats{min-width:720px}
+.foot{font-family:var(--serif);font-size:16px;line-height:1.62;color:var(--muted);margin:1.4rem 0 0;max-width:64ch}
+
+/* fed odds */
+.odds{display:grid;grid-template-columns:auto 1fr auto;gap:10px 12px;align-items:center;font-size:13px}
+.odds .when{font-variant-numeric:tabular-nums;white-space:nowrap}
+.odds .when small{display:block;color:var(--muted);font-size:11px}
+.odds .bar{display:flex;height:24px;border-radius:3px;overflow:hidden;border:1px solid var(--line);background:var(--sunk)}
+.odds .bar span{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:var(--seg-ink);overflow:hidden;white-space:nowrap}
+.odds .bar span.cut2,.odds .bar span.hike2{color:var(--seg-ink-deep)}
+.odds .bar span.hold{color:var(--ink)}
+.odds .exp{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.odds .exp small{display:block;color:var(--muted);font-size:11px}
+.keys{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted);margin:0 0 12px}
+.keys i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-2px;margin-right:5px}
+
+@media (max-width:760px){
+  .two{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .wrap{padding:2rem 1.1rem 3rem}
+  nav.top{margin-bottom:2.4rem}
+  h1{font-size:2.3rem}
+  .cols-5{grid-template-columns:repeat(3,1fr)}
+  .cols-5.big-row{grid-template-columns:repeat(2,1fr)}
+  .tile{padding:8px 9px 8px}
+  .tile .nm{display:none}
+  .tile .px{font-size:16px}
+  .tile.big .px{font-size:18px}
+  .tile .chg{font-size:11.5px;gap:2px 8px}
+  .controls{gap:12px 18px}
+  .seg button{padding:6px 9px;font-size:13px}
+  .chart-panel{padding:12px 6px 8px}
+  .chart-box{height:min(60vh,440px);min-height:300px}
+  .cbox{height:260px}
+  table.cpi td:first-child{white-space:normal}
+  table.cpi th:nth-child(2),table.cpi td:nth-child(2),table.cpi th:nth-child(3),table.cpi td:nth-child(3){display:none}
+  #cpiTable td:last-child{min-width:104px}
+  .odds{grid-template-columns:1fr auto;grid-auto-flow:dense;gap:4px 10px}
+  .odds .bar{grid-column:1/-1;margin-bottom:8px}
+  .odds .exp{grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a class="brand" href="/">Anton Alyakin</a>
+    <div class="links">
+      <a href="/assets/AntonAlyakinCV.pdf" target="_blank" rel="noreferrer"><span class="emoji">📜</span> CV</a>
+      <a href="https://scholar.google.com/citations?user=5rDtuRIAAAAJ" target="_blank" rel="noreferrer"><span class="emoji">🎓</span> Scholar</a>
+      <a href="https://www.linkedin.com/in/anton-a-64a58a9b" target="_blank" rel="noreferrer"><span class="emoji">🤝</span> LinkedIn</a>
+      <a href="https://github.com/alyakin314" target="_blank" rel="noreferrer"><span class="emoji">🐙</span> GitHub</a>
+      <a href="https://huggingface.co/alyakin314" target="_blank" rel="noreferrer"><span class="emoji">🤗</span> HF</a>
+    </div>
+  </nav>
+
+  <h1><span class="h1-emoji">🐂🐻</span>Finance</h1>
+  <p class="source" id="topline">Loading</p>
+
+  <!-- I. prices -->
+  <section class="section">
+    <header class="section-header">
+      <span class="numeral">I</span><span class="rule"></span><span class="label">Prices</span>
+    </header>
+    <p class="meta" id="meta-crypto">Crypto · CoinGecko · loading</p>
+    <div class="tiles cols-5" id="cryptoTiles"></div>
+    <p class="grid-label" id="meta-stocks">Equities · loading</p>
+    <div class="tiles cols-5" id="megaTiles"></div>
+    <div class="tiles cols-5" id="etfTiles" style="margin-top:10px"></div>
+  </section>
+
+  <!-- II. bitcoin cycles -->
+  <section class="section">
+    <header class="section-header">
+      <span class="numeral">II</span><span class="rule"></span><span class="label">Bitcoin Cycles</span>
+    </header>
+    <p class="meta" id="meta-cycles">Bitstamp daily closes · loading</p>
+
+    <div class="controls">
+      <div class="group"><span>Align day 0 to</span>
+        <div class="seg" id="alignSeg">
+          <button aria-pressed="false" data-v="low">Bottom</button>
+          <button aria-pressed="true" data-v="halving">Halving</button>
+          <button aria-pressed="false" data-v="top">Top</button>
+        </div>
+      </div>
+      <div class="group"><span>Vertical scale</span>
+        <div class="seg" id="scaleSeg">
+          <button aria-pressed="true" data-v="low">× cycle bottom</button>
+          <button aria-pressed="false" data-v="anchor">× price at day 0</button>
+          <button aria-pressed="false" data-v="adj" title="Each cycle divided by its own peak log-gain, adjusted for diminishing returns">Same scale</button>
+        </div>
+      </div>
+      <label class="check"><input type="checkbox" id="splitChk"> Start a new cycle at the June 2026 bottom</label>
+    </div>
+
+    <div class="panel chart-panel">
+      <div class="chart-box"><canvas id="chart"></canvas></div>
+      <div class="legend" id="legend"></div>
+      <div class="note" id="note"></div>
+      <div class="note" id="dataNote"></div>
+    </div>
+
+    <div class="stats"><table id="stats"></table></div>
+    <p class="foot" id="foot"></p>
+  </section>
+
+  <!-- III. etf flows -->
+  <section class="section">
+    <header class="section-header">
+      <span class="numeral">III</span><span class="rule"></span><span class="label">Spot Bitcoin ETF Flows</span>
+    </header>
+    <p class="meta" id="meta-etf">Farside Investors · loading</p>
+    <div class="two">
+      <div class="panel"><h3 id="etfDailyTitle">Daily net flow, $m</h3><div class="cbox"><canvas id="etfDaily"></canvas></div></div>
+      <div class="panel"><h3>Cumulative net flow since launch, $bn</h3><div class="cbox"><canvas id="etfCum"></canvas></div></div>
+    </div>
+    <div class="stats"><table id="etfTable"></table></div>
+  </section>
+
+  <!-- IV. fed -->
+  <section class="section">
+    <header class="section-header">
+      <span class="numeral">IV</span><span class="rule"></span><span class="label">Fed</span>
+    </header>
+    <p class="meta" id="meta-fed">New York Fed · Polymarket · loading</p>
+    <div class="tiles cols-5 big-row" id="fedTiles"></div>
+    <div class="panel" style="margin-top:14px">
+      <h3>Next decisions, market-implied odds</h3>
+      <div class="keys" id="oddsKeys"></div>
+      <div class="odds" id="odds"></div>
+    </div>
+  </section>
+
+  <!-- V. cpi -->
+  <section class="section last">
+    <header class="section-header">
+      <span class="numeral">V</span><span class="rule"></span><span class="label">CPI</span>
+    </header>
+    <p class="meta" id="meta-cpi">BLS · loading</p>
+    <div class="tiles cols-5 big-row" id="cpiTiles"></div>
+    <div class="two" style="margin-top:14px">
+      <div class="panel"><h3>12-month change and fed funds rate, %</h3><div class="cbox"><canvas id="cpiYoy"></canvas></div></div>
+      <div class="panel"><h3>1-month change, seasonally adjusted, %</h3><div class="cbox"><canvas id="cpiMom"></canvas></div></div>
+    </div>
+    <div class="stats"><table class="cpi" id="cpiTable"></table></div>
+    <div class="note" id="cpiNote"></div>
+  </section>
+
+  <footer class="bottom">
+    <span class="friend">&copy; Anton Alyakin <span class="amp">&amp;</span> his friend Claude</span>
+    <span>St. Louis &nbsp;&middot;&nbsp; MMXXVI</span>
+  </footer>
+
+</div>
+
+<script>
+/* ============================================================ helpers */
+const $ = id => document.getElementById(id);
+const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const MS = 86400000;
+const MINUS = "−";
+Chart.defaults.font.family = cssVar("--sans");
+Chart.defaults.font.size = 12;
+
+const fmtPct = (v, d = 1) => v == null || !isFinite(v) ? "" : (v > 0 ? "+" : v < 0 ? MINUS : "") + Math.abs(v).toFixed(d) + "%";
+const fmtNum = (v, d = 1) => v == null || !isFinite(v) ? "" : (v < 0 ? MINUS : "") + Math.abs(v).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d });
+const fmtPrice = v => v == null ? "" : "$" + (v >= 1000 ? Math.round(v).toLocaleString() : v >= 1 ? v.toFixed(2) : Number(v.toPrecision(4)).toString());
+const fmt$ = v => "$" + (v >= 100 ? Math.round(v).toLocaleString() : v.toFixed(2));
+const signClass = v => v > 0 ? "up" : v < 0 ? "down" : "";
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const monthLabel = ym => { const [y, m] = ym.split("-"); return MONTHS[+m - 1] + " " + y; };
+const dayLabel = iso => { const d = new Date(iso + "T00:00:00Z"); return MONTHS[d.getUTCMonth()] + " " + d.getUTCDate(); };
+const utcTime = d => new Date(d).toISOString().slice(11, 16) + " UTC";
+const stamp = iso => iso ? iso.slice(0, 10) + " " + utcTime(iso) : "";
+const todayISO = () => new Date().toISOString().slice(0, 10);
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+
+const fmtCap = v => v == null ? "" : v >= 1e12 ? (v / 1e12).toFixed(v >= 1e13 ? 0 : 1) + "T" : v >= 1e9 ? (v / 1e9).toFixed(0) + "B" : (v / 1e6).toFixed(0) + "M";
+function tile({ code, name, title, price, changes, big, sub, cap }) {
+  return `<div class="tile${big ? " big" : ""}" title="${esc(title || name || code)}"><div class="tk">${esc(code)}${name ? `<span class="nm"> · ${esc(name)}</span>` : ""}</div>
+    <div class="px"><span>${price}</span>${cap ? `<span class="cap">${fmtCap(cap)}</span>` : ""}</div>
+    <div class="chg">${(changes || []).map(([l, v]) => `<span>${l}</span><b class="${signClass(v)}">${fmtPct(v)}</b>`).join("")}</div>
+    ${sub ? `<div class="sub">${sub}</div>` : ""}</div>`;
+}
+async function getJSON(url, ms = 12000, opts = {}) {
+  const ctrl = new AbortController(), t = setTimeout(() => ctrl.abort(), ms);
+  try {
+    const r = await fetch(url, { signal: ctrl.signal, ...opts });
+    if (!r.ok) throw new Error("HTTP " + r.status + " " + url);
+    return await r.json();
+  } finally { clearTimeout(t); }
+}
+const charts = {};
+function mkChart(id, cfg) { if (charts[id]) charts[id].destroy(); charts[id] = new Chart($(id), cfg); return charts[id]; }
+const axis = (extra = {}) => ({ grid: { color: cssVar("--grid") }, ticks: { color: cssVar("--muted") }, border: { color: cssVar("--line") }, ...extra });
+const legend = () => ({ labels: { color: cssVar("--muted"), boxWidth: 18, boxHeight: 3, usePointStyle: false, padding: 14 } });
+const status = { live: {}, pushed: {} };
+const ORDER = ["crypto", "equities", "btc history", "etf flows", "fed", "cpi"];
+const byOrder = (a, b) => ORDER.indexOf(a) - ORDER.indexOf(b);
+function topline() {
+  const live = Object.keys(status.live).sort(byOrder), pushed = Object.entries(status.pushed).sort((a, b) => byOrder(a[0], b[0]));
+  $("topline").textContent = [live.length ? "Live: " + live.join(", ") : "", pushed.length ? "Last refreshed: " + pushed.map(([k, v]) => k + " " + v).join(", ") : ""].filter(Boolean).join("  ·  ");
+}
+
+/* ============================================================ I. prices */
+const CRYPTO = [["bitcoin", "BTC", "Bitcoin"], ["ethereum", "ETH", "Ethereum"], ["avalanche-2", "AVAX", "Avalanche"], ["hex-pulsechain", "HEX·PLS", "", "HEX on PulseChain"], ["hex", "HEX·ETH", "", "HEX on Ethereum"]];
+async function crypto() {
+  const el = $("cryptoTiles");
+  try {
+    const rows = await getJSON("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=" + CRYPTO.map(c => c[0]).join(",") + "&price_change_percentage=24h,7d,30d");
+    const byId = Object.fromEntries(rows.map(r => [r.id, r]));
+    el.innerHTML = CRYPTO.map(([id, code, name, title]) => { const r = byId[id]; if (!r) return `<div class="tile" title="${esc(title || name)}"><div class="tk">${esc(code)}</div><div class="px">${MINUS}</div></div>`;
+      return tile({ code, name, title, price: fmtPrice(r.current_price), changes: [["24h", r.price_change_percentage_24h_in_currency], ["7d", r.price_change_percentage_7d_in_currency], ["30d", r.price_change_percentage_30d_in_currency]] }); }).join("");
+    const t = rows.reduce((a, r) => r.last_updated > a ? r.last_updated : a, "");
+    $("meta-crypto").textContent = "Crypto · CoinGecko · live " + utcTime(t);
+    status.live["crypto"] = true; topline();
+  } catch (e) {
+    el.innerHTML = `<div class="empty">CoinGecko did not answer (${esc(e.message)}).</div>`;
+    $("meta-crypto").textContent = "Crypto · CoinGecko unavailable";
+  }
+}
+function changes(dates, closes) {
+  const n = closes.length, last = closes[n - 1], end = Date.parse(dates[n - 1] + "T00:00:00Z");
+  const back = days => { let i = n - 1; while (i > 0 && Date.parse(dates[i] + "T00:00:00Z") > end - days * MS) i--; return i < n - 1 ? (last / closes[i] - 1) * 100 : null; };
+  return [["1d", n > 1 ? (last / closes[n - 2] - 1) * 100 : null], ["7d", back(7)], ["30d", back(30)]];
+}
+async function stocks() {
+  try {
+    const j = await getJSON("data/stocks.json");
+    const syms = j.symbols, by = Object.fromEntries(syms.map(s => [s.symbol, s]));
+    const mk = sym => { const s = by[sym]; if (!s) return `<div class="tile"><div class="tk">${sym}</div><div class="px">${MINUS}</div></div>`;
+      const cap = s.group === "mega" ? s.cap : null;  // market cap for companies only, not for the funds
+      return tile({ code: s.symbol, title: s.name + (cap ? " · market cap " + fmtCap(cap) : ""), price: fmtPrice(s.closes[s.closes.length - 1]), changes: changes(s.dates, s.closes), cap }); };
+    // equal-weight, buy-and-hold index of the "mega" symbols, base 100 at the start of the window
+    const mega = syms.filter(s => s.group === "mega");
+    let idxTile = `<div class="tile"><div class="tk">Hyperscale</div><div class="px">${MINUS}</div></div>`;
+    if (mega.length) {
+      const dates = mega[0].dates.filter(d => mega.every(s => s.dates.includes(d)));
+      const idx = dates.map(d => 100 * mega.reduce((a, s) => a + s.closes[s.dates.indexOf(d)] / s.closes[s.dates.indexOf(dates[0])], 0) / mega.length);
+      const combined = mega.every(s => s.cap) ? mega.reduce((a, s) => a + s.cap, 0) : null;
+      idxTile = tile({ code: "Hyperscale", title: "Equal weight of " + mega.map(s => s.symbol).join(", ") + (combined ? " · combined market cap " + fmtCap(combined) : ""), price: fmtNum(idx[idx.length - 1], 1), changes: changes(dates, idx), cap: combined });
+    }
+    $("megaTiles").innerHTML = ["NVDA", "GOOGL", "MSFT", "AMZN", "META"].map(mk).join("");
+    $("etfTiles").innerHTML = mk("TSM") + idxTile + ["QQQ", "SPY", "GLD"].map(mk).join("");
+    const lastDate = syms.reduce((a, s) => s.dates[s.dates.length - 1] > a ? s.dates[s.dates.length - 1] : a, "");
+    $("meta-stocks").textContent = "Equities · Yahoo · last refreshed " + stamp(j.asof) + (lastDate !== j.asof.slice(0, 10) ? " · bars to " + lastDate : "");
+    status.pushed["equities"] = j.asof.slice(0, 10); topline();
+  } catch (e) {
+    $("megaTiles").innerHTML = `<div class="empty">No equity data (${esc(e.message)}). Run <code>uv run finance/fetch.py stocks</code> and push.</div>`;
+    $("meta-stocks").textContent = "Equities · Yahoo unavailable";
+  }
+}
+
+/* ============================================================ II. bitcoin cycles */
+let START, CLOSES = [], startMs = 0, LAST = -1;
+const idxOf = d => Math.round((Date.parse(d + "T00:00:00Z") - startMs) / MS);
+const dateOf = i => new Date(startMs + i * MS).toISOString().slice(0, 10);
+
+const LOWS = ["2011-10-20", "2015-01-14", "2018-12-15", "2022-11-21"];
+const HALVINGS = ["2012-11-28", "2016-07-09", "2020-05-11", "2024-04-20"];
+const NEXT_HALVING_EST = "2028-04-10";
+const SPLIT_LOW = "2026-06-30";
+const COLORS = ["--c1", "--c2", "--c3", "--c4", "--c5"];
+const LIVE_URL = "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=86400&limit=40";
+
+function buildCycles(split) {
+  const cyc = [];
+  for (let i = 0; i < 4; i++) {
+    const lo = idxOf(LOWS[i]);
+    let end = i < 3 ? idxOf(LOWS[i + 1]) - 1 : LAST;
+    if (i === 3 && split) end = idxOf(SPLIT_LOW) - 1;
+    cyc.push({ name: "Cycle " + (i + 1), lo, end, halving: idxOf(HALVINGS[i]), estHalving: false, open: i === 3 && !split });
+  }
+  if (split) cyc.push({ name: "Cycle 5", lo: idxOf(SPLIT_LOW), end: LAST, halving: idxOf(NEXT_HALVING_EST), estHalving: true, open: true, isNew: true });
+  cyc.forEach((c, k) => {
+    let top = c.lo, mx = -1;
+    for (let i = c.lo; i <= c.end; i++) if (CLOSES[i] > mx) { mx = CLOSES[i]; top = i; }
+    // a top only counts if the cycle has since fallen well below it (≥ 35% drawdown) or the cycle is closed
+    const drawdown = 1 - Math.min(...CLOSES.slice(top, c.end + 1)) / mx;
+    c.top = (!c.open || drawdown > 0.35) ? top : null;
+    c.lowPrice = CLOSES[c.lo];
+    c.topPrice = c.top !== null ? CLOSES[c.top] : null;
+    c.logGain = c.top !== null ? Math.log(c.topPrice / c.lowPrice) : null;
+    c.color = cssVar(COLORS[k]);
+    c.idx = k;
+  });
+  // linear extrapolation of log peak gain vs cycle number, for cycles without a top yet
+  const done = cyc.filter(c => c.logGain !== null);
+  const n = done.length, sx = done.reduce((a, c) => a + c.idx, 0), sy = done.reduce((a, c) => a + Math.log(c.logGain), 0);
+  const sxx = done.reduce((a, c) => a + c.idx * c.idx, 0), sxy = done.reduce((a, c) => a + c.idx * Math.log(c.logGain), 0);
+  const slope = (n * sxy - sx * sy) / (n * sxx - sx * sx), icpt = (sy - slope * sx) / n;
+  cyc.forEach(c => { c.estLogGain = c.logGain === null ? Math.exp(icpt + slope * c.idx) : null; });
+  return cyc;
+}
+
+const state = { align: "halving", scale: "low", split: false, hidden: new Set() };
+let chart, cycles;
+
+function series() {
+  cycles = buildCycles(state.split);
+  const out = [], notes = [];
+  for (const c of cycles) {
+    let x0;
+    if (state.align === "low") x0 = c.lo;
+    else if (state.align === "halving") x0 = c.halving;
+    else { if (c.top === null) { notes.push(c.name + " has no confirmed top yet, so it can't be aligned by top."); continue; } x0 = c.top; }
+    let base = c.lowPrice;
+    if (state.scale === "anchor") {
+      if (x0 >= c.lo && x0 <= c.end) base = CLOSES[x0];
+      else {
+        // day-0 price not known yet: assume the typical bottom→day-0 multiple of the completed cycles (geometric mean)
+        const known = cycles.filter(k => k !== c && k.halving >= k.lo && k.halving <= k.end);
+        const m = Math.exp(known.reduce((a, k) => a + Math.log(CLOSES[k.halving] / k.lowPrice), 0) / known.length);
+        base = c.lowPrice * m;
+        notes.push(c.name + "'s halving price isn't known yet, so it's anchored to an assumed " + fmt$(base) + " — its bottom × " + m.toFixed(1) + ", the geometric mean of bottom→halving multiples in the other cycles (" + known.map(k => (CLOSES[k.halving] / k.lowPrice).toFixed(1) + "×").join(", ") + ").");
+      }
+    }
+    const lg = c.logGain !== null ? c.logGain : c.estLogGain;
+    const pts = [];
+    for (let i = c.lo; i <= c.end; i++) {
+      const p = CLOSES[i];
+      const y = state.scale === "adj" ? Math.log(p / c.lowPrice) / lg : p / base;
+      pts.push({ x: i - x0, y, i });
+    }
+    const dashed = state.scale === "adj" && c.logGain === null;
+    if (dashed) notes.push(c.name + " is scaled by an extrapolated peak gain of " + Math.exp(lg).toFixed(1) + "× (each cycle's log-gain has shrunk by a roughly constant factor; this continues that trend), so its height is an estimate.");
+    out.push({ c, x0, pts, dashed });
+  }
+  if (c5Estimated()) notes.push("Cycle 5's halving date (" + NEXT_HALVING_EST + ") is an estimate; the block schedule will decide the exact day.");
+  return { out, notes };
+}
+function c5Estimated() { return state.split && state.align === "halving"; }
+
+const markerPlugin = {
+  id: "markers",
+  afterDatasetsDraw(ch) {
+    const { ctx, scales: { x, y } } = ch;
+    const cur = ch.$cur || [];
+    ctx.save();
+    // day 0 line
+    if (x.min <= 0 && x.max >= 0) {
+      ctx.strokeStyle = cssVar("--accent"); ctx.setLineDash([5, 4]); ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.moveTo(x.getPixelForValue(0), y.top); ctx.lineTo(x.getPixelForValue(0), y.bottom); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = cssVar("--accent"); ctx.font = "12px " + cssVar("--sans"); ctx.textAlign = "left";
+      ctx.fillText({ low: "bottom", halving: "halving", top: "top" }[state.align], x.getPixelForValue(0) + 5, y.top + 12);
+    }
+    cur.forEach((s, di) => {
+      if (!ch.isDatasetVisible(di)) return;
+      const c = s.c;
+      const draw = (i, kind) => {
+        if (i === null || i < c.lo || i > c.end) return;
+        const pt = s.pts[i - c.lo];
+        const px = x.getPixelForValue(pt.x), py = y.getPixelForValue(pt.y);
+        if (px < x.left || px > x.right) return;
+        ctx.fillStyle = c.color; ctx.strokeStyle = cssVar("--panel"); ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        if (kind === "low") ctx.arc(px, py, 5, 0, Math.PI * 2);
+        else if (kind === "top") { ctx.moveTo(px, py - 6); ctx.lineTo(px + 6, py + 5); ctx.lineTo(px - 6, py + 5); ctx.closePath(); }
+        else { ctx.moveTo(px, py - 6); ctx.lineTo(px + 6, py); ctx.lineTo(px, py + 6); ctx.lineTo(px - 6, py); ctx.closePath(); }
+        ctx.fill(); ctx.stroke();
+      };
+      draw(c.lo, "low"); draw(c.top, "top"); draw(c.halving, "halving");
+      if (c.end === LAST) {
+        const pt = s.pts[s.pts.length - 1];
+        const px = x.getPixelForValue(pt.x);
+        if (px >= x.left && px <= x.right) {
+          ctx.strokeStyle = c.color; ctx.setLineDash([2, 4]); ctx.lineWidth = 1; ctx.globalAlpha = .7;
+          ctx.beginPath(); ctx.moveTo(px, y.top); ctx.lineTo(px, y.bottom); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
+          ctx.fillStyle = c.color; ctx.textAlign = "right"; ctx.fillText("today", px - 4, y.bottom - 6);
+        }
+      }
+    });
+    ctx.restore();
+  }
+};
+
+function render() {
+  if (LAST < 0) return;
+  const { out, notes } = series();
+  const adj = state.scale === "adj";
+  const datasets = out.map(s => ({
+    label: labelFor(s.c), data: s.pts, borderColor: s.c.color, borderWidth: s.c.end === LAST ? 2 : 1.3,
+    borderDash: s.dashed ? [6, 4] : [], pointRadius: 0, pointHitRadius: 6, tension: 0, spanGaps: true,
+    hidden: state.hidden.has(s.c.name)
+  }));
+  const yScale = adj
+    ? { type: "linear", title: { display: true, text: "Share of the cycle's peak log-gain (1 = its top)", color: cssVar("--muted") }, grid: { color: cssVar("--grid") }, ticks: { color: cssVar("--muted") } }
+    : { type: "logarithmic", title: { display: true, text: state.scale === "low" ? "Price ÷ cycle bottom" : "Price ÷ price at day 0", color: cssVar("--muted") }, grid: { color: cssVar("--grid") },
+        ticks: { color: cssVar("--muted"), callback: v => { const l = Math.log10(v); return Number.isInteger(l) || [2, 5].includes(Math.round(v / Math.pow(10, Math.floor(l)))) && v === Math.round(v / Math.pow(10, Math.floor(l))) * Math.pow(10, Math.floor(l)) ? v + "×" : ""; } } };
+  const cfg = {
+    type: "line", data: { datasets },
+    options: {
+      animation: false, responsive: true, maintainAspectRatio: false, parsing: false, normalized: true,
+      interaction: { mode: "nearest", intersect: false },
+      scales: {
+        x: { type: "linear", title: { display: true, text: "Days since " + { low: "cycle bottom", halving: "halving", top: "cycle top" }[state.align], color: cssVar("--muted") }, grid: { color: cssVar("--grid") }, ticks: { color: cssVar("--muted"), stepSize: 365 } },
+        y: yScale
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: items => { const s = out[items[0].datasetIndex]; const p = s.pts[items[0].dataIndex]; return s.c.name + " · " + dateOf(p.i); },
+            label: item => { const s = out[item.datasetIndex]; const p = s.pts[item.dataIndex]; const pr = CLOSES[p.i];
+              return fmt$(pr) + (adj ? "  ·  " + (p.y * 100).toFixed(0) + "% of peak log-gain" : "  ·  " + p.y.toFixed(2) + "×") + "  ·  day " + p.x; }
+          }
+        }
+      }
+    },
+    plugins: [markerPlugin]
+  };
+  if (chart) chart.destroy();
+  chart = new Chart($("chart"), cfg);
+  chart.$cur = out;
+  chart.update();
+  cycleLegend(out);
+  $("note").textContent = notes.join(" ");
+  stats();
+}
+
+function labelFor(c) {
+  return c.name + "  " + dateOf(c.lo).slice(0, 4) + "–" + (c.open ? "now" : dateOf(c.end).slice(0, 4));
+}
+function cycleLegend(out) {
+  const el = $("legend"); el.innerHTML = "";
+  out.forEach((s, di) => {
+    const b = document.createElement("button");
+    b.style.setProperty("--sw", s.c.color);
+    b.className = (state.hidden.has(s.c.name) ? "off" : "") + (s.dashed ? " dashed" : "");
+    b.innerHTML = "<i></i>" + labelFor(s.c) + (s.c.isNew ? " (new)" : "");
+    b.onclick = () => { state.hidden.has(s.c.name) ? state.hidden.delete(s.c.name) : state.hidden.add(s.c.name); chart.setDatasetVisibility(di, !state.hidden.has(s.c.name)); chart.update(); b.classList.toggle("off"); };
+    el.appendChild(b);
+  });
+}
+function stats() {
+  const t = $("stats");
+  const rows = cycles.map(c => {
+    const nextLo = c.open ? null : c.end + 1;
+    const dd = c.top !== null ? (c.open ? Math.min(...CLOSES.slice(c.top, c.end + 1)) : CLOSES[nextLo]) / c.topPrice - 1 : null;
+    const ddLabel = c.top === null ? "—" : (dd * 100).toFixed(0) + "%" + (c.open ? " so far" : "");
+    return `<tr><td><span class="dot" style="background:${c.color}"></span>${c.name}${c.isNew ? " (new)" : ""}</td>
+      <td>${dateOf(c.lo)}<br>${fmt$(c.lowPrice)}</td>
+      <td>${dateOf(c.halving)}${c.estHalving ? " (est.)" : ""}<br>${c.halving <= LAST ? fmt$(CLOSES[c.halving]) : "—"}</td>
+      <td>${c.top !== null ? dateOf(c.top) + "<br>" + fmt$(c.topPrice) : "—"}</td>
+      <td>${c.top !== null ? Math.exp(c.logGain).toFixed(1) + "×" : "est. " + Math.exp(c.estLogGain).toFixed(1) + "×"}</td>
+      <td>${c.top !== null ? c.top - c.lo + " d" : "—"}</td>
+      <td>${ddLabel}</td>
+      <td>${c.end - c.lo + 1} d${c.open ? " so far" : ""}</td></tr>`;
+  });
+  t.innerHTML = `<tr><th>Cycle</th><th>Bottom</th><th>Halving</th><th>Top</th><th>Bottom→top</th><th>Days to top</th><th>Drawdown after top</th><th>Length</th></tr>` + rows.join("");
+}
+function stampDates(liveNote) {
+  $("meta-cycles").textContent = "Bitstamp daily closes · 2011 to " + dateOf(LAST) + (liveNote ? " · " + liveNote : "");
+  $("foot").textContent = "Bottoms are the lowest daily close of each bear market; tops the highest close of each cycle.";
+}
+
+for (const [id, key] of [["alignSeg", "align"], ["scaleSeg", "scale"]]) {
+  document.querySelectorAll("#" + id + " button").forEach(b => b.onclick = () => {
+    document.querySelectorAll("#" + id + " button").forEach(x => x.setAttribute("aria-pressed", "false"));
+    b.setAttribute("aria-pressed", "true"); state[key] = b.dataset.v; render();
+  });
+}
+$("splitChk").onchange = e => { state.split = e.target.checked; render(); };
+try { const s = JSON.parse(localStorage.getItem("btc-cycles-state") || "null"); if (s) { state.align = s.align || state.align; state.scale = s.scale || state.scale; state.split = !!s.split;
+  document.querySelectorAll("#alignSeg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === state.align));
+  document.querySelectorAll("#scaleSeg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === state.scale));
+  $("splitChk").checked = state.split; } } catch (e) {}
+const _render = render; render = function () { _render(); try { localStorage.setItem("btc-cycles-state", JSON.stringify({ align: state.align, scale: state.scale, split: state.split })); } catch (e) {} };
+
+// the JSON snapshot renders first; the last 40 days are then refreshed from Bitstamp
+function spliceCloses(rows) {
+  const fresh = new Map();
+  for (const r of rows) {
+    const i = Math.round((Number(r.timestamp) * 1000 - startMs) / MS), p = Number(r.close);
+    if (i >= 0 && p > 0) fresh.set(i, p);
+  }
+  if (!fresh.size) return false;
+  const oldLen = CLOSES.length;
+  for (const [i, p] of fresh) CLOSES[i] = p;
+  // if the snapshot is older than the fetch window, fill the days in between linearly (as fetch.py does)
+  for (let i = oldLen; i < CLOSES.length; i++) {
+    if (CLOSES[i] !== undefined) continue;
+    let j = i + 1; while (CLOSES[j] === undefined) j++;
+    CLOSES[i] = CLOSES[i - 1] + (CLOSES[j] - CLOSES[i - 1]) / (j - i + 1);
+  }
+  LAST = CLOSES.length - 1;
+  return true;
+}
+async function cyclesSection() {
+  try {
+    const j = await getJSON("data/btc.json");
+    START = j.start; CLOSES = j.closes; startMs = Date.parse(START + "T00:00:00Z"); LAST = CLOSES.length - 1;
+    stampDates("last refreshed " + j.asof.slice(0, 10)); render();
+    status.pushed["btc history"] = j.asof.slice(0, 10); topline();
+  } catch (e) {
+    $("meta-cycles").textContent = "Bitstamp daily closes · unavailable";
+    $("dataNote").textContent = "No BTC history (" + e.message + "). Run uv run finance/fetch.py btc and push.";
+    return;
+  }
+  try {
+    const j = await getJSON(LIVE_URL, 10000);
+    if (!spliceCloses((j.data && j.data.ohlc) || [])) throw new Error("no rows");
+    stampDates("live"); render();
+    status.live["btc history"] = true; delete status.pushed["btc history"]; topline();
+  } catch (e) {
+    $("dataNote").textContent = "Live prices did not load, so this is the snapshot through " + dateOf(LAST) + ".";
+  }
+}
+
+/* ============================================================ III. etf flows */
+let etfData = null;
+function renderEtf() {
+  const d = etfData; if (!d) return;
+  const up = cssVar("--up"), down = cssVar("--down"), ink = cssVar("--ink");
+  const recent = d.rows.slice(-90);
+  $("etfDailyTitle").textContent = "Daily net flow, $m · last " + recent.length + " trading days";
+  mkChart("etfDaily", {
+    type: "bar",
+    data: { labels: recent.map(r => r.date), datasets: [{ data: recent.map(r => r.total), backgroundColor: recent.map(r => r.total >= 0 ? up : down), borderWidth: 0, borderRadius: 2, barPercentage: .8, categoryPercentage: .9 }] },
+    options: { animation: false, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      scales: { x: axis({ type: "category", grid: { display: false }, ticks: { color: cssVar("--muted"), maxTicksLimit: 8, maxRotation: 0, callback: (v, i) => dayLabel(recent[i].date) } }), y: axis({ ticks: { color: cssVar("--muted"), callback: v => fmtNum(v, 0) } }) },
+      plugins: { legend: { display: false }, tooltip: { callbacks: {
+        title: items => dayLabel(recent[items[0].dataIndex].date) + " " + recent[items[0].dataIndex].date.slice(0, 4),
+        label: item => "Total " + fmtNum(item.raw, 1) + " $m",
+        afterBody: items => { const r = recent[items[0].dataIndex]; return d.funds.map((f, i) => [f, r.flows[i]]).filter(x => x[1]).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])).slice(0, 4).map(x => x[0] + " " + fmtNum(x[1], 1)); } } } } }
+  });
+  let cum = 0; const cumPts = d.rows.map(r => ({ x: r.date, y: (cum += r.total || 0) / 1000 }));
+  const yearTicks = new Set();
+  mkChart("etfCum", {
+    type: "line",
+    data: { labels: cumPts.map(p => p.x), datasets: [{ data: cumPts.map(p => p.y), borderColor: ink, borderWidth: 1.6, pointRadius: 0, pointHitRadius: 6, tension: 0 }] },
+    options: { animation: false, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      scales: { x: axis({ type: "category", grid: { display: false }, ticks: { color: cssVar("--muted"), maxRotation: 0, autoSkip: false, callback: (v, i) => { const m = cumPts[i].x.slice(0, 7); if (m.slice(5) === "01" || m.slice(5) === "07") { if (!yearTicks.has(m)) { yearTicks.add(m); return monthLabel(m); } } return null; } } }), y: axis({ ticks: { color: cssVar("--muted"), callback: v => fmtNum(v, 0) } }) },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { title: items => cumPts[items[0].dataIndex].x, label: item => fmtNum(item.raw, 2) + " $bn cumulative" } } } }
+  });
+  const last = d.rows.slice(-10).reverse();
+  const cols = d.funds.map((f, i) => i).filter(i => last.some(r => r.flows[i]));  // funds with any flow in the window
+  $("etfTable").innerHTML = "<tr><th>$m</th>" + cols.map(i => "<th>" + d.funds[i] + "</th>").join("") + "<th>Total</th></tr>" +
+    last.map(r => "<tr><td>" + dayLabel(r.date) + "</td>" + cols.map(i => { const v = r.flows[i]; return v == null ? "<td></td>" : v === 0 ? '<td class="zero">0.0</td>' : `<td class="${signClass(v)}">${fmtNum(v, 1)}</td>`; }).join("") + `<td class="${signClass(r.total)}"><b>${fmtNum(r.total, 1)}</b></td></tr>`).join("");
+}
+function parseFarsideMarkdown(md) {
+  // the reader proxy returns Farside's table as markdown; rows look like "| 23 Sep 2026 | 166.3 | (4.7) | - | ... | 346.9 |"
+  const rows = [], num = s => { s = s.replace(/,/g, "").trim(); if (s === "" || s === "-") return null; const neg = s.startsWith("("); const v = parseFloat(s.replace(/[()]/g, "")); return isNaN(v) ? null : (neg ? -v : v); };
+  let funds = null;
+  for (const line of md.split("\n")) {
+    if (!line.startsWith("|")) continue;
+    const c = line.split("|").slice(1, -1).map(s => s.trim());
+    if (!funds && c[1] === "IBIT") { funds = c.slice(1).filter(x => x); continue; }
+    const m = /^(\d{2}) (\w{3}) (\d{4})$/.exec(c[0]);
+    if (!m || !funds) continue;
+    const mi = MONTHS.findIndex(x => x.toLowerCase() === m[2].toLowerCase()); if (mi < 0) continue;
+    const flows = c.slice(1, 1 + funds.length).map(num);
+    if (flows.every(v => v == null)) continue;
+    rows.push({ date: `${m[3]}-${String(mi + 1).padStart(2, "0")}-${m[1]}`, flows, total: num(c[1 + funds.length]) });
+  }
+  return { funds, rows };
+}
+async function etfSection() {
+  try {
+    etfData = await getJSON("data/etf.json");
+    renderEtf();
+    $("meta-etf").textContent = "Farside Investors · last refreshed " + stamp(etfData.asof) + " · through " + etfData.rows[etfData.rows.length - 1].date;
+    status.pushed["etf flows"] = etfData.asof.slice(0, 10); topline();
+  } catch (e) {
+    $("meta-etf").textContent = "Farside Investors · unavailable";
+    $("etfTable").innerHTML = `<tr><td class="empty">No ETF flow data (${esc(e.message)}). Run <code>uv run finance/fetch.py etf</code> and push.</td></tr>`;
+    return;
+  }
+  // best effort live refresh of the recent rows through a reader proxy (Farside itself blocks scripts)
+  try {
+    const ctrl = new AbortController(), t = setTimeout(() => ctrl.abort(), 20000);
+    const r = await fetch("https://r.jina.ai/https://farside.co.uk/btc/", { signal: ctrl.signal }); clearTimeout(t);
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const live = parseFarsideMarkdown(await r.text());
+    if (!live.funds || !live.rows.length) throw new Error("no table");
+    if (live.funds.join() !== etfData.funds.join()) throw new Error("fund columns changed");
+    const byDate = new Map(etfData.rows.map(r => [r.date, r]));
+    let changed = false;
+    for (const row of live.rows) { const old = byDate.get(row.date); if (!old || JSON.stringify(old) !== JSON.stringify(row)) { byDate.set(row.date, row); changed = true; } }
+    if (changed) { etfData.rows = [...byDate.values()].sort((a, b) => a.date < b.date ? -1 : 1); renderEtf(); }
+    $("meta-etf").textContent = "Farside Investors · live · through " + etfData.rows[etfData.rows.length - 1].date;
+    status.live["etf flows"] = true; delete status.pushed["etf flows"]; topline();
+  } catch (e) { /* the JSON data stays */ }
+}
+
+/* ============================================================ IV. fed */
+let effr = null;  // { rows: [{date, rate}], latest: {...}, monthly: Map(YYYY-MM → avg) }
+let meetings = null;
+function renderFedTiles() {
+  const t = [];
+  if (effr) {
+    const L = effr.latest, rows = effr.rows;
+    const ago = rows.filter(r => r.date <= new Date(Date.parse(L.date) - 365 * MS).toISOString().slice(0, 10)).pop();
+    t.push(`<div class="tile big"><div class="tk">Target range</div><div class="px">${L.from.toFixed(2)} to ${L.to.toFixed(2)}%</div><div class="sub">as of ${dayLabel(L.date)}</div></div>`);
+    t.push(`<div class="tile big"><div class="tk">Effective rate</div><div class="px">${L.rate.toFixed(2)}%</div><div class="sub">${ago ? "a year ago " + ago.rate.toFixed(2) + "%" : ""}</div></div>`);
+    if (cpiState.data) { const d = cpiState.data, core = item("SA0L1E"), n = d.months.length, y = pct(core.nsa[n - 1], core.nsa[n - 13]);
+      if (y != null) t.push(`<div class="tile big"><div class="tk">Real rate</div><div class="px">${fmtNum(L.rate - y, 2)}%</div><div class="sub">EFFR ${MINUS} core CPI ${fmtNum(y, 1)}%</div></div>`); }
+  }
+  if (meetings && meetings.length) {
+    const m0 = meetings[0], days = Math.round((Date.parse(m0.iso) - Date.parse(todayISO())) / MS);
+    t.push(`<div class="tile big"><div class="tk">Next decision</div><div class="px">${dayLabel(m0.iso)}</div><div class="sub">${days <= 0 ? "today" : days === 1 ? "tomorrow" : "in " + days + " days"}</div></div>`);
+    const cum = meetings.reduce((a, m) => a + m.exp, 0), last = meetings[meetings.length - 1];
+    t.push(`<div class="tile big"><div class="tk">Implied by ${dayLabel(last.iso)}</div><div class="px">${(cum > 0 ? "+" : cum < 0 ? MINUS : "") + Math.abs(cum).toFixed(0)} bp</div><div class="sub">${effr ? "EFFR to about " + fmtNum(effr.latest.rate + cum / 100, 2) + "%" : "expected change"}</div></div>`);
+  }
+  $("fedTiles").innerHTML = t.join("");
+}
+const OUTCOMES = [["cut2", "Cut 50+ bp", -50], ["cut1", "Cut 25 bp", -25], ["hold", "Hold", 0], ["hike1", "Hike 25 bp", 25], ["hike2", "Hike 50+ bp", 50]];
+function classify(title) {
+  const t = title.toLowerCase();
+  if (/no change/.test(t)) return "hold";
+  const m = /(\d+)\+?\s*bps?\s*(decrease|increase)/.exec(t); if (!m) return null;
+  return (m[2] === "decrease" ? "cut" : "hike") + (+m[1] >= 50 ? "2" : "1");
+}
+async function fedSection() {
+  try {
+    const j = await getJSON("https://markets.newyorkfed.org/api/rates/unsecured/effr/search.json?startDate=2016-01-01&endDate=" + todayISO(), 15000);
+    const rows = j.refRates.map(r => ({ date: r.effectiveDate, rate: r.percentRate, from: r.targetRateFrom, to: r.targetRateTo })).sort((a, b) => a.date < b.date ? -1 : 1);
+    const monthly = new Map();
+    for (const r of rows) { const m = r.date.slice(0, 7); const a = monthly.get(m) || [0, 0]; a[0] += r.rate; a[1]++; monthly.set(m, a); }
+    for (const [m, a] of monthly) monthly.set(m, a[0] / a[1]);
+    const latest = rows[rows.length - 1];
+    effr = { rows, latest, monthly };
+    $("meta-fed").textContent = "New York Fed · Polymarket · live · EFFR " + latest.date;
+    status.live["fed"] = true; topline();
+  } catch (e) {
+    $("meta-fed").textContent = "New York Fed unavailable · Polymarket · live";
+  }
+  renderFedTiles();
+  if (cpiState.data) renderCpi();
+  try {
+    const events = await getJSON("https://gamma-api.polymarket.com/events?tag_slug=fed-rates&active=true&closed=false&limit=60", 15000);
+    meetings = events.filter(e => /^fed decision in \w+\??$/i.test(e.title)).sort((a, b) => a.endDate < b.endDate ? -1 : 1).map(e => {
+      const p = {}; let sum = 0;
+      for (const m of e.markets) { const k = classify(m.groupItemTitle || m.question); if (!k) continue; const v = parseFloat(JSON.parse(m.outcomePrices)[0]); p[k] = v; sum += v; }
+      OUTCOMES.forEach(([k]) => p[k] = (p[k] || 0) / (sum || 1));
+      // the event resolves at the end of decision day, New York time
+      const iso = new Date(e.endDate).toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+      const exp = OUTCOMES.reduce((a, [k, , bp]) => a + p[k] * bp, 0);
+      return { title: e.title.replace(/\?$/, ""), iso, when: dayLabel(iso) + " " + iso.slice(0, 4), p, exp };
+    });
+    if (!meetings.length) throw new Error("no Fed decision markets");
+    $("oddsKeys").innerHTML = OUTCOMES.map(([k, l]) => `<span><i style="background:var(--${k})"></i>${l}</span>`).join("");
+    $("odds").innerHTML = meetings.map(m => `<div class="when">${m.when}<small>${esc(m.title.replace(/^Fed decision in /i, ""))} meeting</small></div>
+      <div class="bar">${OUTCOMES.map(([k]) => { const pct = m.p[k] * 100; return `<span class="${k}" style="width:${pct}%;background:var(--${k})" title="${OUTCOMES.find(o => o[0] === k)[1]} ${pct.toFixed(0)}%">${pct >= 8 ? pct.toFixed(0) + "%" : ""}</span>`; }).join("")}</div>
+      <div class="exp">${(m.exp > 0 ? "+" : m.exp < 0 ? MINUS : "") + Math.abs(m.exp).toFixed(0)} bp<small>expected</small></div>`).join("");
+    renderFedTiles();
+  } catch (e) {
+    $("odds").innerHTML = `<div class="empty">Polymarket did not answer (${esc(e.message)}).</div>`;
+  }
+}
+
+/* ============================================================ V. cpi */
+const cpiState = { data: null, liveMonth: null };
+const pct = (a, b) => a != null && b != null ? (a / b - 1) * 100 : null;
+function item(id) { return cpiState.data.items.find(i => i.id === id); }
+function renderCpi() {
+  const d = cpiState.data; if (!d) return;
+  const months = d.months, n = months.length, head = item("SA0"), core = item("SA0L1E");
+  const yoy = (it, i) => i >= 12 ? pct(it.nsa[i], it.nsa[i - 12]) : null;
+  const mom = (it, i) => i >= 1 ? pct(it.sa[i], it.sa[i - 1]) : null;
+  const li = n - 1, m = months[li];
+  // tiles
+  const t = [];
+  const big = (label, v, sub) => `<div class="tile big"><div class="tk">${label}</div><div class="px">${fmtPct(v)}</div><div class="sub">${sub}</div></div>`;
+  t.push(big("Headline, 12-mo", yoy(head, li), "prior " + fmtPct(yoy(head, li - 1))));
+  t.push(big("Core, 12-mo", yoy(core, li), "prior " + fmtPct(yoy(core, li - 1))));
+  t.push(big("Headline, 1-mo", mom(head, li), "prior " + fmtPct(mom(head, li - 1))));
+  t.push(big("Core, 1-mo", mom(core, li), "prior " + fmtPct(mom(core, li - 1))));
+  const next = (d.releases || []).find(r => r.date >= todayISO());
+  if (next) { const days = Math.round((Date.parse(next.date) - Date.parse(todayISO())) / MS);
+    t.push(`<div class="tile big"><div class="tk">Next release</div><div class="px">${dayLabel(next.date)}</div><div class="sub">${monthLabel(next.month)} CPI · ${days === 0 ? "today" : days === 1 ? "tomorrow" : "in " + days + " days"}</div></div>`); }
+  else if (effr) { const rr = effr.latest.rate - yoy(core, li);
+    t.push(`<div class="tile big"><div class="tk">Real rate</div><div class="px">${fmtNum(rr, 2)}%</div><div class="sub">EFFR ${MINUS} core CPI</div></div>`); }
+  $("cpiTiles").innerHTML = t.join("");
+  // yoy chart with effr
+  const from = Math.max(12, n - 120), lab = months.slice(from);
+  const ds = [
+    { label: "All items", data: lab.map((_, k) => yoy(head, from + k)), borderColor: cssVar("--ink"), borderWidth: 1.8, pointRadius: 0, pointHitRadius: 6, tension: 0 },
+    { label: "Core", data: lab.map((_, k) => yoy(core, from + k)), borderColor: cssVar("--accent"), borderWidth: 1.8, pointRadius: 0, pointHitRadius: 6, tension: 0 }
+  ];
+  if (effr) ds.push({ label: "Fed funds (EFFR)", data: lab.map(mo => effr.monthly.has(mo) ? effr.monthly.get(mo) : null), borderColor: cssVar("--c2"), borderWidth: 1.6, borderDash: [5, 3], pointRadius: 0, pointHitRadius: 6, tension: 0, spanGaps: true });
+  mkChart("cpiYoy", { type: "line", data: { labels: lab, datasets: ds },
+    options: { animation: false, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      scales: { x: axis({ grid: { display: false }, ticks: { color: cssVar("--muted"), maxRotation: 0, autoSkip: false, callback: (v, i) => lab[i].endsWith("-01") ? lab[i].slice(0, 4) : null } }), y: axis({ ticks: { color: cssVar("--muted"), callback: v => v + "%" } }) },
+      plugins: { legend: legend(), tooltip: { callbacks: { title: items => monthLabel(lab[items[0].dataIndex]), label: item => item.dataset.label + ": " + fmtNum(item.raw, 2) + "%" } } } } });
+  // mom chart, last 13 months
+  const from2 = Math.max(1, n - 13), lab2 = months.slice(from2);
+  mkChart("cpiMom", { type: "bar", data: { labels: lab2, datasets: [
+      { label: "All items", data: lab2.map((_, k) => mom(head, from2 + k)), backgroundColor: cssVar("--ink"), borderRadius: 2 },
+      { label: "Core", data: lab2.map((_, k) => mom(core, from2 + k)), backgroundColor: cssVar("--accent"), borderRadius: 2 }] },
+    options: { animation: false, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      scales: { x: axis({ grid: { display: false }, ticks: { color: cssVar("--muted"), maxRotation: 0, callback: (v, i) => MONTHS[+lab2[i].slice(5) - 1] } }), y: axis({ ticks: { color: cssVar("--muted"), callback: v => fmtNum(v, 1) + "%" } }) },
+      plugins: { legend: legend(), tooltip: { callbacks: { title: items => monthLabel(lab2[items[0].dataIndex]), label: item => item.dataset.label + ": " + fmtPct(item.raw, 2) } } } } });
+  // table A: components, last three 1-month changes (SA) and the 12-month change (NSA)
+  const ti = d.items.map(it => ({ it, mo: [li - 2, li - 1, li].map(i => mom(it, i)), yr: yoy(it, li) }));
+  const maxAbs = Math.max(...ti.map(x => Math.abs(x.yr || 0))) || 1, barMax = matchMedia("(max-width:640px)").matches ? 50 : 90;
+  const cell = v => v == null ? "<td></td>" : `<td>${fmtPct(v)}</td>`;
+  $("cpiTable").innerHTML = `<tr><th>Table A · ${monthLabel(m)}</th>${[li - 2, li - 1, li].map(i => "<th>" + MONTHS[+months[i].slice(5) - 1] + " 1-mo</th>").join("")}<th>12-mo</th></tr>` +
+    ti.map(({ it, mo, yr }) => `<tr class="lvl${it.indent}"><td>${esc(it.name)}</td>${mo.map(cell).join("")}<td>${yr == null ? "" : `<span class="ibar ${yr < 0 ? "neg" : "pos"}" style="width:${Math.max(2, Math.abs(yr) / maxAbs * barMax)}px"></span><b>${fmtPct(yr)}</b>`}</td></tr>`).join("");
+}
+async function cpiSection() {
+  try {
+    cpiState.data = await getJSON("data/cpi.json");
+    renderCpi(); renderFedTiles();
+    $("meta-cpi").textContent = "BLS CPI-U · last refreshed " + stamp(cpiState.data.asof) + " · through " + monthLabel(cpiState.data.months[cpiState.data.months.length - 1]);
+    status.pushed["cpi"] = cpiState.data.asof.slice(0, 10); topline();
+  } catch (e) {
+    $("meta-cpi").textContent = "BLS CPI-U · unavailable";
+    $("cpiTable").innerHTML = `<tr><td class="empty">No CPI data (${esc(e.message)}). Run <code>uv run finance/fetch.py cpi</code> and push.</td></tr>`;
+    return;
+  }
+  // release-day refresh: headline and core come straight from the BLS API (v1, no key, 3 years, 25 calls a day per address),
+  // and only when the calendar says a release newer than the JSON is out (or the calendar has run out and the JSON is a month old)
+  try {
+    const d0 = cpiState.data, have = d0.months[d0.months.length - 1], today = todayISO();
+    const due = (d0.releases || []).find(r => r.month > have);
+    const stale = due ? today >= due.date : Date.parse(today) - Date.parse(d0.asof) > 31 * MS;
+    if (!stale) throw new Error("current");
+    const ids = [["CUSR0000SA0", "SA0", "sa"], ["CUUR0000SA0", "SA0", "nsa"], ["CUSR0000SL1E", "SA0L1E", "sa"], ["CUUR0000SL1E", "SA0L1E", "nsa"]];
+    const res = await Promise.all(ids.map(([s]) => getJSON("https://api.bls.gov/publicAPI/v1/timeseries/data/" + s, 15000)));
+    const d = cpiState.data; let newest = d.months[d.months.length - 1], added = false;
+    res.forEach((j, k) => {
+      if (j.status !== "REQUEST_SUCCEEDED") throw new Error(j.message && j.message[0]);
+      const [, id, kind] = ids[k], it = item(id);
+      for (const row of j.Results.series[0].data) {
+        if (!row.period.startsWith("M") || row.period === "M13") continue;
+        const mo = row.year + "-" + row.period.slice(1);
+        let i = d.months.indexOf(mo);
+        if (i < 0) { if (mo < newest) continue; d.months.push(mo); d.months.sort(); d.items.forEach(x => { x.sa.push(null); x.nsa.push(null); }); i = d.months.indexOf(mo); added = true; }
+        it[kind][i] = parseFloat(row.value);
+      }
+    });
+    if (added) { renderCpi(); renderFedTiles(); $("cpiNote").textContent = "Headline and core are live from the BLS API; the component table only has data through " + monthLabel(newest) + " until the next refresh."; }
+    $("meta-cpi").textContent = "BLS CPI-U · live · through " + monthLabel(d.months[d.months.length - 1]) + (added ? " · components last refreshed " + stamp(d.asof) : "");
+    status.live["cpi"] = true; delete status.pushed["cpi"]; topline();
+  } catch (e) { /* the JSON data stays; the API allows 25 calls a day per address */ }
+}
+
+/* ============================================================ boot */
+crypto(); stocks(); cyclesSection(); etfSection(); fedSection(); cpiSection();
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { render(); renderEtf(); renderCpi(); });
+</script>
+</body>
+</html>
