@@ -525,10 +525,13 @@ const markerPlugin = {
       draw(c.lo, "low"); draw(c.top, "top"); draw(c.halving, "halving");
       if (c.end === LAST) {
         const pt = s.pts[s.pts.length - 1];
-        const px = x.getPixelForValue(pt.x);
+        const px = x.getPixelForValue(pt.x), py = y.getPixelForValue(pt.y);
         if (px >= x.left && px <= x.right) {
           ctx.strokeStyle = c.color; ctx.setLineDash([2, 4]); ctx.lineWidth = 1; ctx.globalAlpha = .7;
           ctx.beginPath(); ctx.moveTo(px, y.top); ctx.lineTo(px, y.bottom); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
+          // a square on the latest close of the open cycle
+          ctx.fillStyle = c.color; ctx.strokeStyle = cssVar("--panel"); ctx.lineWidth = 1.5;
+          ctx.beginPath(); ctx.rect(px - 5, py - 5, 10, 10); ctx.fill(); ctx.stroke();
           ctx.fillStyle = c.color; ctx.textAlign = "right"; ctx.fillText("today", px - 4, y.bottom - 6);
         }
       }
