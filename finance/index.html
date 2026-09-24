@@ -470,11 +470,20 @@ function series() {
     if (state.scale === "anchor") {
       if (x0 >= c.lo && x0 <= c.end) base = CLOSES[x0];
       else {
-        // day-0 price not known yet: assume the typical bottom→day-0 multiple of the completed cycles (geometric mean)
-        const known = cycles.filter(k => k !== c && k.halving >= k.lo && k.halving <= k.end);
-        const m = Math.exp(known.reduce((a, k) => a + Math.log(CLOSES[k.halving] / k.lowPrice), 0) / known.length);
-        base = c.lowPrice * m;
-        notes.push(c.name + "'s halving price isn't known yet, so it's anchored to an assumed " + fmt$(base) + " — its bottom × " + m.toFixed(1) + ", the geometric mean of bottom→halving multiples in the other cycles (" + known.map(k => (CLOSES[k.halving] / k.lowPrice).toFixed(1) + "×").join(", ") + ").");
+        // day-0 price not known yet. Every halving so far has landed below the previous cycle's top
+        // (0.57, 0.45, 0.96 of it, drifting up), so assume the most recent ratio repeats.
+        const prev = cycles[c.idx - 1];
+        const ratios = cycles.filter(k => k.idx > 0 && k.halving >= k.lo && k.halving <= k.end && cycles[k.idx - 1].topPrice).map(k => CLOSES[k.halving] / cycles[k.idx - 1].topPrice);
+        if (prev && prev.topPrice && ratios.length) {
+          const r = ratios[ratios.length - 1];
+          base = prev.topPrice * r;
+          notes.push(c.name + "'s halving price isn't known yet, so it's anchored to an assumed " + fmt$(base) + ": " + r.toFixed(2) + " × the " + prev.name + " top, the ratio the last halving landed at (earlier halvings: " + ratios.slice(0, -1).map(v => v.toFixed(2)).join(", ") + " of the previous top).");
+        } else {
+          const known = cycles.filter(k => k !== c && k.halving >= k.lo && k.halving <= k.end);
+          const m = Math.exp(known.reduce((a, k) => a + Math.log(CLOSES[k.halving] / k.lowPrice), 0) / known.length);
+          base = c.lowPrice * m;
+          notes.push(c.name + "'s halving price isn't known yet, so it's anchored to an assumed " + fmt$(base) + ": its bottom × " + m.toFixed(1) + ", the geometric mean of bottom→halving multiples in the other cycles.");
+        }
       }
     }
     const lg = c.logGain !== null ? c.logGain : c.estLogGain;
