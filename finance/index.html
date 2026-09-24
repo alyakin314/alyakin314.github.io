@@ -252,7 +252,7 @@ td .ibar.pos{background:var(--accent)} td .ibar.neg{background:var(--c2)}
           <button aria-pressed="false" data-v="adj" title="Each cycle divided by its own peak log-gain, adjusted for diminishing returns">Same scale</button>
         </div>
       </div>
-      <label class="check"><input type="checkbox" id="splitChk"> Start a new cycle at the June 2026 bottom</label>
+      <label class="check"><input type="checkbox" id="splitChk" checked> Start a new cycle at the June 2026 bottom</label>
     </div>
 
     <div class="panel chart-panel">
@@ -455,7 +455,7 @@ function buildCycles(split) {
   return cyc;
 }
 
-const state = { align: "halving", scale: "low", split: false, hidden: new Set() };
+const state = { align: "halving", scale: "low", split: true, hidden: new Set() };
 let chart, cycles;
 
 function series() {
