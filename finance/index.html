@@ -632,12 +632,12 @@ function stats() {
       <td>${dateOf(c.halving)}${c.estHalving ? " (est.)" : ""}<br>${c.halving <= LAST ? fmt$(CLOSES[c.halving]) : "—"}</td>
       <td>${c.top !== null ? dateOf(c.top) + "<br>" + fmt$(c.topPrice) : "—"}</td>
       <td>${c.top !== null ? Math.exp(c.logGain).toFixed(1) + "×" : "est. " + Math.exp(c.estLogGain).toFixed(1) + "×"}</td>
+      <td>${ddLabel}</td>
       <td>${c.top !== null ? c.top - c.lo + " d" : "—"}</td>
       <td>${toBottom}</td>
-      <td>${ddLabel}</td>
       <td>${c.end - c.lo + 1} d${c.open ? " so far" : ""}</td></tr>`;
   });
-  t.innerHTML = `<tr><th>Cycle</th><th>Bottom</th><th>Halving</th><th>Top</th><th>Bottom→top</th><th>Days to top</th><th>Days to bottom</th><th>Drawdown</th><th>Length</th></tr>` + rows.join("");
+  t.innerHTML = `<tr><th>Cycle</th><th>Bottom</th><th>Halving</th><th>Top</th><th>Bottom→top</th><th>Drawdown</th><th>Days to top</th><th>Days to bottom</th><th>Length</th></tr>` + rows.join("");
 }
 function stampDates(liveNote) {
   $("meta-cycles").textContent = "Bitstamp daily closes · 2011 to " + dateOf(LAST) + (liveNote ? " · " + liveNote : "");
