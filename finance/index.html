@@ -626,6 +626,7 @@ function stats() {
     const nextLo = c.open ? null : c.end + 1;
     const dd = c.top !== null ? (c.open ? Math.min(...CLOSES.slice(c.top, c.end + 1)) : CLOSES[nextLo]) / c.topPrice - 1 : null;
     const ddLabel = c.top === null ? "—" : (dd * 100).toFixed(0) + "%" + (c.open ? " so far" : "");
+    const toBottom = c.top === null ? "—" : c.open ? (LAST - c.top) + " d so far" : (nextLo - c.top) + " d";
     return `<tr><td><span class="dot" style="background:${c.color}"></span>${c.name}${c.isNew ? " (new)" : ""}</td>
       <td>${dateOf(c.lo)}<br>${fmt$(c.lowPrice)}</td>
       <td>${dateOf(c.halving)}${c.estHalving ? " (est.)" : ""}<br>${c.halving <= LAST ? fmt$(CLOSES[c.halving]) : "—"}</td>
@@ -633,9 +634,10 @@ function stats() {
       <td>${c.top !== null ? Math.exp(c.logGain).toFixed(1) + "×" : "est. " + Math.exp(c.estLogGain).toFixed(1) + "×"}</td>
       <td>${c.top !== null ? c.top - c.lo + " d" : "—"}</td>
       <td>${ddLabel}</td>
+      <td>${toBottom}</td>
       <td>${c.end - c.lo + 1} d${c.open ? " so far" : ""}</td></tr>`;
   });
-  t.innerHTML = `<tr><th>Cycle</th><th>Bottom</th><th>Halving</th><th>Top</th><th>Bottom→top</th><th>Days to top</th><th>Drawdown after top</th><th>Length</th></tr>` + rows.join("");
+  t.innerHTML = `<tr><th>Cycle</th><th>Bottom</th><th>Halving</th><th>Top</th><th>Bottom→top</th><th>Days to top</th><th>Drawdown</th><th>Days to bottom</th><th>Length</th></tr>` + rows.join("");
 }
 function stampDates(liveNote) {
   $("meta-cycles").textContent = "Bitstamp daily closes · 2011 to " + dateOf(LAST) + (liveNote ? " · " + liveNote : "");
