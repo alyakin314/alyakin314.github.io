@@ -532,7 +532,7 @@ const markerPlugin = {
           // a square on the latest close of the open cycle
           ctx.fillStyle = c.color; ctx.strokeStyle = cssVar("--panel"); ctx.lineWidth = 1.5;
           ctx.beginPath(); ctx.rect(px - 5, py - 5, 10, 10); ctx.fill(); ctx.stroke();
-          ctx.fillStyle = c.color; ctx.textAlign = "right"; ctx.fillText("today", px - 4, y.bottom - 6);
+          ctx.fillStyle = c.color; ctx.textAlign = "left"; ctx.fillText("today", px + 5, y.top + 12);
         }
       }
     });
