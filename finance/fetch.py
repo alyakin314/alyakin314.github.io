@@ -18,6 +18,7 @@ Each file carries an "asof" timestamp that the page shows next to the panel.
 import datetime as dt
 import html
 import json
+import os
 import re
 import sys
 import time
@@ -194,8 +195,13 @@ MONTHS = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", 
 
 
 def bls(series, start, end):
-    r = requests.post("https://api.bls.gov/publicAPI/v1/timeseries/data/",
-                      json={"seriesid": series, "startyear": str(start), "endyear": str(end)}, timeout=60).json()
+    # Without a key the v1 API allows 25 requests per address per day. A free key from
+    # https://data.bls.gov/registrationEngine/ in BLS_API_KEY switches to v2 (500 a day).
+    key = os.environ.get("BLS_API_KEY")
+    body = {"seriesid": series, "startyear": str(start), "endyear": str(end)}
+    if key:
+        body["registrationkey"] = key
+    r = requests.post(f"https://api.bls.gov/publicAPI/v{2 if key else 1}/timeseries/data/", json=body, timeout=60).json()
     if r.get("status") != "REQUEST_SUCCEEDED":
         raise RuntimeError(r.get("message"))
     out = {}
