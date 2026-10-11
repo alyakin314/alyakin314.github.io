@@ -1,0 +1,201 @@
+{
+ "asof": "2026-10-11T03:18:00+00:00",
+ "user": "5rDtuRIAAAAJ",
+ "papers": {
+  "O3NaXMp0MMsC": {
+   "title": "Incidental information contaminates patient notes and disrupts clinical reasoning in large language models",
+   "year": 2026,
+   "cites": 0
+  },
+  "GnPB-g6toBAC": {
+   "title": "Big data in US neuro-oncology: trends and translational priorities",
+   "year": 2026,
+   "cites": 1,
+   "cluster": "4970322348473342678"
+  },
+  "NMxIlDl6LWMC": {
+   "title": "Automated Generation and Human Evaluation of Neurosurgical Board Examination Self-Assessment Questions",
+   "year": 2026,
+   "cites": 0
+  },
+  "hC7cP41nSMkC": {
+   "title": "General-purpose large language models outperform specialized clinical AI tools on medical benchmarks",
+   "year": 2026,
+   "cites": 72,
+   "cluster": "10305779436264383744,1648917315906845204"
+  },
+  "blknAaTinKkC": {
+   "title": "Computer vision in clinical medicine: an LLM-powered large-scale systematic review",
+   "year": 2026,
+   "cites": 0
+  },
+  "TFP_iSt0sucC": {
+   "title": "AI-Powered Pipeline Transforms Neurosurgical Articles Into High-Quality Graphical Abstracts",
+   "year": 2026,
+   "cites": 0
+  },
+  "k_IJM867U9cC": {
+   "title": "CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications",
+   "year": 2026,
+   "cites": 11,
+   "cluster": "14187687968963830099,5548895623426687553,15743440913436433229,15498936092527126898,6529365798926580697"
+  },
+  "r0BpntZqJG4C": {
+   "title": "1196 Computational Optimization of Laser Interstitial Thermal Therapy Parameters for Brain Tumor Ablation: A Thermodynamics-Based Simulation Approach",
+   "year": 2026,
+   "cites": 0
+  },
+  "4JMBOYKVnBMC": {
+   "title": "1082 Tabular Foundation Models Predict Clinical Outcomes in Skull Base and Cerebrovascular Surgery",
+   "year": 2026,
+   "cites": 0
+  },
+  "_Qo2XoVZTnwC": {
+   "title": "LLM-assisted systematic review of large language models in clinical medicine",
+   "year": 2026,
+   "cites": 119,
+   "cluster": "9003228866059358273"
+  },
+  "R3hNpaxXUhUC": {
+   "title": "Large Language Models Predict Functional Outcomes after Acute Ischemic Stroke",
+   "year": 2026,
+   "cites": 1,
+   "cluster": "703485480504000265"
+  },
+  "9ZlFYXVOiuMC": {
+   "title": "Evaluating the performance and fragility of large language models on the self-assessment for neurological surgeons",
+   "year": 2025,
+   "cites": 3,
+   "cluster": "18406354843701960657"
+  },
+  "-f6ydRqryjwC": {
+   "title": "\"All You Need\" is Not All You Need for a Paper Title: On the Origins of a Scientific Meme",
+   "year": 2025,
+   "cites": 0
+  },
+  "dhFuZR0502QC": {
+   "title": "Neuro Data Hub: A New Approach for Streamlining Medical Clinical Research",
+   "year": 2025,
+   "cites": 2,
+   "cluster": "12893053726959852577"
+  },
+  "IWHjjKOFINEC": {
+   "title": "MedMobile: a mobile-sized language model with clinical capabilities",
+   "year": 2025,
+   "cites": 9,
+   "cluster": "7226873309812640143"
+  },
+  "qUcmZB5y_30C": {
+   "title": "The pitfalls of multiple-choice questions in generative AI and medical education",
+   "year": 2025,
+   "cites": 35,
+   "cluster": "15476626946310808,864999804656966790,8435732183716497317"
+  },
+  "ZeXyd9-uunAC": {
+   "title": "Generalist Foundation Models Are Not Clinical Enough for Hospital Operations",
+   "year": 2025,
+   "cites": 3,
+   "cluster": "17673379953113972107,12178561372905062746"
+  },
+  "QIV2ME_5wuYC": {
+   "title": "Automating the referral of bone metastases patients with and without the use of large language models",
+   "year": 2025,
+   "cites": 4,
+   "cluster": "248993168605628627"
+  },
+  "mVmsd5A6BfQC": {
+   "title": "Medical large language models are easily distracted",
+   "year": 2025,
+   "cites": 27,
+   "cluster": "17006843949760313238,15534626305230478550"
+  },
+  "4DMP91E08xMC": {
+   "title": "A Generalizable Pipeline for Building an Extensive Domain-Specific Dataset From a Medical Journal-Neurosurgery Edition",
+   "year": 2025,
+   "cites": 5,
+   "cluster": "9788522688165002531"
+  },
+  "aqlVkmm33-oC": {
+   "title": "BPQA Dataset: Evaluating How Well Language Models Leverage Blood Pressures to Answer Biomedical Questions",
+   "year": 2025,
+   "cites": 1,
+   "cluster": "8818655817000307807"
+  },
+  "YOwf2qJgpHMC": {
+   "title": "Medical large language models are vulnerable to data-poisoning attacks",
+   "year": 2025,
+   "cites": 375,
+   "cluster": "10644094364771965173"
+  },
+  "ULOm3_A8WrAC": {
+   "title": "MedG-KRP: Medical Graph Knowledge Representation Probing",
+   "year": 2024,
+   "cites": 4,
+   "cluster": "11250601303436599974"
+  },
+  "3fE2CSJIrl8C": {
+   "title": "Commensal HPVs Have Evolved to Be More Immunogenic Compared with High-Risk α-HPVs",
+   "year": 2024,
+   "cites": 5,
+   "cluster": "10183345268476567886"
+  },
+  "MXK_kJrjxJIC": {
+   "title": "Clinical prediction for surgical versus nonsurgical interventions in patients with vertebral osteomyelitis and discitis",
+   "year": 2024,
+   "cites": 2,
+   "cluster": "10639284895193069660"
+  },
+  "hqOjcs7Dif8C": {
+   "title": "Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices with Applications to Connectomics",
+   "year": 2024,
+   "cites": 11,
+   "cluster": "10057549402367792276"
+  },
+  "Zph67rFs4hoC": {
+   "title": "CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model",
+   "year": 2024,
+   "cites": 11,
+   "cluster": "14274458360060752917,2351845010199452050"
+  },
+  "UebtZRa9Y70C": {
+   "title": "Exploration of Residual Confounding in Analyses of Associations of Metformin Use and Outcomes in Adults with Type 2 Diabetes",
+   "year": 2022,
+   "cites": 13,
+   "cluster": "5184846199195540288,12687679383718461752"
+  },
+  "bEWYMUwI8FkC": {
+   "title": "Natural Language Processing Methods Automate Molecular Marker Extraction From Glioma Pathology Reports",
+   "year": 2022,
+   "cites": 0
+  },
+  "zYLM7Y9cAGgC": {
+   "title": "Using Machine Learning for Early Prediction of Cardiogenic Shock in Patients with Acute Heart Failure",
+   "year": 2022,
+   "cites": 33,
+   "cluster": "7978778450375264836"
+  },
+  "WF5omc3nYNoC": {
+   "title": "An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon Induction from Word Embedding Spaces",
+   "year": 2021,
+   "cites": 10,
+   "cluster": "15885078136982446977"
+  },
+  "LkGwnXOMwfcC": {
+   "title": "Valid Two‐Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation with Applications in Connectomics",
+   "year": 2021,
+   "cites": 11,
+   "cluster": "7815699494345081016,5250616532787953031"
+  },
+  "0EnyYjriUFMC": {
+   "title": "LqRT: Robust hypothesis testing of location parameters using Lq-Likelihood-Ratio-Type test in Python",
+   "year": 2019,
+   "cites": 4,
+   "cluster": "1773175555333415827"
+  },
+  "5nxA0vEk-isC": {
+   "title": "Motif Discovery in the Irregularly Sampled Time Series Data",
+   "year": 2019,
+   "cites": 0
+  }
+ }
+}

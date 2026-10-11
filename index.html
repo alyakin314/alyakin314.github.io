@@ -17,6 +17,7 @@
       --ink: #e8dfc9;
       --ink-bright: #f4ead2;
       --muted: #9a8a72;
+      --faint: rgba(232,223,201,0.38);
       --accent: #d4a04a;
       --accent-dim: rgba(212,160,74,0.18);
       --rule: rgba(232,223,201,0.10);
@@ -387,18 +388,17 @@
     }
     .pub-list { border-bottom: 1px solid var(--rule); }
 
-    a.pub {
+    .pub {
+      position: relative;
       display: grid;
       grid-template-columns: 3.5rem 1fr;
       gap: 1rem;
       padding: 0.9rem 0;
       border-top: 1px solid var(--rule);
-      text-decoration: none;
-      color: inherit;
       align-items: baseline;
       transition: background 200ms ease;
     }
-    a.pub:hover { background: rgba(212,160,74,0.05); }
+    .pub:hover { background: rgba(212,160,74,0.05); }
     .pub-year {
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
@@ -406,7 +406,7 @@
       font-feature-settings: "tnum";
       transition: color 200ms ease;
     }
-    a.pub:hover .pub-year { color: var(--accent); }
+    .pub:hover .pub-year { color: var(--accent); }
     .pub-body { line-height: 1.45; }
     .pub-authors {
       display: block;
@@ -421,15 +421,18 @@
       color: var(--ink-bright);
       font-weight: 500;
     }
-    .pub-title {
+    a.pub-title {
       font-family: 'Crimson Pro', Georgia, serif;
       font-style: italic;
       font-weight: 420;
       font-size: 17px;
       color: var(--ink-bright);
       letter-spacing: 0.005em;
+      text-decoration: none;
     }
-    a.pub:hover .pub-title {
+    /* the whole row opens the paper; the citation link sits above this layer */
+    a.pub-title::after { content: ''; position: absolute; inset: 0; }
+    a.pub-title:hover {
       text-decoration: underline;
       text-decoration-color: var(--accent);
       text-underline-offset: 3px;
@@ -442,6 +445,28 @@
       margin-top: 0.15rem;
       font-style: normal;
     }
+    .pub-cites {
+      position: relative;
+      z-index: 1;
+      color: var(--faint);
+      transition: color 200ms ease;
+    }
+    .pub:hover .pub-cites { color: var(--muted); }
+    .pub-cites a { color: inherit; text-decoration: none; }
+    .pub-cites a:hover { color: var(--accent); }
+    .pub-note {
+      margin: -1.5rem 0 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--faint);
+    }
+    .pub-note a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+    }
+    .pub-note a:hover { color: var(--muted); }
 
     /* ===== footer ===== */
     footer.bottom {
@@ -625,82 +650,88 @@
         <div class="pub-group">
           <h3>Clinical Artificial Intelligence Models</h3>
           <div class="pub-list">
-            <a class="pub" href="https://doi.org/10.1227/neu.0000000000004070" target="_blank" rel="noreferrer">
+            <div class="pub" data-scholar="k_IJM867U9cC">
               <span class="pub-year">2026</span>
-              <span class="pub-body"><span class="pub-title">CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications</span><span class="pub-authors"><strong>A. Alyakin</strong>, J. Stryker, D. A. Alber, et al.</span><span class="pub-venue">Neurosurgery</span></span>
-            </a>
-            <a class="pub" href="https://doi.org/10.1227/neu.0000000000003297" target="_blank" rel="noreferrer">
+              <span class="pub-body"><a class="pub-title" href="https://doi.org/10.1227/neu.0000000000004070" target="_blank" rel="noreferrer">CNS-Obsidian: A Neurosurgical Vision-Language Model Built From Scientific Publications</a><span class="pub-authors"><strong>A. Alyakin</strong>, J. Stryker, D. A. Alber, et al.</span><span class="pub-venue">Neurosurgery</span></span>
+            </div>
+            <div class="pub" data-scholar="Zph67rFs4hoC">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model</span><span class="pub-authors"><strong>A. Alyakin</strong>, D. Kurland, D. Alber, et al.</span><span class="pub-venue">Neurosurgery</span></span>
-            </a>
-            <a class="pub" href="https://doi.org/10.1136/bmjdhai-2025-000068" target="_blank" rel="noreferrer">
+              <span class="pub-body"><a class="pub-title" href="https://doi.org/10.1227/neu.0000000000003297" target="_blank" rel="noreferrer">CNS-CLIP: Transforming a Neurosurgical Journal into a Multimodal Medical Model</a><span class="pub-authors"><strong>A. Alyakin</strong>, D. Kurland, D. Alber, et al.</span><span class="pub-venue">Neurosurgery</span></span>
+            </div>
+            <div class="pub" data-scholar="IWHjjKOFINEC">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">MedMobile: A Mobile-sized Language Model with Clinical Capabilities</span><span class="pub-authors">K. Vishwanath, J. Stryker, <strong>A. Alyakin</strong>, et al.</span><span class="pub-venue">BMJ Digital Health &amp; AI</span></span>
-            </a>
-            <a class="pub" href="https://arxiv.org/abs/2511.13703" target="_blank" rel="noreferrer">
+              <span class="pub-body"><a class="pub-title" href="https://doi.org/10.1136/bmjdhai-2025-000068" target="_blank" rel="noreferrer">MedMobile: A Mobile-sized Language Model with Clinical Capabilities</a><span class="pub-authors">K. Vishwanath, J. Stryker, <strong>A. Alyakin</strong>, et al.</span><span class="pub-venue">BMJ Digital Health &amp; AI</span></span>
+            </div>
+            <div class="pub" data-scholar="ZeXyd9-uunAC">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">Lang1: Generalist Foundation Models Are Not Clinical Enough for Hospital Operations</span><span class="pub-authors">L. Y. Jiang, A. Chen, X. Han, …, <strong>A. Alyakin</strong>, et al.</span><span class="pub-venue">preprint</span></span>
-            </a>
+              <span class="pub-body"><a class="pub-title" href="https://arxiv.org/abs/2511.13703" target="_blank" rel="noreferrer">Lang1: Generalist Foundation Models Are Not Clinical Enough for Hospital Operations</a><span class="pub-authors">L. Y. Jiang, A. Chen, X. Han, …, <strong>A. Alyakin</strong>, et al.</span><span class="pub-venue">arXiv</span></span>
+            </div>
           </div>
         </div>
 
         <div class="pub-group">
           <h3>Computational Safety</h3>
           <div class="pub-list">
-            <a class="pub" href="https://doi.org/10.1038/s41591-026-04431-5" target="_blank" rel="noreferrer">
+            <div class="pub" data-scholar="YOwf2qJgpHMC">
+              <span class="pub-year">2025</span>
+              <span class="pub-body"><a class="pub-title" href="https://doi.org/10.1038/s41591-024-03445-1" target="_blank" rel="noreferrer">Medical Large Language Models are Vulnerable to Data-poisoning Attacks</a><span class="pub-authors">D. A. Alber, Z. Yang, <strong>A. Alyakin</strong>, et al.</span><span class="pub-venue">Nature Medicine</span></span>
+            </div>
+            <div class="pub" data-scholar="_Qo2XoVZTnwC">
               <span class="pub-year">2026</span>
-              <span class="pub-body"><span class="pub-title">Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks</span><span class="pub-authors">K. Vishwanath, <strong>A. Alyakin</strong>, M. Ghosh, et al.</span><span class="pub-venue">Nature Medicine</span></span>
-            </a>
-            <a class="pub" href="https://doi.org/10.1038/s41591-026-04229-5" target="_blank" rel="noreferrer">
+              <span class="pub-body"><a class="pub-title" href="https://doi.org/10.1038/s41591-026-04229-5" target="_blank" rel="noreferrer">LLM-assisted Systematic Review of Large Language Models in Clinical Medicine</a><span class="pub-authors">S. F. Chen, <strong>A. Alyakin</strong>, A. Seas, et al.</span><span class="pub-venue">Nature Medicine</span></span>
+            </div>
+            <div class="pub" data-scholar="hC7cP41nSMkC">
               <span class="pub-year">2026</span>
-              <span class="pub-body"><span class="pub-title">LLM-assisted Systematic Review of Large Language Models in Clinical Medicine</span><span class="pub-authors">S. F. Chen, <strong>A. Alyakin</strong>, A. Seas, et al.</span><span class="pub-venue">Nature Medicine</span></span>
-            </a>
-            <a class="pub" href="https://doi.org/10.1038/s41591-024-03445-1" target="_blank" rel="noreferrer">
+              <span class="pub-body"><a class="pub-title" href="https://doi.org/10.1038/s41591-026-04431-5" target="_blank" rel="noreferrer">Generalist Large Language Models Outperform Clinical Tools on Medical Benchmarks</a><span class="pub-authors">K. Vishwanath, <strong>A. Alyakin</strong>, M. Ghosh, et al.</span><span class="pub-venue">Nature Medicine</span></span>
+            </div>
+            <div class="pub" data-scholar="qUcmZB5y_30C">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">Medical Large Language Models are Vulnerable to Data-poisoning Attacks</span><span class="pub-authors">D. A. Alber, Z. Yang, <strong>A. Alyakin</strong>, et al.</span><span class="pub-venue">Nature Medicine</span></span>
-            </a>
-            <a class="pub" href="https://doi.org/10.1038/s41598-025-26036-7" target="_blank" rel="noreferrer">
+              <span class="pub-body"><a class="pub-title" href="https://doi.org/10.1038/s41598-025-26036-7" target="_blank" rel="noreferrer">Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education</a><span class="pub-authors">S. Singh, <strong>A. Alyakin</strong>, D. A. Alber, et al.</span><span class="pub-venue">Scientific Reports</span></span>
+            </div>
+            <div class="pub" data-scholar="mVmsd5A6BfQC">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">Pitfalls of Multiple-Choice Questions in Generative AI and Medical Education</span><span class="pub-authors">S. Singh, <strong>A. Alyakin</strong>, D. A. Alber, et al.</span><span class="pub-venue">Scientific Reports</span></span>
-            </a>
-            <a class="pub" href="https://doi.org/10.1227/neu.0000000000003878" target="_blank" rel="noreferrer">
+              <span class="pub-body"><a class="pub-title" href="https://arxiv.org/abs/2504.01201" target="_blank" rel="noreferrer">Medical Large Language Models are Easily Distracted</a><span class="pub-authors">K. Vishwanath, <strong>A. Alyakin</strong>, D. A. Alber, et al.</span><span class="pub-venue">arXiv</span></span>
+            </div>
+            <div class="pub" data-scholar="9ZlFYXVOiuMC">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions</span><span class="pub-authors">K. Vishwanath, <strong>A. Alyakin</strong>, M. Ghosh, et al.</span><span class="pub-venue">Neurosurgery</span></span>
-            </a>
-            <a class="pub" href="https://arxiv.org/abs/2504.01201" target="_blank" rel="noreferrer">
-              <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">Medical Large Language Models are Easily Distracted</span><span class="pub-authors">K. Vishwanath, <strong>A. Alyakin</strong>, D. A. Alber, et al.</span><span class="pub-venue">preprint</span></span>
-            </a>
+              <span class="pub-body"><a class="pub-title" href="https://doi.org/10.1227/neu.0000000000003878" target="_blank" rel="noreferrer">Evaluating the Performance and Fragility of Large Language Models on Neurosurgical Board-like Questions</a><span class="pub-authors">K. Vishwanath, <strong>A. Alyakin</strong>, M. Ghosh, et al.</span><span class="pub-venue">Neurosurgery</span></span>
+            </div>
+            <div class="pub" data-scholar="O3NaXMp0MMsC">
+              <span class="pub-year">2026</span>
+              <span class="pub-body"><a class="pub-title" href="https://arxiv.org/abs/2610.08585" target="_blank" rel="noreferrer">Large Language Models are Vulnerable to Incidental Information in Clinical Documentation and Reasoning</a><span class="pub-authors">K. Vishwanath, B. Ye, <strong>A. Alyakin</strong>, et al.</span><span class="pub-venue">arXiv</span></span>
+            </div>
           </div>
         </div>
 
         <div class="pub-group">
           <h3>Connectome &amp; Graph-Based Statistics</h3>
           <div class="pub-list">
-            <a class="pub" href="https://doi.org/10.1007/s41109-023-00607-x" target="_blank" rel="noreferrer">
+            <div class="pub" data-scholar="hqOjcs7Dif8C">
               <span class="pub-year">2024</span>
-              <span class="pub-body"><span class="pub-title">Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices, with Applications to Connectomics</span><span class="pub-authors"><strong>A. A. Alyakin</strong>, J. Agterberg, H. S. Helm, C. E. Priebe</span><span class="pub-venue">Applied Network Science</span></span>
-            </a>
-            <a class="pub" href="https://doi.org/10.1002/sta4.429" target="_blank" rel="noreferrer">
+              <span class="pub-body"><a class="pub-title" href="https://doi.org/10.1007/s41109-023-00607-x" target="_blank" rel="noreferrer">Correcting a Nonparametric Two-sample Graph Hypothesis Test for Graphs with Different Numbers of Vertices, with Applications to Connectomics</a><span class="pub-authors"><strong>A. A. Alyakin</strong>, J. Agterberg, H. S. Helm, C. E. Priebe</span><span class="pub-venue">Applied Network Science</span></span>
+            </div>
+            <div class="pub" data-scholar="LkGwnXOMwfcC">
               <span class="pub-year">2021</span>
-              <span class="pub-body"><span class="pub-title">Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation, with Applications in Connectomics</span><span class="pub-authors">J. Chung, B. Varjavand, J. Arroyo, <strong>A. Alyakin</strong>, et al.</span><span class="pub-venue">Stat</span></span>
-            </a>
-            <a class="pub" href="https://arxiv.org/pdf/2109.12640" target="_blank" rel="noreferrer">
+              <span class="pub-body"><a class="pub-title" href="https://doi.org/10.1002/sta4.429" target="_blank" rel="noreferrer">Valid Two-Sample Graph Testing via Optimal Transport Procrustes and Multiscale Graph Correlation, with Applications in Connectomics</a><span class="pub-authors">J. Chung, B. Varjavand, J. Arroyo, <strong>A. Alyakin</strong>, et al.</span><span class="pub-venue">Stat</span></span>
+            </div>
+            <div class="pub" data-scholar="WF5omc3nYNoC">
               <span class="pub-year">2021</span>
-              <span class="pub-body"><span class="pub-title">An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon Induction from Word Embedding Spaces</span><span class="pub-authors">K. Marchisio, Y. Park, A. Saad-Eldin, <strong>A. Alyakin</strong>, et al.</span><span class="pub-venue">Findings of the ACL: EMNLP</span></span>
-            </a>
+              <span class="pub-body"><a class="pub-title" href="https://arxiv.org/pdf/2109.12640" target="_blank" rel="noreferrer">An Analysis of Euclidean vs. Graph-Based Framing for Bilingual Lexicon Induction from Word Embedding Spaces</a><span class="pub-authors">K. Marchisio, Y. Park, A. Saad-Eldin, <strong>A. Alyakin</strong>, et al.</span><span class="pub-venue">Findings of the ACL: EMNLP</span></span>
+            </div>
           </div>
         </div>
 
         <div class="pub-group">
           <h3>Commentary</h3>
           <div class="pub-list">
-            <a class="pub" href="https://arxiv.org/abs/2512.19700" target="_blank" rel="noreferrer">
+            <div class="pub" data-scholar="-f6ydRqryjwC">
               <span class="pub-year">2025</span>
-              <span class="pub-body"><span class="pub-title">"All You Need" is Not All You Need for a Paper Title: On the Origins of a Scientific Meme</span><span class="pub-authors"><strong>A. Alyakin</strong></span><span class="pub-venue">preprint</span></span>
-            </a>
+              <span class="pub-body"><a class="pub-title" href="https://arxiv.org/abs/2512.19700" target="_blank" rel="noreferrer">"All You Need" is Not All You Need for a Paper Title: On the Origins of a Scientific Meme</a><span class="pub-authors"><strong>A. Alyakin</strong></span><span class="pub-venue">arXiv</span></span>
+            </div>
           </div>
         </div>
+
+        <p class="pub-note" id="pub-note" hidden></p>
       </section>
 
       <footer class="bottom">
@@ -720,6 +751,47 @@
       a.href = 'mailto:' + addr;
       t.textContent = addr;
     }
+  })();
+
+  // Citation counts come from scholar/data/citations.json, written by scholar/fetch.py.
+  // Without the file the rows simply show no count.
+  (function () {
+    var rows = document.querySelectorAll('.pub[data-scholar]');
+    var note = document.getElementById('pub-note');
+    if (!rows.length || !note || !window.fetch) return;
+    var profile = 'https://scholar.google.com/citations?user=5rDtuRIAAAAJ';
+    fetch('scholar/data/citations.json').then(function (r) {
+      return r.ok ? r.json() : null;
+    }).then(function (d) {
+      if (!d || !d.papers) return;
+      var shown = 0;
+      rows.forEach(function (row) {
+        var p = d.papers[row.dataset.scholar];
+        if (!p || !p.cites) return;
+        var a = document.createElement('a');
+        a.href = p.cluster
+          ? 'https://scholar.google.com/scholar?cites=' + p.cluster
+          : profile + '&view_op=view_citation&citation_for_view=' + d.user + ':' + row.dataset.scholar;
+        a.target = '_blank';
+        a.rel = 'noreferrer';
+        a.title = 'Cited by ' + p.cites + ' on Google Scholar';
+        a.textContent = 'citations:\u00a0' + p.cites;
+        var cites = document.createElement('span');
+        cites.className = 'pub-cites';
+        cites.append('\u00a0\u00b7 ', a);
+        row.querySelector('.pub-venue').appendChild(cites);
+        shown++;
+      });
+      if (!shown) return;
+      var when = new Date(d.asof).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+      var link = document.createElement('a');
+      link.href = profile;
+      link.target = '_blank';
+      link.rel = 'noreferrer';
+      link.textContent = 'Google Scholar';
+      note.append('Citation counts from ', link, ', as of ' + when);
+      note.hidden = false;
+    }).catch(function () {});
   })();
 </script>
 </body>
